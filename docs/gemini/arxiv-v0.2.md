@@ -1,13 +1,4 @@
 
-
-
-
-This is the complete integrated draft for your arXiv submission, titled **"momagrid: A Decentralized LLM Inference Network via Structured Prompting."** It incorporates the **SPL v3.0** foundations, the **Mixture-of-Model on Ollama** (momagrid) architecture, and the specific security protocols we brainstormed.
-
-The **Results** section remains as a placeholder for your 3-GPU LAN grid data.
-
----
-
 # momagrid: A Decentralized LLM Inference Network via Structured Prompting
 
 **Wen G. Gong** *Independent Researcher* `wen.gong.research@gmail.com`
@@ -102,14 +93,13 @@ The combination of **SPL’s declarative budgeting** and **Mixture-of-Model rout
 
 ## References
 
-[1] Ryabinin, M., et al. (2023). *Petals: Collaborative Inference of Large Language Models.* [2] Gong, W. G. (2026). *Structured Prompt Language: Declarative Context Management for LLMs.* arXiv:2602.xxxxx.
+[1] Ryabinin, M., et al. (2023). *Petals: Collaborative Inference of Large Language Models.* 
 
-[3] SecureLLM Framework (2025). *Privacy-Preserving Inference in Heterogeneous Environments.* [4] Liquid AI (2025). *The LFM-1.2B: Efficient Linear Foundation Models.* [5] "Proof of Quality" (PoQ) Framework (2026). *Quality Scoring for Decentralized LLM Inference.* arXiv:2603.xxxxx.
+[2] Gong, W. G. (2026). *Structured Prompt Language: Declarative Context Management for LLMs.* arXiv:2602.xxxxx.
 
----
+[3] SecureLLM Framework (2025). *Privacy-Preserving Inference in Heterogeneous Environments.* 
 
-### **Next Step**
+[4] Liquid AI (2025). *The LFM-1.2B: Efficient Linear Foundation Models.* 
 
-Once you have the **Tokens Per Second (TPS)** and **Memory Usage** results from your 1050 Ti test this weekend, we can plug them into **Section V** to finalize the paper.
+[5] "Proof of Quality" (PoQ) Framework (2026). *Quality Scoring for Decentralized LLM Inference.* arXiv:2603.xxxxx.
 
-To help with your Sunday session, would you like me to draft a **"Data Collection Table"** you can use to record the results from your 3-GPU grid?
