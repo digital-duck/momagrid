@@ -3,7 +3,6 @@
 A decentralized LLM Inference Network via Structured Prompting - SPL
 
 
-
 ## Decentralized LLM Inference for the Heterogeneous Edge
 
 **momagrid** is a decentralized, peer-to-peer inference network that orchestrates Large Language Models (LLMs) across a grid of heterogeneous, consumer-grade GPUs. By utilizing the **Structured Prompt Language (SPL)**, momagrid treats a local area network (LAN) or wide area network (WAN) as a unified generative utility, intelligently routing logical tasks to the most efficient hardware profile.
@@ -46,6 +45,9 @@ The current stable build is optimized for **NVIDIA Pascal (GTX 10-series)** and 
 On each worker node, start the Spoke proxy and register with your Hub's API key:
 
 ```bash
+conda create -n momahub python=3.11
+conda activate momahub
+
 # Set your Hub's address and your authorized API Key
 export MOMAGRID_HUB="192.168.1.100"
 export MOMAGRID_API_KEY="your-pki-authorized-key"
