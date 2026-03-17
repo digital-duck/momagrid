@@ -1,0 +1,8 @@
+
+  Document Pipeline
+    Source:  demo_text.txt
+    Hub:     http://localhost:9000
+    Model:   llama3
+
+  [1/3] Preparing text... 1005 chars
+  [2/3] Summarizing on grid (llama3)... SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused

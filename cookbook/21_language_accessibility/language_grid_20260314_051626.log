@@ -1,0 +1,64 @@
+
+  Language Accessibility Demo
+    Hub:       http://192.168.0.177:9000
+    Model:     llama3
+    Languages: 10
+
+    Arabic         81 tok    3.3s
+    Hindi          72 tok    3.3s
+    English        63 tok    3.3s
+    Portuguese    107 tok    3.3s
+    Japanese       69 tok    3.3s
+    French         86 tok    5.5s
+    Russian        80 tok    5.5s
+    Spanish        81 tok    5.5s
+    German         97 tok    5.5s
+    Chinese        62 tok    8.1s
+
+  ============================================================
+
+  [Arabic]
+  Q: ما هو الذكاء الاصطناعي؟
+  A:  Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making. AI uses algorithms and data analysis to simulate human thought processes, enabling machines to make pr
+
+  [Chinese]
+  Q: 人工智能是什么？
+  A: 人工智能（Artificial Intelligence，AI）是指计算机或软件能够模拟人类智能的能力，以进行学习、推理和决策等智能行为。 AI 技术可以使计算机更好地理解自然语言、识别图像、执行复杂任务等。
+
+  [English]
+  Q: What is artificial intelligence?
+  A: Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding natural language. AI involves creating algorithms and models that enable machines to make
+
+  [French]
+  Q: Qu'est-ce que l'intelligence artificielle?
+  A: L'intelligence artificielle (IA) est une technologie qui permet aux ordinateurs et aux autres systèmes de prendre des décisions et d'apprendre à partir de données, en simulant l'intelligence humaine. Elle utilise diverses techniques telles que l'apprentissage automatique, les réseaux de neurone
+
+  [German]
+  Q: Was ist künstliche Intelligenz?
+  A: Künstliche Intelligenz (KI) bezeichnet die Fähigkeit von Maschinen, wie Computersystemen oder Robotern, durch Lernen und Analyse aus Daten zu einem menschlichartigen Verhalten zu kommen. Dies umfasst Fähigkeiten wie Erkennung von Mustern, Problem Lösung und Entscheidungsfindung, die aufwärts ko
+
+  [Hindi]
+  Q: कृत्रिम बुद्धिमत्ता क्या है?
+  A: कृत्रिम बुद्धिमत्ता (Artificial Intelligence) का मतलब एक मशीन या सिस्टम जो मानवीय Thoughts और Actions से प्रेरित होने की जगह, automated decision-making और problem-s
+
+  [Japanese]
+  Q: 人工知能とは何ですか？
+  A: 人工知能（AI）とは、計算機が自己の判断や推測を行うことを可能にする技術です。これは、データを分析し、学習することで、新しい知識やパターンを獲得し、将来の事象に対応して適切な反応を示すことができます。
+
+  [Portuguese]
+  Q: O que é inteligência artificial?
+  A: A inteligência artificial (IA) é uma área da ciência e tecnologia que se refere à capacidade de uma máquina ou programa computacional realizar tarefas que normalmente requerem habilidades humanas, como aprendizado, resolução de problemas e tomada de decisões. Essa tecnologia utiliza algorit
+
+  [Russian]
+  Q: Что такое искусственный интеллект?
+  A: Искусственный интеллект (ИИ) - это система, которая может выполнять задачи, обычно требующие человеческого разума, такие как рассуждение, решение и обучение, исполь
+
+  [Spanish]
+  Q: ¿Qué es la inteligencia artificial?
+  A: La inteligencia artificial (IA) se refiere a la capacidad de un programa o máquina para realizar tareas que habitualmente requieren la inteligencia humana, como aprender, razonar y tomar decisiones. La IA utiliza algoritmos y datos para analizar información y hacer predicciones, sin necesidad de s
+
+  ------------------------------------------------------------
+  10/10 languages answered in 8.1s wall time
+  (All dispatched in parallel — wall time ≈ slowest single response)
+
+  Results saved: out/language_grid_20260314_051634.json

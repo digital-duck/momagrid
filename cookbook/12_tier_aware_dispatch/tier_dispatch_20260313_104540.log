@@ -1,0 +1,18 @@
+
+  Tier-Aware Dispatch
+    Hub:   http://localhost:9000
+    Tasks: 4
+
+  Available agents:
+    wen                  tier=BRONZE     vram=11GB  status=ONLINE
+
+  Label                            VRAM  State                     Agent     Lat    Tok
+  -------------------------------------------------------------------------------------
+  No VRAM constraint                 0G  COMPLETE       ..agent-0577c8be    5.5s     74
+  VRAM >= 4 GB                       4G  COMPLETE       ..agent-0577c8be   11.2s    128
+  VRAM >= 8 GB                       8G  COMPLETE       ..agent-0577c8be    8.1s    128
+  VRAM >= 10 GB                     10G  COMPLETE       ..agent-0577c8be    3.3s    128
+
+  4/4 dispatched successfully
+
+  Results saved: out/tier_dispatch_20260313_104551.json

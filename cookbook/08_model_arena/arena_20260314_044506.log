@@ -1,0 +1,19 @@
+
+  Model Arena
+    Hub:    http://localhost:9000
+    Models: [llama3 mistral phi3]
+
+    [llama3] submitting...
+    [mistral] submitting...
+    [phi3] submitting...
+    [llama3] SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+    [mistral] SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+    [phi3] SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  MODEL           STATE        TOKENS    LATENCY      TPS
+  -------------------------------------------------------
+  llama3          SUBMIT_FAILED        0       0.0s     0.0
+  mistral         SUBMIT_FAILED        0       0.0s     0.0
+  phi3            SUBMIT_FAILED        0       0.0s     0.0
+
+  Results saved: out/arena_20260314_044507.json

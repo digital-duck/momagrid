@@ -1,0 +1,21 @@
+
+  RAG on Grid
+    Hub:      http://localhost:9000
+    Model:    llama3
+    Question: What are the key benefits of hub-and-spoke inference?
+
+  Submitting to grid... done  4.6s  123 tokens  agent=..ent-0577c8be
+
+  ─────────────────────────────────────────────────────────
+  Answer:
+
+  According to the provided context, the key benefits of hub-and-spoke inference (Momahub) are:
+  
+  1. Reduced hardware requirements for clients — inference runs on GPU nodes, not the requester.
+  2. Parallel execution across multiple GPU nodes for high throughput.
+  3. Centralized task management with priority queuing and retry logic.
+  4. Reward tracking — operators earn credits per 1000 output tokens.
+  5. Resilience via automatic agent failover and task re-queuing on eviction.
+  6. Flexible dispatch: push mode (hub → agent HTTP POST) or pull mode (agent SSE stream).
+  ─────────────────────────────────────────────────────────
+

@@ -1,0 +1,15 @@
+
+  Multi-Agent Throughput
+    Hub:         http://localhost:9000
+
+
+  ============================================================
+  Label:      run-044507
+  Completed:  0/60
+  Wall time:  0.0s
+  Tokens:     0
+  Throughput: 0.0 tokens/s  <- KEY METRIC
+
+  Agent distribution:
+
+  Results saved: out/throughput_20260314_044507.json

@@ -1,0 +1,46 @@
+{
+  "elapsed_s": 4.419619189,
+  "hub": "http://localhost:9000",
+  "languages": [
+    "French",
+    "German",
+    "Chinese",
+    "Spanish"
+  ],
+  "model": "llama3",
+  "results": [
+    {
+      "language": "Chinese",
+      "state": "COMPLETE",
+      "translation": "(nǐ hǎo shì jiè, shí bā shén me)",
+      "output_tokens": 19,
+      "latency_ms": 522,
+      "agent_id": "agent-0577c8be"
+    },
+    {
+      "language": "French",
+      "state": "COMPLETE",
+      "translation": "Bonjour monde, qu'est-ce que 10 !",
+      "output_tokens": 11,
+      "latency_ms": 750,
+      "agent_id": "agent-0577c8be"
+    },
+    {
+      "language": "German",
+      "state": "COMPLETE",
+      "translation": "Hallo Welt, was ist 10?!",
+      "output_tokens": 9,
+      "latency_ms": 941,
+      "agent_id": "agent-0577c8be"
+    },
+    {
+      "language": "Spanish",
+      "state": "COMPLETE",
+      "translation": "Hola mundo, ¿qué es un 10!",
+      "output_tokens": 11,
+      "latency_ms": 299,
+      "agent_id": "agent-0577c8be"
+    }
+  ],
+  "timestamp": "2026-03-13T10:37:30-04:00"
+}

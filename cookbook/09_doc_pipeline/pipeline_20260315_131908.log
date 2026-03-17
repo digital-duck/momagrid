@@ -1,0 +1,29 @@
+
+  Document Pipeline
+    Source:  demo_text.txt
+    Hub:     http://192.168.0.177:9000
+    Model:   llama3
+
+  [1/3] Preparing text... 1005 chars
+  [2/3] Summarizing on grid (llama3)... 249 tokens  8026ms
+  [3/3] Formatting output...
+
+  Here is a structured summary of the document:
+
+### Overview
+This document discusses Artificial Intelligence (AI) and Machine Learning (ML), specifically highlighting the capabilities and processes involved in ML. It focuses on how ML enables systems to learn and improve from experience without being explicitly programmed.
+
+### Key Points
+• Machine learning is a subset of artificial intelligence that allows systems to learn and improve from experience without explicit programming.
+• The primary goal of ML is to enable computers to learn automatically without human intervention or assistance.
+• Deep learning is part of the broader family of machine learning methods based on artificial neural networks with representation learning.
+
+### Details
+According to the text, the process of machine learning begins with observations or data, which allows computers to look for patterns in data and make better decisions in the future. The learning process can be supervised, semi-supervised, or unsupervised, and various deep learning architectures such as convolutional neural networks, recurrent neural networks, and transformers have been applied to fields including computer vision, natural language processing, and speech recognition.
+
+### Conclusion
+The main takeaways from this document are that machine learning is a powerful tool that enables systems to learn and improve without explicit programming, and that it has far-reaching applications in various fields.
+
+  Done! Agent: ..ent-345612c8
+
+  Results saved: out/doc_pipeline_20260315_131921.json

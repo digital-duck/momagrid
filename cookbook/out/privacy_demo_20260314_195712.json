@@ -1,0 +1,45 @@
+{
+  "assembly": {
+    "Chunk": 0,
+    "State": "COMPLETE",
+    "Content": "Here is the combined document analysis:\n\n**Momahub Distributed Inference Agreement**\n\nThe Momahub Distributed Inference Agreement (Demo Document) is a contract between two parties: Digital Duck Labs (the \"Provider\") and participating GPU operators (\"Contributors\"). The Provider operates the hub infrastructure, while Contributors supply compute resources via the Momahub agent software.\n\n**Key Obligations**\n\n* **Compute Contribution**: Contributors agree to make their GPU resources available during registered hours. They will be compensated with Momahub credits at a rate of 1 credit per 1,000 output tokens generated.\n* **Privacy and Data Handling**: Task prompts will not be stored beyond the task lifecycle (default: 24 hours). Contributors acknowledge that prompt chunks may not represent complete documents. The hub retains sole access to task assembly and final result delivery.\n\n**Notable Clauses**\n\n* **Liability**: The Provider makes no warranty regarding uptime, task completion rates, or inference quality. Contributors are responsible for their own hardware and network. Neither party is liable for indirect or consequential damages.\n* **Termination**: Either party can terminate participation with 24 hours' notice via a specific process (moma down). Outstanding tasks at termination time will be re-queued to available agents. Credits earned prior to termination remain redeemable indefinitely.\n\n**Main Themes**\n\nThe main themes of this agreement are:\n\n1. **Compute Resource Sharing**: The agreement outlines the terms for sharing compute resources between Contributors and the Provider.\n2. **Data Handling and Privacy**: The agreement addresses data handling and privacy concerns, ensuring that task prompts are not stored beyond the task lifecycle and that Contributors acknowledge the limitations of prompt chunks.\n3. **Liability and Termination**: The agreement establishes liability limits and termination procedures to minimize disruptions and ensure a smooth transition.\n\nOverall, this agreement sets the stage for a collaborative distributed inference framework, where parties can share compute resources, contribute to tasks, and receive compensation in the form of Momahub credits.",
+    "AgentID": "agent-fde66a4b",
+    "LatencyS": 10.758449626,
+    "OutputTokens": 0,
+    "Error": ""
+  },
+  "chunks": [
+    {
+      "Chunk": 1,
+      "State": "COMPLETE",
+      "Content": "Key points from this excerpt:\n\n* The document is titled \"Momahub Distributed Inference Agreement\" (Demo Document)\n* It is an agreement between two parties:\n\t+ \"Digital Duck Labs\" (the \"Provider\")\n\t+ Participating GPU operators (\"Contributors\")\n* The Provider operates the hub infrastructure\n* Contributors supply compute resources via the Momahub agent software",
+      "AgentID": "agent-fde66a4b",
+      "LatencyS": 4.418582925,
+      "OutputTokens": 76,
+      "Error": ""
+    },
+    {
+      "Chunk": 2,
+      "State": "COMPLETE",
+      "Content": "Here are the key points extracted from this excerpt:\n\n**Compute Contribution**\n\n1. Contributors agree to make their GPU resources available during registered hours.\n2. The hub dispatches inference tasks based on tier (PLATINUM/GOLD/SILVER/BRONZE), VRAM availability, and model support.\n3. Contributors are compensated with Momahub credits at a rate of 1 credit per 1,000 output tokens generated.\n\n**Privacy and Data Handling**\n\n1. Task prompts will not be stored beyond the task lifecycle (default: 24 hours).\n2. Contributors acknowledge that prompt chunks may not represent complete documents.\n3. The hub retains sole access to task assembly and final result delivery.",
+      "AgentID": "agent-574772ab",
+      "LatencyS": 4.418540321,
+      "OutputTokens": 142,
+      "Error": ""
+    },
+    {
+      "Chunk": 3,
+      "State": "COMPLETE",
+      "Content": "Here are the key points extracted and summarized from this excerpt:\n\n**Liability**\n\n* The Provider makes no warranty regarding uptime, task completion rates, or inference quality.\n* Contributors are responsible for their own hardware and network.\n* Neither party is liable for indirect or consequential damages.\n\n**Termination**\n\n* Either party can terminate participation with 24 hours' notice via a specific process (moma down).\n* Outstanding tasks at termination time will be re-queued to available agents.\n* Credits earned prior to termination remain redeemable indefinitely.",
+      "AgentID": "agent-e52c4919",
+      "LatencyS": 4.419374647,
+      "OutputTokens": 107,
+      "Error": ""
+    }
+  ],
+  "document": "demo_contract.txt",
+  "hub": "http://192.168.0.177:9000",
+  "num_chunks": 3,
+  "timestamp": "2026-03-14T19:57:12-04:00",
+  "wall_time_s": 15.178092206
+}

@@ -1,0 +1,46 @@
+
+  Agent Failover Test
+    Hub:    http://localhost:9000
+    Tasks:  20
+    Model:  llama3
+
+  Initial agents (1 online):
+    - wen                  BRONZE     ONLINE
+
+  Submitting tasks... Kill an agent mid-run to test failover.
+  (Use `moma down` on the agent machine, or stop the agent process)
+
+  Submitted [  1/20] failover-017de69e
+  Submitted [  2/20] failover-890909ee
+  Submitted [  3/20] failover-6f3a88f9
+  Submitted [  4/20] failover-bb66be7d
+  Submitted [  5/20] failover-e4d7c15f
+  Submitted [  6/20] failover-1d098108
+  Submitted [  7/20] failover-4d94d60c
+  Submitted [  8/20] failover-52e93696
+  Submitted [  9/20] failover-0d3b5bd0
+  Submitted [ 10/20] failover-a8ffa0ab
+  Submitted [ 11/20] failover-9c32b201
+  Submitted [ 12/20] failover-e756f5d5
+  Submitted [ 13/20] failover-2f77338e
+  Submitted [ 14/20] failover-0f02d505
+  Submitted [ 15/20] failover-75317f23
+  Submitted [ 16/20] failover-3cd1f325
+  Submitted [ 17/20] failover-3955833f
+  Submitted [ 18/20] failover-0c3fe4a2
+  Submitted [ 19/20] failover-149b4c2c
+  Submitted [ 20/20] failover-a24356fc
+
+  All 20 tasks submitted. Waiting for completion...
+
+  ============================================================
+  Completed: 20/20
+  Failed:    0
+  Timed out: 0
+
+  Agent distribution (post-failover):
+    ..agent-0577c8be    20 tasks
+
+  PASS: All 20 tasks completed despite any failover events.
+
+  Results saved: out/failover_20260314_011556.json

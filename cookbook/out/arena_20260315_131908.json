@@ -1,0 +1,42 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "models": [
+    "llama3",
+    "mistral",
+    "phi3"
+  ],
+  "prompt": "Explain factorials",
+  "results": [
+    {
+      "model": "llama3",
+      "state": "COMPLETE",
+      "content": "Factorials!\n\nThe factorial of a positive integer `n` is denoted as `n!` (read as \"n factorial\") and is the product of all positive integers that are less than or equal to `n`. In other words, it's the result of multiplying all the numbers from `1` to `n`.\n\nMathematically, the factorial is defined as:\n\nn! = 1 × 2 × 3 × ... × (n-1) × n\n\nFor example:\n\n* 5! = 1 × 2 × 3 × 4 × 5 = 120\n* 3! = 1 × 2 × 3 = 6\n* 2! = 1 × 2 = 2\n* 1! = 1 (by convention, 0! is also defined as 1)\n\nFactorials have many real-world applications, such as:\n\n1. **Combinatorics**: Factorials help us count the number of ways to arrange objects in a particular order. For example, if you have `n` objects and want to arrange them in a line, there are `n!` possible arrangements.\n2. **Probability**: Factorials appear in probability theory when calculating the number of outcomes in an event. For instance, the number of ways to flip `n` coins is 2^n, which can be expressed as `n! / (n/2)!`.\n3. **Mathematics**: Factorials are used in many mathematical formulas and identities, such as the binomial theorem and the formula for the sum of an arithmetic series.\n4. **Computer science**: Factorials have applications in algorithms, data structures, and programming languages.\n\nSome interesting properties of factorials include:\n\n* `n!` grows very rapidly with `n`. For example, 10! = 3,628,800 is already quite large!\n* The factorial function is not injective (one-to-one), meaning that two different values of `n` can have the same factorial result. For instance, `4!` and `5!` both equal 24.\n* The factorial function has a recursive definition: `n! = n × (n-1)!`. This property makes it easy to compute factorials for large values of `n`.\n\nIn conclusion, factorials are a fundamental concept in mathematics, with applications in various fields. Understanding factorials can help you appreciate the beauty and complexity of mathematical structures.",
+      "output_tokens": 503,
+      "latency_s": 18.115854448,
+      "tps": 27.765734232620282,
+      "agent_id": "agent-ae5c6070",
+      "error": ""
+    },
+    {
+      "model": "mistral",
+      "state": "COMPLETE",
+      "content": " Factorial is a mathematical function denoted by the symbol \"!\". It is used to represent the product of all positive integers up to that number. For example:\n\n- Factoriall (1) equals 1, because there are no numbers to multiply together in this case.\n- Factoriall (2) equals 2, since 2 times 1 equals 2.\n- Factoriall (3) equals 6, because 3 times 2 times 1 equals 6.\n- In general, factoriall (n) is the product of all integers from 1 to n. So, factoriall (5) would be 5 times 4 times 3 times 2 times 1, which equals 120.\n\nFactorials are used in many areas of mathematics and science, including combinatorics, probability theory, and statistics. They can be calculated using various methods such as multiplication or recursion. The factorial function grows very quickly, meaning that the larger the number, the larger the result becomes (e.g., factoriall (20) is much larger than factoriall (10)). This rapid growth leads to large numbers that are difficult to handle in practice, requiring specialized techniques and software for calculation.",
+      "output_tokens": 274,
+      "latency_s": 8.001115032,
+      "tps": 34.245226934515095,
+      "agent_id": "agent-345612c8",
+      "error": ""
+    },
+    {
+      "model": "phi3",
+      "state": "COMPLETE",
+      "content": "Factorial is a mathematical operation represented by the symbol '!'. It applies to natural numbers and represents the product of all positive integers up to that number. For example, if we take any natural number n (where n \u003e 0), its factorial denoted as n!, can be calculated using this formula: \nn! = n x (n-1) x (n-2)....x3 x 2 x 1 where '.' signifies the continuation of multiplying by all positive integers less than or equal to ‘n’ until we reach one. For instance, if you take a number like five and find its factorial – it would be calculated as:\n5! = 5x4x3x2x1 = 120. It is important to note that the value of zero's factorial (0!) is defined as 1 by convention in mathematics, which means when you multiply nothing together using the rule above will always give a result of one and this definition helps avoid undefined situations where division or other mathematical operations involving zeros may arise later on. Factorial function plays a crucial role in various areas such as algebra, calculus, statistics (probability calculations), combinatorries etc., allowing for solutions to numerous problems that involve the arrangement, permutation and combination of elements into groups within these fields.",
+      "output_tokens": 278,
+      "latency_s": 12.396456599,
+      "tps": 22.425763183200736,
+      "agent_id": "agent-ae5c6070",
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-15T13:19:08-04:00"
+}

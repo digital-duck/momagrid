@@ -1,0 +1,79 @@
+
+  Wake/Sleep Resilience Test
+    Hub:      http://192.168.0.177:9000
+    Duration: 60s
+    Model:    llama3
+    Interval: 3.0s between tasks
+
+  Continuously submitting tasks. Bring agents online/offline to test.
+  (`moma join` on another machine, or `moma down` to stop an agent)
+
+  [13:24:35] Task    1 submitted  (59s remaining)
+  [13:24:38] Task    2 submitted  (56s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+
+  +  [13:24:40] NEW AGENT: papa-game (ONLINE)
+
+  +  [13:24:40] NEW AGENT: wengong (ONLINE)
+
+  +  [13:24:40] NEW AGENT: ducklover1 (ONLINE)
+  [13:24:41] Task    3 submitted  (53s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:24:44] Task    4 submitted  (50s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:24:47] Task    5 submitted  (47s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:24:50] Task    6 submitted  (44s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:24:53] Task    7 submitted  (41s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:24:56] Task    8 submitted  (38s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:24:59] Task    9 submitted  (35s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:02] Task   10 submitted  (32s remaining)
+  -> COMPLETE  ..ent-94a2e41b  5.5s
+  [13:25:05] Task   11 submitted  (29s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:08] Task   12 submitted  (26s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:11] Task   13 submitted  (23s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:14] Task   14 submitted  (20s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:17] Task   15 submitted  (17s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:20] Task   16 submitted  (14s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:23] Task   17 submitted  (11s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:26] Task   18 submitted  (8s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:29] Task   19 submitted  (5s remaining)
+  -> COMPLETE  ..ent-94a2e41b  3.3s
+  [13:25:32] Task   20 submitted  (2s remaining)
+  -> COMPLETE  ..ent-e5069a6b  3.3s
+
+  Waiting for in-flight tasks...
+  -> COMPLETE  ..ent-e5069a6b  3.3s
+
+  ============================================================
+  Resilience Test Complete
+  Duration:  60s
+  Tasks:     20 submitted
+  Completed: 20
+  Failed:    0
+  Success:   100.0%
+
+  Agent events during test:
+    [13:24:40] JOINED     papa-game
+    [13:24:40] JOINED     wengong
+    [13:24:40] JOINED     ducklover1
+
+  Task distribution across agents:
+    ..agent-94a2e41b     18 tasks  ██████████████████
+    ..agent-e5069a6b      2 tasks  ██
+
+  PASS: 100% tasks completed despite 3 agent event(s).
+
+  Results saved: out/resilience_20260314_132535.json

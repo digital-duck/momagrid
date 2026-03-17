@@ -1,0 +1,7 @@
+
+  RAG on Grid
+    Hub:      http://localhost:9000
+    Model:    llama3
+    Question: What are the key benefits of hub-and-spoke inference?
+
+  Submitting to grid... ERROR: submit: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused

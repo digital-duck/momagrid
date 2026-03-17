@@ -1,0 +1,10 @@
+-- Recipe 01: Hello Grid
+PROMPT hello_grid
+USING MODEL 'llama3'
+ON GRID
+
+SELECT
+    system_role('You are a friendly assistant on the i-grid.')
+
+GENERATE
+    llm('Introduce the i-grid distributed inference network in exactly two sentences.');

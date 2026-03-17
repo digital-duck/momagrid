@@ -1,0 +1,10 @@
+
+  Code Review Pipeline
+    Hub:      http://192.168.0.177:9000
+    File:     demo_code.go (demo) (326 chars)
+    Step 1:   deepseek-coder-v2 → review
+    Step 2:   llama3 → summarise
+    Step 3:   qwen2.5-coder → refactor
+
+  → [Review] submitting to deepseek-coder-v2...
+  Pipeline aborted at Step 1: HTTP 429

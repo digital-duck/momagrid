@@ -1,0 +1,141 @@
+{
+  "difficulty": "medium",
+  "hub": "http://localhost:9000",
+  "models": [
+    "mathstral",
+    "qwen2-math"
+  ],
+  "results": [
+    {
+      "model": "mathstral",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "mathstral",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "qwen2-math",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "mathstral",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "mathstral",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "mathstral",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "qwen2-math",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "",
+      "correct": false,
+      "state": "SUBMIT_FAILED",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    }
+  ],
+  "timestamp": "2026-03-14T04:45:08-04:00"
+}

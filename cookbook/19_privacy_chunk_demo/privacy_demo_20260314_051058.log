@@ -1,0 +1,36 @@
+
+  Privacy Chunk Demo
+    Hub:           http://192.168.0.177:9000
+    Document:      demo_contract.txt (1418 chars)
+    Chunks:        3 (dispatched in parallel)
+    Chunk model:   llama3
+    Assembly model:llama3
+
+  Privacy guarantee: no single agent sees the full document.
+  The hub is the only point that assembles all chunk analyses.
+
+  Active agents: 3
+    - wen (BRONZE)
+    - ducklover1 (BRONZE)
+    - wengong (BRONZE)
+
+  → Chunk 3: dispatching to agent (490 chars)...
+  → Chunk 1: dispatching to agent (308 chars)...
+  → Chunk 2: dispatching to agent (614 chars)...
+    FAILED Chunk 3: HTTP 429
+    FAILED Chunk 2: HTTP 429
+    FAILED Chunk 1: HTTP 429
+
+  → Assembly: combining 3 chunk analyses...
+
+  Chunks handled by 0 agent(s): 
+  (Each agent saw only 1/3 of the document)
+
+  ============================================================
+  ASSEMBLED ANALYSIS
+  ------------------------------------------------------------
+  Assembly failed
+
+  Wall time: 308.5s
+
+  Results saved: out/privacy_demo_20260314_051607.json

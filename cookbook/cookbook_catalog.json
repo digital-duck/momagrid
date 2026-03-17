@@ -1,0 +1,351 @@
+{
+  "_comment": "MomaGrid Cookbook Catalog — single source of truth for all recipes.",
+  "_schema": {
+    "is_active":       "bool   — included in default batch run (go run run_all.go)",
+    "approval_status": "string — new | approved | wip | disabled | rejected",
+    "category":        "string — basics | performance | resilience | application | ai-quality | developer | research | operations | cluster"
+  },
+  "recipes": [
+    {
+      "id":              "01",
+      "name":            "Hello SPL",
+      "description":     "Basic SPL query via grid",
+      "args":            ["mg", "run", "./01_single_node_hello/hello.spl", "--hub", "{hub}"],
+      "dir":             "01_single_node_hello",
+      "log":             "hello",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "basics"
+    },
+    {
+      "id":              "02",
+      "name":            "Multi-CTE Parallel",
+      "description":     "Parallel multi-CTE queries",
+      "args":            ["mg", "run", "./02_multi_cte_parallel/multi_cte.spl", "--hub", "{hub}"],
+      "dir":             "02_multi_cte_parallel",
+      "log":             "multi_cte",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "basics"
+    },
+    {
+      "id":              "03",
+      "name":            "Batch Translate",
+      "description":     "Batch translation — 4 languages",
+      "args":            ["go", "run", "./03_batch_translate/translate.go", "--hub", "{hub}", "Hello Momahub"],
+      "dir":             "03_batch_translate",
+      "log":             "translate",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "application"
+    },
+    {
+      "id":              "04",
+      "name":            "Benchmark Models",
+      "description":     "Model benchmark — latency & TPS",
+      "args":            ["go", "run", "./04_benchmark_models/benchmark.go", "--hub", "{hub}"],
+      "dir":             "04_benchmark_models",
+      "log":             "benchmark",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "performance"
+    },
+    {
+      "id":              "05",
+      "name":            "RAG on Grid",
+      "description":     "Retrieval-Augmented Generation on the grid",
+      "args":            ["go", "run", "./05_rag_on_grid/rag.go", "--hub", "{hub}", "What are the key benefits of hub-and-spoke inference?"],
+      "dir":             "05_rag_on_grid",
+      "log":             "rag",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "application"
+    },
+    {
+      "id":              "06",
+      "name":            "Arxiv Paper Digest",
+      "description":     "Academic paper summarization via arXiv API",
+      "args":            ["go", "run", "./06_arxiv_paper_digest/digest.go", "--hub", "{hub}", "2312.12345"],
+      "dir":             "06_arxiv_paper_digest",
+      "log":             "digest",
+      "is_active":       false,
+      "approval_status": "disabled",
+      "category":        "research"
+    },
+    {
+      "id":              "07",
+      "name":            "Stress Test",
+      "description":     "Stress test — sustained load",
+      "args":            ["go", "run", "./07_stress_test/stress.go", "--hub", "{hub}", "-n", "15"],
+      "dir":             "07_stress_test",
+      "log":             "stress",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "performance"
+    },
+    {
+      "id":              "08",
+      "name":            "Model Arena",
+      "description":     "Model arena — head-to-head comparison",
+      "args":            ["go", "run", "./08_model_arena/arena.go", "--hub", "{hub}", "--prompt", "Explain factorials"],
+      "dir":             "08_model_arena",
+      "log":             "arena",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "ai-quality"
+    },
+    {
+      "id":              "09",
+      "name":            "Doc Pipeline",
+      "description":     "Document processing pipeline",
+      "args":            ["go", "run", "./09_doc_pipeline/pipeline.go", "--hub", "{hub}"],
+      "dir":             "09_doc_pipeline",
+      "log":             "pipeline",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "application"
+    },
+    {
+      "id":              "10",
+      "name":            "Chain Relay",
+      "description":     "Chain relay — sequential prompts",
+      "args":            ["go", "run", "./10_chain_relay/chain.go", "--hub", "{hub}", "quantum computing"],
+      "dir":             "10_chain_relay",
+      "log":             "chain",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "application"
+    },
+    {
+      "id":              "12",
+      "name":            "Tier-Aware Dispatch",
+      "description":     "Tier-aware dispatch by VRAM",
+      "args":            ["go", "run", "./12_tier_aware_dispatch/tier_dispatch.go", "--hub", "{hub}"],
+      "dir":             "12_tier_aware_dispatch",
+      "log":             "tier_dispatch",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "performance"
+    },
+    {
+      "id":              "13",
+      "name":            "Multi-Agent Throughput",
+      "description":     "Multi-agent throughput benchmark",
+      "args":            ["go", "run", "./13_multi_agent_throughput/throughput.go", "--hub", "{hub}", "-n", "60"],
+      "dir":             "13_multi_agent_throughput",
+      "log":             "throughput",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "performance"
+    },
+    {
+      "id":              "15",
+      "name":            "Agent Failover",
+      "description":     "Agent failover & retry",
+      "args":            ["go", "run", "./15_agent_failover/failover.go", "--hub", "{hub}"],
+      "dir":             "15_agent_failover",
+      "log":             "failover",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "resilience"
+    },
+    {
+      "id":              "16",
+      "name":            "Math Olympiad",
+      "description":     "Math olympiad — reasoning accuracy",
+      "args":            ["go", "run", "./16_math_olympiad/math_olympiad.go", "--hub", "{hub}"],
+      "dir":             "16_math_olympiad",
+      "log":             "math_olympiad",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "ai-quality"
+    },
+    {
+      "id":              "17",
+      "name":            "Code Review Pipeline",
+      "description":     "Code review pipeline (3 stages)",
+      "args":            ["go", "run", "./17_code_review_pipeline/code_review.go", "--hub", "{hub}"],
+      "dir":             "17_code_review_pipeline",
+      "log":             "code_review",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "developer"
+    },
+    {
+      "id":              "18",
+      "name":            "Smart Router",
+      "description":     "Smart router — query classification",
+      "args":            ["go", "run", "./18_smart_router/smart_router.go", "--hub", "{hub}", "--demo"],
+      "dir":             "18_smart_router",
+      "log":             "smart_router",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "application"
+    },
+    {
+      "id":              "19",
+      "name":            "Privacy Chunk Demo",
+      "description":     "Privacy chunk — distributed doc analysis",
+      "args":            ["go", "run", "./19_privacy_chunk_demo/privacy_demo.go", "--hub", "{hub}"],
+      "dir":             "19_privacy_chunk_demo",
+      "log":             "privacy_demo",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "application"
+    },
+    {
+      "id":              "20",
+      "name":            "Overnight Batch",
+      "description":     "Overnight batch processing",
+      "args":            ["go", "run", "./20_overnight_batch/overnight.go", "--hub", "{hub}", "--tasks", "10"],
+      "dir":             "20_overnight_batch",
+      "log":             "overnight",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "operations"
+    },
+    {
+      "id":              "21",
+      "name":            "Language Accessibility",
+      "description":     "Language accessibility — 10 languages",
+      "args":            ["go", "run", "./21_language_accessibility/language_grid.go", "--hub", "{hub}"],
+      "dir":             "21_language_accessibility",
+      "log":             "language_grid",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "application"
+    },
+    {
+      "id":              "22",
+      "name":            "Rewards Report",
+      "description":     "Rewards report — operator credits",
+      "args":            ["go", "run", "./22_rewards_report/rewards_report.go", "--hub", "{hub}"],
+      "dir":             "22_rewards_report",
+      "log":             "rewards_report",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "operations"
+    },
+    {
+      "id":              "23",
+      "name":            "Wake/Sleep Resilience",
+      "description":     "Wake/sleep resilience",
+      "args":            ["go", "run", "./23_wake_sleep_resilience/resilience.go", "--hub", "{hub}", "--duration", "60"],
+      "dir":             "23_wake_sleep_resilience",
+      "log":             "resilience",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "resilience"
+    },
+    {
+      "id":              "24",
+      "name":            "SPL Compiler Pipeline",
+      "description":     "SPL compiler pipeline",
+      "args":            ["go", "run", "./24_spl_compiler_pipeline/compiler_demo.go", "--hub", "{hub}"],
+      "dir":             "24_spl_compiler_pipeline",
+      "log":             "compiler_demo",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "basics"
+    },
+    {
+      "id":              "25",
+      "name":            "Model Diversity",
+      "description":     "Model diversity — all models probed",
+      "args":            ["go", "run", "./25_model_diversity/model_diversity.go", "--hub", "{hub}", "--probe"],
+      "dir":             "25_model_diversity",
+      "log":             "model_diversity",
+      "is_active":       true,
+      "approval_status": "approved",
+      "category":        "ai-quality"
+    },
+    {
+      "id":              "26",
+      "name":            "Code Guardian",
+      "description":     "Code guardian — parallel security reviews",
+      "args":            ["go", "run", "./26_code_guardian/guardian.go", "--hub", "{hub}", "./internal/hub/app.go"],
+      "dir":             "26_code_guardian",
+      "log":             "guardian",
+      "is_active":       false,
+      "approval_status": "new",
+      "category":        "developer"
+    },
+    {
+      "id":              "27",
+      "name":            "Model Health Check",
+      "description":     "Model health check — load & TPS",
+      "args":            ["go", "run", "./27_model_health/model_health.go", "--hub", "{hub}"],
+      "dir":             "27_model_health",
+      "log":             "model_health",
+      "is_active":       false,
+      "approval_status": "new",
+      "category":        "operations"
+    },
+    {
+      "id":              "28",
+      "name":            "Federated Search Grid",
+      "description":     "Federated search — gathering & synthesis",
+      "args":            ["go", "run", "./28_federated_search/search.go", "--hub", "{hub}", "recent breakthroughs in AI"],
+      "dir":             "28_federated_search",
+      "log":             "search",
+      "is_active":       false,
+      "approval_status": "new",
+      "category":        "operations"
+    },
+    {
+      "id":              "29",
+      "name":            "Model Fingerprinting",
+      "description":     "Model fingerprinting — cross-agent consistency",
+      "args":            ["go", "run", "./29_model_fingerprinting/model_fingerprinting.go", "--hub", "{hub}"],
+      "dir":             "29_model_fingerprinting",
+      "log":             "model_fingerprinting",
+      "is_active":       false,
+      "approval_status": "new",
+      "category":        "ai-quality"
+    },
+    {
+      "id":              "30",
+      "name":            "Academic Paper Pipeline",
+      "description":     "Academic paper pipeline — 4 parallel stages + synthesis",
+      "args":            ["go", "run", "./30_academic_paper_pipeline/academic_pipeline.go", "--hub", "{hub}"],
+      "dir":             "30_academic_paper_pipeline",
+      "log":             "academic_pipeline",
+      "is_active":       false,
+      "approval_status": "new",
+      "category":        "research"
+    },
+    {
+      "id":              "33",
+      "name":            "Micro-Learning Grid",
+      "description":     "Micro-learning — textbook generation",
+      "args":            ["go", "run", "./33_micro_learning/learning.go", "--hub", "{hub}", "Gradient Descent"],
+      "dir":             "33_micro_learning",
+      "log":             "learning",
+      "is_active":       false,
+      "approval_status": "new",
+      "category":        "research"
+    },
+    {
+      "id":              "34",
+      "name":            "Junior Dev Assistant",
+      "description":     "Junior dev assistant — code review, refactoring & docs",
+      "args":            ["go", "run", "./34_junior_developer_assistant/junior_dev_assistant.go", "--hub", "{hub}"],
+      "dir":             "34_junior_developer_assistant",
+      "log":             "junior_dev_assistant",
+      "is_active":       false,
+      "approval_status": "new",
+      "category":        "developer"
+    },
+    {
+      "id":              "90",
+      "name":            "Two-Hub Cluster",
+      "description":     "Two-hub cluster federation",
+      "args":            ["go", "run", "./90_two_hub_cluster/cluster.go", "--hub", "{hub}"],
+      "dir":             "90_two_hub_cluster",
+      "log":             "cluster",
+      "is_active":       false,
+      "approval_status": "disabled",
+      "category":        "cluster"
+    }
+  ]
+}

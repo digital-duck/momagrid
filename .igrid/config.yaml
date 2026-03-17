@@ -1,0 +1,23 @@
+operator_id: duck
+hub:
+    host: 0.0.0.0
+    port: 9000
+    db_path: postgres://mguser:mgpass@localhost/momagrid?sslmode=disable
+    api_key: ""
+    urls:
+        - http://192.168.0.177:9000
+agent:
+    host: 0.0.0.0
+    port: 9010
+    id: ""
+    name: ""
+    ollama_url: http://localhost:11434
+mgui:
+    host: 127.0.0.1
+    port: 9080
+    fallback_chain:
+        - momagrid
+    openai_api_key: ""
+    anthropic_api_key: ""
+    google_api_key: ""
+    openrouter_api_key: ""

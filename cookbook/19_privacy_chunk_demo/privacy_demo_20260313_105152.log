@@ -1,0 +1,58 @@
+
+  Privacy Chunk Demo
+    Hub:           http://localhost:9000
+    Document:      demo_contract.txt (1418 chars)
+    Chunks:        3 (dispatched in parallel)
+    Chunk model:   llama3
+    Assembly model:llama3
+
+  Privacy guarantee: no single agent sees the full document.
+  The hub is the only point that assembles all chunk analyses.
+
+  Active agents: 1
+    - wen (BRONZE)
+
+  → Chunk 3: dispatching to agent (490 chars)...
+  → Chunk 1: dispatching to agent (308 chars)...
+  → Chunk 2: dispatching to agent (614 chars)...
+    OK Chunk 3 complete  7.3s  agent=..ent-0577c8be
+    OK Chunk 1 complete  10.7s  agent=..ent-0577c8be
+    OK Chunk 2 complete  14.9s  agent=..ent-0577c8be
+
+  → Assembly: combining 3 chunk analyses...
+    OK Assembly complete  10.8s
+
+  Chunks handled by 1 agent(s): ..agent-0577c8be
+  (Each agent saw only 1/3 of the document)
+
+  ============================================================
+  ASSEMBLED ANALYSIS
+  ------------------------------------------------------------
+  Here is a combined summary of the document analysis:
+
+**Summary**
+
+The Momahub Distributed Inference Agreement outlines the terms and conditions for collaboration between Digital Duck Labs (the "Provider") and GPU operators ("Contributors"). The agreement focuses on compute contribution, privacy and data handling, liability, and termination.
+
+**Main Themes**
+
+1. **Compute Contribution**: Contributors agree to make their GPU resources available during registered hours, with tasks dispatched based on tier, VRAM availability, and model support. They are compensated in Momahub credits for the output tokens generated.
+2. **Privacy and Data Handling**: The hub retains sole access to task assembly and final result delivery. Task prompts are stored for no longer than the task lifecycle (default: 24 hours). Contributors acknowledge that prompt chunks may not represent complete documents.
+3. **Liability**: Neither party is liable for indirect or consequential damages. The Provider does not make any warranties regarding uptime, task completion rates, or inference quality. Contributors are responsible for their own hardware and network.
+
+**Key Obligations**
+
+1. Compute resource contribution by Contributors during registered hours
+2. Task dispatch based on tier, VRAM availability, and model support
+3. Compensation in Momahub credits for output tokens generated
+
+**Notable Clauses**
+
+1. **Termination**: Either party can terminate participation with 24 hours' notice via "moma down" (unclear what this refers to). Outstanding tasks will be re-queued to available agents at termination time. Credits earned prior to termination remain redeemable indefinitely.
+2. **Provider's Limitations**: The Provider does not make any warranties regarding uptime, task completion rates, or inference quality.
+
+This summary provides a comprehensive overview of the main themes, key obligations, and notable clauses in the Momahub Distributed Inference Agreement.
+
+  Wall time: 25.7s
+
+  Results saved: out/privacy_demo_20260313_105218.json

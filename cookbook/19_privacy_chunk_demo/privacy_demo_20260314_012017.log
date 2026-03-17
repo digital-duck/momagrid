@@ -1,0 +1,61 @@
+
+  Privacy Chunk Demo
+    Hub:           http://localhost:9000
+    Document:      demo_contract.txt (1418 chars)
+    Chunks:        3 (dispatched in parallel)
+    Chunk model:   llama3
+    Assembly model:llama3
+
+  Privacy guarantee: no single agent sees the full document.
+  The hub is the only point that assembles all chunk analyses.
+
+  Active agents: 1
+    - wen (BRONZE)
+
+  → Chunk 3: dispatching to agent (490 chars)...
+  → Chunk 2: dispatching to agent (614 chars)...
+  → Chunk 1: dispatching to agent (308 chars)...
+    OK Chunk 3 complete  4.4s  agent=..ent-0577c8be
+    OK Chunk 2 complete  7.3s  agent=..ent-0577c8be
+    OK Chunk 1 complete  10.8s  agent=..ent-0577c8be
+
+  → Assembly: combining 3 chunk analyses...
+    OK Assembly complete  10.8s
+
+  Chunks handled by 1 agent(s): ..agent-0577c8be
+  (Each agent saw only 1/3 of the document)
+
+  ============================================================
+  ASSEMBLED ANALYSIS
+  ------------------------------------------------------------
+  Here is the combined document analysis:
+
+**Summary**
+
+The "Momahub Distributed Inference Agreement" (Demo Document) outlines the terms and conditions for collaboration between Digital Duck Labs ("Provider") and GPU operators who participate in the Momahub system ("Contributors"). The agreement details the roles of each party, compute contribution procedures, privacy and data handling guidelines, as well as key obligations, liability limitations, and termination procedures.
+
+**Main Themes**
+
+1. **Compute Contribution**: Contributors agree to provide their GPU resources during registered hours, with compensation in Momahub credits for output tokens generated.
+2. **Privacy and Data Handling**: The hub retains sole access to task assembly and final result delivery, with prompt chunks not representing complete documents.
+3. **Liability and Termination**: Neither party is liable for indirect or consequential damages, while either party can terminate participation with 24 hours' notice.
+
+**Key Obligations**
+
+1. **Provider**:
+	* Operates the hub infrastructure
+	* Dispatches inference tasks based on tier, VRAM availability, and model support
+2. **Contributors**:
+	* Make their GPU resources available during registered hours
+	* Are responsible for their own hardware and network
+
+**Notable Clauses**
+
+1. **Warranty Disclaimer**: The provider makes no warranty regarding uptime, task completion rates, or inference quality.
+2. **Credit Redemption**: Credits earned prior to termination remain redeemable indefinitely.
+
+Overall, the agreement outlines a collaborative framework between the Provider and Contributors, with clear guidelines for compute contribution, privacy, and liability.
+
+  Wall time: 21.5s
+
+  Results saved: out/privacy_demo_20260314_012039.json

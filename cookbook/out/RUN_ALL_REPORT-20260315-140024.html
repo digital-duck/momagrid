@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MomaGrid Cookbook Run — 2026-03-15 13:15:58</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          background: #f8fafc; color: #1e293b; padding: 32px 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .banner { background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+             color: white; border-radius: 12px; padding: 28px 32px; margin-bottom: 28px; }
+  .banner h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; }
+  .banner .subtitle { opacity: 0.85; font-size: 0.95rem; margin-bottom: 16px; }
+  .stats { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+  .stat { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 10px 18px; }
+  .stat .val { font-size: 1.6rem; font-weight: 700; color: #22c55e; }
+  .stat .lbl { font-size: 0.78rem; opacity: 0.8; margin-top: 2px; }
+  .pi-badge { display:inline-block; background:rgba(255,255,255,0.2);
+               border-radius:20px; padding:4px 14px; font-size:0.85rem; margin-left:12px; }
+  h2 { font-size: 1.15rem; font-weight: 600; margin: 28px 0 12px;
+        padding-bottom: 6px; border-bottom: 2px solid #e2e8f0; }
+  h3 { font-size: 0.95rem; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; background: white;
+           border-radius: 8px; overflow: hidden;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 8px; }
+  th { background: #f1f5f9; font-size: 0.78rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.05em;
+        color: #64748b; padding: 10px 14px; text-align: left; }
+  td { padding: 9px 14px; font-size: 0.88rem; border-top: 1px solid #f1f5f9; }
+  tr:hover td { background: #fafbff; }
+  code { background: #f1f5f9; border-radius: 4px; padding: 1px 5px;
+          font-size: 0.83rem; font-family: monospace; }
+  pre { background: #1e293b; color: #e2e8f0; border-radius: 6px;
+         padding: 10px; font-size: 0.8rem; overflow-x: auto; }
+  .footer { margin-top: 40px; text-align: center; font-size: 0.78rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="banner">
+    <h1>🦆 MomaGrid Cookbook Run
+      <span class="pi-badge">π Day — March 14</span>
+    </h1>
+    <div class="subtitle">Decentralized AI Inference Grid — 3-GPU LAN Test</div>
+    <div class="stats">
+      <div class="stat"><div class="val">22/22</div><div class="lbl">Recipes passed</div></div>
+      <div class="stat"><div class="val">1472s</div><div class="lbl">Total elapsed</div></div>
+      <div class="stat"><div class="val">24.5 min</div><div class="lbl">Wall time</div></div>
+      <div class="stat"><div class="val">http://192.168.0.177:9000</div><div class="lbl">Hub</div></div>
+    </div>
+  </div>
+
+  <div style="background:white;border-left:4px solid #7c3aed;border-radius:8px;
+              padding:20px 24px;margin-bottom:24px;
+              box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+    <h2 style="margin:0 0 10px;border:none;color:#7c3aed;font-size:1.05rem">
+      Executive Summary
+    </h2>
+    <p style="font-size:0.95rem;line-height:1.7;color:#1e293b">
+      <strong>MomaGrid</strong> — a decentralized, open-source AI inference grid, running entirely
+      on your own hardware, coordinating <strong>3 GPU nodes</strong>, serving
+      <strong>14 LLM models</strong>, verified by cryptographic identity, with
+      <strong>22/22 cookbook recipes</strong> all passing.
+    </p>
+    <p style="font-size:0.95rem;line-height:1.7;color:#1e293b;margin-top:8px">
+      Built from scratch. Spec-driven. Pure Go. No cloud dependency. No API bills.
+    </p>
+  </div>
+
+  <p style="font-size:0.85rem;color:#64748b;margin-bottom:20px">
+    Run date: <strong>2026-03-15 13:15:58</strong> &nbsp;|&nbsp;
+    Log: <code>/home/wengong/projects/digital-duck/momahub.go/cookbook/out/RUN_ALL_LOGGING-20260315-131557.md</code>
+  </p>
+
+  <h2>Recipe Results</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:40px">ID</th>
+        <th>Recipe</th>
+        <th style="text-align:center;width:60px">Status</th>
+        <th style="text-align:right;width:70px">Elapsed</th>
+        <th style="width:220px">Description</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td style="text-align:center;font-weight:600">01</td><td><a href="../01_single_node_hello/hello.spl" style="color:#2563eb;text-decoration:none">Hello SPL</a></td><td style="text-align:center">✅</td><td style="text-align:right">4.0s</td><td style="color:#6b7280">Basic SPL query via grid</td><td>—</td></tr>
+<tr><td style="text-align:center;font-weight:600">02</td><td><a href="../02_multi_cte_parallel/multi_cte.spl" style="color:#2563eb;text-decoration:none">Multi-CTE Parallel</a></td><td style="text-align:center">✅</td><td style="text-align:right">44.1s</td><td style="color:#6b7280">Parallel multi-CTE queries</td><td>—</td></tr>
+<tr><td style="text-align:center;font-weight:600">03</td><td><a href="../03_batch_translate/translate.go" style="color:#2563eb;text-decoration:none">Batch Translate</a></td><td style="text-align:center">✅</td><td style="text-align:right">2.5s</td><td style="color:#6b7280">Batch translation — 4 languages</td><td>4/4 langs</td></tr>
+<tr><td style="text-align:center;font-weight:600">04</td><td><a href="../04_benchmark_models/benchmark.go" style="color:#2563eb;text-decoration:none">Benchmark Models</a></td><td style="text-align:center">✅</td><td style="text-align:right">25.9s</td><td style="color:#6b7280">Model benchmark — latency & TPS</td><td>avg 12.7 tok/s · 3 models</td></tr>
+<tr><td style="text-align:center;font-weight:600">05</td><td><a href="../05_rag_on_grid/rag.go" style="color:#2563eb;text-decoration:none">RAG on Grid</a></td><td style="text-align:center">✅</td><td style="text-align:right">12.8s</td><td style="color:#6b7280">RAG retrieval-augmented generation</td><td>134 tok</td></tr>
+<tr><td style="text-align:center;font-weight:600">07</td><td><a href="../07_stress_test/stress.go" style="color:#2563eb;text-decoration:none">Stress Test</a></td><td style="text-align:center">✅</td><td style="text-align:right">82.5s</td><td style="color:#6b7280">Stress test — sustained load</td><td>avg 22.0 tok/s · 15/15 tasks</td></tr>
+<tr><td style="text-align:center;font-weight:600">08</td><td><a href="../08_model_arena/arena.go" style="color:#2563eb;text-decoration:none">Model Arena</a></td><td style="text-align:center">✅</td><td style="text-align:right">18.4s</td><td style="color:#6b7280">Model arena — head-to-head</td><td>avg 28.1 tok/s · 3 models</td></tr>
+<tr><td style="text-align:center;font-weight:600">09</td><td><a href="../09_doc_pipeline/pipeline.go" style="color:#2563eb;text-decoration:none">Doc Pipeline</a></td><td style="text-align:center">✅</td><td style="text-align:right">12.7s</td><td style="color:#6b7280">Document processing pipeline</td><td>249 tok</td></tr>
+<tr><td style="text-align:center;font-weight:600">10</td><td><a href="../10_chain_relay/chain.go" style="color:#2563eb;text-decoration:none">Chain Relay</a></td><td style="text-align:center">✅</td><td style="text-align:right">48.3s</td><td style="color:#6b7280">Chain relay — sequential prompts</td><td>3 steps · 1777 tok</td></tr>
+<tr><td style="text-align:center;font-weight:600">12</td><td><a href="../12_tier_aware_dispatch/tier_dispatch.go" style="color:#2563eb;text-decoration:none">Tier-Aware Dispatch</a></td><td style="text-align:center">✅</td><td style="text-align:right">8.4s</td><td style="color:#6b7280">Tier-aware dispatch by VRAM</td><td>avg 17.7 tok/s · 4/4 tasks</td></tr>
+<tr><td style="text-align:center;font-weight:600">13</td><td><a href="../13_multi_agent_throughput/throughput.go" style="color:#2563eb;text-decoration:none">Multi-Agent Throughput</a></td><td style="text-align:center">✅</td><td style="text-align:right">50.3s</td><td style="color:#6b7280">Multi-agent throughput benchmark</td><td>avg 9.0 tok/s · 60/60 tasks</td></tr>
+<tr><td style="text-align:center;font-weight:600">15</td><td><a href="../15_agent_failover/failover.go" style="color:#2563eb;text-decoration:none">Agent Failover</a></td><td style="text-align:center">✅</td><td style="text-align:right">22.7s</td><td style="color:#6b7280">Agent failover & retry</td><td>20/20 tasks</td></tr>
+<tr><td style="text-align:center;font-weight:600">16</td><td><a href="../16_math_olympiad/math_olympiad.go" style="color:#2563eb;text-decoration:none">Math Olympiad</a></td><td style="text-align:center">✅</td><td style="text-align:right">31.5s</td><td style="color:#6b7280">Math olympiad — reasoning accuracy</td><td>mathstral=4/5, qwen2-math=4/5</td></tr>
+<tr><td style="text-align:center;font-weight:600">17</td><td><a href="../17_code_review_pipeline/code_review.go" style="color:#2563eb;text-decoration:none">Code Review Pipeline</a></td><td style="text-align:center">✅</td><td style="text-align:right">92.2s</td><td style="color:#6b7280">Code review pipeline (3 stages)</td><td>3/3 steps</td></tr>
+<tr><td style="text-align:center;font-weight:600">18</td><td><a href="../18_smart_router/smart_router.go" style="color:#2563eb;text-decoration:none">Smart Router</a></td><td style="text-align:center">✅</td><td style="text-align:right">48.6s</td><td style="color:#6b7280">Smart router — query classification</td><td>avg 23.5 tok/s · 6/6 tasks</td></tr>
+<tr><td style="text-align:center;font-weight:600">19</td><td><a href="../19_privacy_chunk_demo/privacy_demo.go" style="color:#2563eb;text-decoration:none">Privacy Chunk Demo</a></td><td style="text-align:center">✅</td><td style="text-align:right">31.0s</td><td style="color:#6b7280">Privacy chunk — distributed doc analysis</td><td>3/3 chunks · assembled ✓</td></tr>
+<tr><td style="text-align:center;font-weight:600">20</td><td><a href="../20_overnight_batch/overnight.go" style="color:#2563eb;text-decoration:none">Overnight Batch</a></td><td style="text-align:center">✅</td><td style="text-align:right">25.9s</td><td style="color:#6b7280">Overnight batch processing</td><td>avg 99.9 tok/s · 10/10 tasks</td></tr>
+<tr><td style="text-align:center;font-weight:600">21</td><td><a href="../21_language_accessibility/language_grid.go" style="color:#2563eb;text-decoration:none">Language Accessibility</a></td><td style="text-align:center">✅</td><td style="text-align:right">8.3s</td><td style="color:#6b7280">Language accessibility — 10 languages</td><td>10/10</td></tr>
+<tr><td style="text-align:center;font-weight:600">22</td><td><a href="../22_rewards_report/rewards_report.go" style="color:#2563eb;text-decoration:none">Rewards Report</a></td><td style="text-align:center">✅</td><td style="text-align:right">0.3s</td><td style="color:#6b7280">Rewards report — operator credits</td><td>1298 tasks rewarded · 178.91 credits</td></tr>
+<tr><td style="text-align:center;font-weight:600">23</td><td><a href="../23_wake_sleep_resilience/resilience.go" style="color:#2563eb;text-decoration:none">Wake/Sleep Resilience</a></td><td style="text-align:center">✅</td><td style="text-align:right">60.6s</td><td style="color:#6b7280">Wake/sleep resilience</td><td>20/20 tasks · 3 events</td></tr>
+<tr><td style="text-align:center;font-weight:600">24</td><td><a href="../24_spl_compiler_pipeline/compiler_demo.go" style="color:#2563eb;text-decoration:none">SPL Compiler Pipeline</a></td><td style="text-align:center">✅</td><td style="text-align:right">20.5s</td><td style="color:#6b7280">SPL compiler pipeline</td><td>5 steps · 472 tok</td></tr>
+<tr><td style="text-align:center;font-weight:600">25</td><td><a href="../25_model_diversity/model_diversity.go" style="color:#2563eb;text-decoration:none">Model Diversity</a></td><td style="text-align:center">✅</td><td style="text-align:right">821.0s</td><td style="color:#6b7280">Model diversity — all models probed</td><td>13 models probed</td></tr>
+    </tbody>
+  </table>
+
+  
+        <h2>Throughput Summary</h2>
+        <table>
+          <thead><tr><th>Recipe</th><th style="text-align:right">Avg tok/s</th></tr></thead>
+          <tbody><tr><td>[04] Benchmark Models</td><td style="text-align:right;font-weight:600">12.7</td></tr>
+<tr><td>[07] Stress Test</td><td style="text-align:right;font-weight:600">22.0</td></tr>
+<tr><td>[08] Model Arena</td><td style="text-align:right;font-weight:600">28.1</td></tr>
+<tr><td>[13] Multi-Agent Throughput</td><td style="text-align:right;font-weight:600">9.0</td></tr>
+<tr><td>[18] Smart Router</td><td style="text-align:right;font-weight:600">23.5</td></tr>
+</tbody>
+        </table>
+  
+        <h2>Math Olympiad Scores</h2>
+        <p style="color:#6b7280">Difficulty: <code>medium</code></p>
+        <table>
+          <thead><tr><th>Model</th><th>Score</th></tr></thead>
+          <tbody><tr><td>mathstral</td><td style="text-align:center">4/5</td></tr><tr><td>qwen2-math</td><td style="text-align:center">4/5</td></tr></tbody>
+        </table>
+  
+        <h2>Timing Breakdown</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+          <div>
+            <h3 style="margin:0 0 8px">Top 5 slowest</h3>
+            <table>
+              <thead><tr><th>#</th><th>Recipe</th><th>Elapsed</th></tr></thead>
+              <tbody><tr><td>1</td><td>[25] Model Diversity</td><td style="text-align:right">821.0s</td></tr><tr><td>2</td><td>[17] Code Review Pipeline</td><td style="text-align:right">92.2s</td></tr><tr><td>3</td><td>[07] Stress Test</td><td style="text-align:right">82.5s</td></tr><tr><td>4</td><td>[23] Wake/Sleep Resilience</td><td style="text-align:right">60.6s</td></tr><tr><td>5</td><td>[13] Multi-Agent Throughput</td><td style="text-align:right">50.3s</td></tr></tbody>
+            </table>
+          </div>
+          <div>
+            <h3 style="margin:0 0 8px">Top 5 fastest</h3>
+            <table>
+              <thead><tr><th>#</th><th>Recipe</th><th>Elapsed</th></tr></thead>
+              <tbody><tr><td>1</td><td>[22] Rewards Report</td><td style="text-align:right">0.3s</td></tr><tr><td>2</td><td>[03] Batch Translate</td><td style="text-align:right">2.5s</td></tr><tr><td>3</td><td>[01] Hello SPL</td><td style="text-align:right">4.0s</td></tr><tr><td>4</td><td>[21] Language Accessibility</td><td style="text-align:right">8.3s</td></tr><tr><td>5</td><td>[12] Tier-Aware Dispatch</td><td style="text-align:right">8.4s</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+  
+
+  <div class="footer">
+    Generated 2026-03-15 14:00:24 by <code>cookbook/analyze_run_all.py</code>
+    &nbsp;·&nbsp; MomaGrid — open-source decentralized AI inference
+  </div>
+
+</div>
+</body>
+</html>

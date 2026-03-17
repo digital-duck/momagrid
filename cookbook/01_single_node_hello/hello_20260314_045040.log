@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Welcome to the i-grid! The i-grid is a decentralized, peer-to-peer network that enables distributed inference and decision-making by allowing nodes to share knowledge and collaborate in real-time, fostering a collective intelligence that can tackle complex problems and make informed decisions at scale.
+
+[model=llama3 tokens=33+53 latency=2911ms]

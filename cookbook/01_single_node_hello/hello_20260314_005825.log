@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Welcome to the i-grid! The i-grid is a revolutionary, decentralized AI framework that enables distributed inference and reasoning across multiple agents, allowing for more accurate and efficient decision-making through collective intelligence and peer-to-peer communication. By leveraging blockchain technology and a modular architecture, the i-grid facilitates secure, transparent, and autonomous collaboration among nodes, making it an ideal platform for developing complex AI applications.
+
+[model=llama3 tokens=33+78 latency=3607ms]

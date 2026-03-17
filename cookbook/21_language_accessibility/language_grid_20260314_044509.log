@@ -1,0 +1,24 @@
+
+  Language Accessibility Demo
+    Hub:       http://localhost:9000
+    Model:     llama3
+    Languages: 10
+
+    Portuguese   SUBMIT_FAILED
+    Arabic       SUBMIT_FAILED
+    Spanish      SUBMIT_FAILED
+    Japanese     SUBMIT_FAILED
+    Russian      SUBMIT_FAILED
+    Chinese      SUBMIT_FAILED
+    French       SUBMIT_FAILED
+    Hindi        SUBMIT_FAILED
+    English      SUBMIT_FAILED
+    German       SUBMIT_FAILED
+
+  ============================================================
+
+  ------------------------------------------------------------
+  0/10 languages answered in 0.0s wall time
+  (All dispatched in parallel — wall time ≈ slowest single response)
+
+  Results saved: out/language_grid_20260314_044509.json

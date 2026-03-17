@@ -1,0 +1,19 @@
+
+  Model Arena
+    Hub:    http://192.168.0.177:9000
+    Models: [llama3 mistral phi3]
+
+    [phi3] submitting...
+    [llama3] submitting...
+    [mistral] submitting...
+    [phi3] 209 tok  8.0s  26.1 tps
+    [mistral] 309 tok  8.0s  38.5 tps
+    [llama3] 423 tok  12.4s  34.1 tps
+
+  MODEL           STATE        TOKENS    LATENCY      TPS
+  -------------------------------------------------------
+  llama3          COMPLETE        423      12.4s    34.1
+  mistral         COMPLETE        309       8.0s    38.5
+  phi3            COMPLETE        209       8.0s    26.1
+
+  Results saved: out/arena_20260314_131833.json

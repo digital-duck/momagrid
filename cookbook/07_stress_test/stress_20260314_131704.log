@@ -1,0 +1,23 @@
+Starting stress test: 15 tasks, concurrency=5, model=llama3
+  [1/15] COMPLETE  agent=..94a2e41b  30.1 tps
+  [2/15] COMPLETE  agent=..e5069a6b  39.8 tps
+  [3/15] COMPLETE  agent=..94a2e41b  38.5 tps
+  [4/15] COMPLETE  agent=..e5069a6b  23.4 tps
+  [5/15] COMPLETE  agent=..e5069a6b  25.8 tps
+  [6/15] COMPLETE  agent=..94a2e41b  23.9 tps
+  [7/15] COMPLETE  agent=..94a2e41b  18.1 tps
+  [8/15] COMPLETE  agent=..e5069a6b  30.5 tps
+  [9/15] COMPLETE  agent=..94a2e41b  15.6 tps
+  [10/15] COMPLETE  agent=..e5069a6b  23.4 tps
+  [11/15] COMPLETE  agent=..94a2e41b  15.9 tps
+  [12/15] COMPLETE  agent=..e5069a6b  23.9 tps
+  [13/15] COMPLETE  agent=..e5069a6b  10.5 tps
+  [14/15] COMPLETE  agent=..94a2e41b  15.0 tps
+  [15/15] COMPLETE  agent=..94a2e41b  19.2 tps
+
+--- Stress Test Summary ---
+Tasks:       15 / 15 completed
+Wall time:   76.26s
+Total tokens: 6835
+Throughput:  89.6 tokens/sec (total grid capacity)
+Results saved: out/stress_20260314_131821.json

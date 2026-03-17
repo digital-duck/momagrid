@@ -1,0 +1,33 @@
+
+  Overnight Batch
+    Hub:         http://192.168.0.177:9000
+    Tasks:       10
+    Model:       llama3
+    Concurrency: 30
+    Started:     2026-03-14 05:16:07
+    Agents:      3 online
+
+  Submitting 10 tasks...
+  All 10 tasks submitted. Waiting for completion...
+  (Progress shown every 10 completions)
+
+  [05:16:26]   10/10  COMPLETE     18.1s    256 tok
+
+  ============================================================
+  OVERNIGHT BATCH COMPLETE
+  Started:    2026-03-14 05:16:07
+  Finished:   2026-03-14 05:16:26
+  Wall time:  0.01h (18s)
+  Completed:  10/10
+  Failed:     0
+  Timed out:  0
+  Tokens:     2560
+  Throughput: 140.9 tokens/s
+  Avg latency:13.5s
+
+  Agent distribution:
+    ..agent-0577c8be      3 tasks (30%)  ██████
+    ..agent-4be29801      4 tasks (40%)  ████████
+    ..agent-7a2dde45      3 tasks (30%)  ██████
+
+  Results saved: out/overnight_batch_20260314_051626.json

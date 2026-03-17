@@ -1,0 +1,48 @@
+
+--- [analyse_cons] ---
+
+--- [analyse_pros] ---
+As a technology analyst, my role is to evaluate and provide insights on the latest technological trends, products, and services. I help organizations make informed decisions about adopting new technologies that can drive business value, improve operations, or enhance customer experiences.
+
+My expertise lies in analyzing various aspects of technology, including:
+
+1. Emerging Trends: I stay up-to-date with the latest technological advancements, such as artificial intelligence (AI), blockchain, cloud computing, and Internet of Things (IoT).
+2. Product Evaluation: I assess the features, functionality, and performance of software applications, hardware devices, and services to determine their suitability for specific use cases.
+3. Market Analysis: I conduct research on market sizes, growth rates, and competitive landscapes to help organizations understand the opportunities and challenges in various technology sectors.
+4. Integration and Interoperability: I evaluate how different technologies can be integrated and made to work seamlessly together, ensuring a cohesive user experience.
+
+My clients include companies of all sizes, from startups to enterprises, as well as government agencies and non-profit organizations. I provide them with actionable insights, data-driven recommendations, and strategic guidance to help them:
+
+1. Develop effective technology strategies
+2. Select the right technologies for their business needs
+3. Optimize their existing technology infrastructure
+4. Address emerging technology challenges and opportunities
+
+Some of the specific areas I focus on include:
+
+* Cloud Computing: Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), etc.
+* Artificial Intelligence (AI) and Machine Learning (ML): Natural Language Processing (NLP), Computer Vision, Predictive Analytics, etc.
+* Cybersecurity: Threat Assessment, Incident Response, Identity and Access Management (IAM), Encryption, etc.
+* Data Analytics: Business Intelligence (BI), Data Visualization, Big Data, Data Science, etc.
+
+If you have any technology-related questions or need expert analysis on a specific topic, feel free to ask!
+
+[model=llama3 tokens=16+388 latency=7454ms]
+ As a critical technology reviewer, my role is to evaluate and analyze various technologies, their features, benefits, drawbacks, and overall impact on the industry and end-users. I provide objective, unbiased assessments that help potential users make informed decisions when choosing technology solutions. My reviews cover a wide range of topics, including software, hardware, AI, IoT, cybersecurity, cloud computing, blockchain, and more.
+
+In my reviews, I aim to answer key questions such as: What is the technology's purpose? How does it work? Who is it intended for? What are its pros and cons? How does it compare to similar solutions on the market? What are some potential use cases or applications? And finally, do the benefits outweigh the costs, making it a worthwhile investment for users?
+
+In addition to writing reviews, I also provide recommendations, insights, and best practices to help readers maximize their technology investments. My goal is to empower users with the knowledge they need to make smart decisions when adopting new technologies.
+
+[model=mistral tokens=14+220 latency=7417ms]
+
+--- [synthesis] ---
+Hi there! I'm thrilled to be your go-to source for all things tech. As a balanced technology writer, my mission is to provide you with unbiased and informative content that covers the latest trends, innovations, and insights from the world of technology.
+
+Whether you're looking for in-depth reviews of new gadgets and devices, analysis of emerging technologies like AI and blockchain, or expert advice on how to get the most out of your tech tools, I've got you covered. My goal is to empower you with the knowledge you need to make informed decisions about the technology that shapes our world.
+
+I believe in approaching each topic from a neutral perspective, without fear or favor. This means I'll provide both the pros and cons of new technologies, as well as highlight potential pitfalls and challenges. By doing so, I aim to foster a more nuanced understanding of how technology is impacting our lives and society at large.
+
+So, what's on your mind? Do you have a specific tech-related question or topic you'd like me to tackle? Let's get started!
+
+[model=llama3 tokens=17+211 latency=4041ms]

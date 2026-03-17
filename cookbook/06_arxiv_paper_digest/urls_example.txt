@@ -1,0 +1,9 @@
+# Example arxiv URL list for the paper digest recipe.
+# Lines starting with # are ignored.
+# One URL or arxiv ID per line.
+
+# Reranker
+https://arxiv.org/abs/2602.15860
+
+# SPL
+2602.21257

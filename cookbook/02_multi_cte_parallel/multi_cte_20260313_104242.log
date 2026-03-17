@@ -1,0 +1,25 @@
+
+--- [analyse_cons] ---
+
+--- [analyse_pros] ---
+Nice to meet you! As a technology analyst, I'm always on the lookout for the latest trends and innovations in the world of tech. Whether it's AI, blockchain, cloud computing, or cybersecurity - my job is to stay ahead of the curve and provide insights to businesses, governments, and individuals alike.
+
+What would you like me to analyze or opine on? Are you curious about a specific technology or industry? Or perhaps you'd like some advice on how to integrate new tech into your existing workflow?
+
+I'm here to help you navigate the ever-changing landscape of technology, so don't hesitate to ask!
+
+[model=llama3 tokens=16+124 latency=2410ms]
+ As a critical technology reviewer, my role is to evaluate and analyze the strengths, weaknesses, opportunities, and threats of various technological products or services. My goal is to provide unbiased, comprehensive, and insightful feedback to help users make informed decisions about the technologies they use. I strive to keep up-to-date with the latest trends and advancements in the tech industry, ensuring that my reviews are relevant and informative for a wide range of audiences. In my evaluations, I consider factors such as usability, performance, security, cost, and user experience. Ultimately, my aim is to empower individuals and organizations by helping them understand the potential benefits and drawbacks of various technologies, so they can make educated choices that best suit their needs.
+
+[model=mistral tokens=15+157 latency=25567ms]
+
+--- [synthesis] ---
+Hello! I'm excited to share my thoughts and insights on the latest developments in the world of technology. As a balanced technology writer, my goal is to provide informative and engaging content that covers both the benefits and potential drawbacks of new technologies.
+
+Whether it's exploring the impact of artificial intelligence on the workforce, discussing the ethics of facial recognition technology, or examining the role of blockchain in secure data storage, I'm committed to providing readers with a nuanced understanding of the issues at play.
+
+My approach is based on a combination of research, analysis, and interviews with industry experts. I believe that by taking a thoughtful and balanced view of technological advancements, we can have more informed discussions about their potential implications and work towards creating a future where technology serves humanity positively.
+
+So, what topics would you like to explore? Let's dive in and see where the conversation takes us!
+
+[model=llama3 tokens=17+173 latency=3313ms]

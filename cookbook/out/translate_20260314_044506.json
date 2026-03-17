@@ -1,0 +1,50 @@
+{
+  "elapsed_s": 0.001714405,
+  "hub": "http://localhost:9000",
+  "languages": [
+    "French",
+    "German",
+    "Chinese",
+    "Spanish"
+  ],
+  "model": "llama3",
+  "results": [
+    {
+      "language": "Chinese",
+      "state": "SUBMIT_FAILED",
+      "translation": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "language": "French",
+      "state": "SUBMIT_FAILED",
+      "translation": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "language": "Spanish",
+      "state": "SUBMIT_FAILED",
+      "translation": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "language": "German",
+      "state": "SUBMIT_FAILED",
+      "translation": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    }
+  ],
+  "timestamp": "2026-03-14T04:45:06-04:00"
+}

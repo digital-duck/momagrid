@@ -1,0 +1,103 @@
+{
+  "completed": 10,
+  "failed": 0,
+  "hub": "http://192.168.0.177:9000",
+  "model": "llama3",
+  "num_tasks": 10,
+  "results": [
+    {
+      "TaskID": "overnight-eb1b54df",
+      "State": "COMPLETE",
+      "AgentID": "agent-345612c8",
+      "LatencyS": 7.990348653,
+      "OutputTokens": 256,
+      "TPS": 32.03865201850536,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-93cbb35c",
+      "State": "COMPLETE",
+      "AgentID": "agent-ae5c6070",
+      "LatencyS": 7.988086959,
+      "OutputTokens": 256,
+      "TPS": 32.0477232300996,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-bf52acbb",
+      "State": "COMPLETE",
+      "AgentID": "agent-7f765375",
+      "LatencyS": 12.387352312,
+      "OutputTokens": 256,
+      "TPS": 20.666240335475493,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-533b1bfc",
+      "State": "COMPLETE",
+      "AgentID": "agent-345612c8",
+      "LatencyS": 12.387464796,
+      "OutputTokens": 256,
+      "TPS": 20.66605267630421,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-8923e0aa",
+      "State": "COMPLETE",
+      "AgentID": "agent-ae5c6070",
+      "LatencyS": 18.104190547,
+      "OutputTokens": 256,
+      "TPS": 14.1403726024316,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-19c4c01c",
+      "State": "COMPLETE",
+      "AgentID": "agent-7f765375",
+      "LatencyS": 12.388479167,
+      "OutputTokens": 256,
+      "TPS": 20.664360536031243,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-85976245",
+      "State": "COMPLETE",
+      "AgentID": "agent-345612c8",
+      "LatencyS": 18.105801025,
+      "OutputTokens": 256,
+      "TPS": 14.13911484206206,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-bf38345e",
+      "State": "COMPLETE",
+      "AgentID": "agent-ae5c6070",
+      "LatencyS": 12.388162892,
+      "OutputTokens": 256,
+      "TPS": 20.664888105831988,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-aa45e413",
+      "State": "COMPLETE",
+      "AgentID": "agent-7f765375",
+      "LatencyS": 18.105592267,
+      "OutputTokens": 256,
+      "TPS": 14.13927786646318,
+      "Error": ""
+    },
+    {
+      "TaskID": "overnight-da74c270",
+      "State": "COMPLETE",
+      "AgentID": "agent-345612c8",
+      "LatencyS": 25.539564855,
+      "OutputTokens": 256,
+      "TPS": 10.023663341698702,
+      "Error": ""
+    }
+  ],
+  "throughput": 99.86006051128341,
+  "timestamp": "2026-03-15T13:25:20-04:00",
+  "total_tokens": 2560,
+  "wall_time_s": 25.635874712
+}

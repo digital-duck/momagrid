@@ -1,0 +1,8 @@
+Translating into 4 languages using llama3...
+  Spanish         5 tok    0.4s  agent=..ent-ae5c6070
+  Chinese        11 tok    0.4s  agent=..ent-345612c8
+  German          5 tok    0.5s  agent=..ent-345612c8
+  French          4 tok    0.5s  agent=..ent-ae5c6070
+
+Done in 2.02s
+  Results saved: out/translate_20260315_131649.json

@@ -1,0 +1,42 @@
+{
+  "hub": "http://localhost:9000",
+  "models": [
+    "llama3",
+    "mistral",
+    "phi3"
+  ],
+  "prompt": "Explain factorials",
+  "results": [
+    {
+      "Model": "llama3",
+      "State": "COMPLETE",
+      "Content": "Factorials!\n\nIn mathematics, a factorial is the product of all positive integers that are smaller than or equal to a given number. In other words, it's the result of multiplying all the numbers from 1 to n (where n is the input number).\n\nThe notation for factorial is \"n!\" (read as \"n factorial\"). For example:\n\n* 5! = 5 × 4 × 3 × 2 × 1 = 120\n* 3! = 3 × 2 × 1 = 6\n* 2! = 2 × 1 = 2\n* 1! = 1 (since there's only one number to multiply)\n* 0! = 1 (by convention, the factorial of 0 is defined as 1)\n\nHere are some key properties and rules:\n\n1. **Definition**: The factorial of a positive integer n, denoted by n!, is the product of all positive integers that are smaller than or equal to n.\n2. **Recursion**: The factorial of a number can be calculated by multiplying that number by its previous factorial value (minus 1). For example: 5! = 5 × 4! (since 4! = 24).\n3. **Zero and one**: As mentioned earlier, 0! is defined as 1, while 1! is also equal to 1.\n4. **Commutative property**: The order of the numbers being multiplied doesn't matter. For example: 5 × 4 × 3 × 2 × 1 = 1 × 2 × 3 × 4 × 5 (both equal 120).\n5. **Non-integer values**: Factorials can be extended to non-integer values, but this is usually done using mathematical functions like the gamma function or the double factorial.\n\nFactorials have many practical applications in various fields:\n\n1. **Combinatorics**: Factorials are used to count the number of ways to arrange objects (e.g., permutations).\n2. **Probability theory**: Factorials appear in probability calculations, such as counting the number of possible outcomes.\n3. **Statistics**: Factorials are used in statistical analysis, particularly in hypothesis testing and confidence intervals.\n\nNow that you know what factorials are, can you think of any interesting applications or problems involving factorials?",
+      "OutputTokens": 482,
+      "LatencyS": 18.109254258,
+      "TPS": 26.616225777882057,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Model": "mistral",
+      "State": "COMPLETE",
+      "Content": " Factorials are a mathematical operation that involves multiplying a number by all the positive integers less than it, up to and including 1. The notation for a factorial is an exclamation mark (or bang) after the number. For example:\n\n- 0! = 1 (by definition)\n- 1! = 1\n- 2! = 2 * 1 = 2\n- 3! = 3 * 2 * 1 = 6\n- 4! = 4 * 3 * 2 * 1 = 24\n- 5! = 5 * 4 * 3 * 2 * 1 = 120\n\nIn general, for any non-negative integer n, the factorial of n is given by:\n\nn! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1\n\nFactorials are important in many areas of mathematics and are used to calculate probabilities, solve recurrence relations, count permutations, and find the coefficients of certain types of polynomials.",
+      "OutputTokens": 247,
+      "LatencyS": 18.109252144,
+      "TPS": 13.63943679374063,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Model": "phi3",
+      "State": "COMPLETE",
+      "Content": "A factorial is a mathematical operation denoted by an exclamation point (!) that multiplies a series of descending positive integers. For any non-negative integer n, the factorial (represented as n!) is the product of all positive integers from n down to 1. Mathematically, it can be expressed as:\n\nn! = n × (n-1) × (n-2) × ... × 3 × 2 × 1\n\nHere are a few key points about factorials:\n\n1. By definition, the value of 0! is equal to 1. This may seem counterintuitive but it's an important convention in mathematics and makes many formulas work consistently across all values of n. In combinatorics, this interpretation allows us not to exclude any permutations or combinations where no objects are selected (i.e., the empty set).\n\n2. The factorial operation grows very rapidly with increasing n because each subsequent number is an additional multiple being multiplied into the product sequence. For example: 10! = 3,628,800 and so forth for higher values of n. As a result, computers typically have to use approximations or special functions like Stirling's approximation when dealing with large factorial calculations directly due to limitations in computing precision and speed.\n\n3. Factorials are often used in calculating permutations (arrangements) where order matters – such as the number of ways you can arrange a shuffled deck of cards, or seating guests around tables for dinner parties when rotational symmetry is not considered unique arrangements anymore. \n\n4. They also appear frequently in combinations and other statistical methods involving probabilities because they describe how many distinct groupings are possible from larger sets while considering order irrelevant (or ordering within groups).\n\n5. It's worth mentioning that factorial growth can cause computational issues when calculating n! for large values of 'n'. Factorials grow super-exponentially, which means calculations become increasingly time and resource intensive as numbers get larger due to the exponential multiplication process involved in computing a factorial number.\n\n6. Despite these challenges, there are efficient algorithms like prime sieve method or even more advanced techniques that allow us to handle large values of n (and thus find their respective !-values) quite swiftly and with better precision when required for tasks such as",
+      "OutputTokens": 512,
+      "LatencyS": 25.542833346,
+      "TPS": 20.044761403894103,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T01:11:52-04:00"
+}

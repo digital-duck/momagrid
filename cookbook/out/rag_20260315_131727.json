@@ -1,0 +1,7 @@
+{
+  "content": "Based on the provided context, the key benefits of Hub-and-spoke inference (Momahub) are:\n\n1. Reduced hardware requirements for clients — inference runs on GPU nodes, not the requester.\n2. Parallel execution across multiple GPU nodes for high throughput.\n3. Centralized task management with priority queuing and retry logic.\n4. Reward tracking — operators earn credits per 1000 output tokens.\n5. Resilience via automatic agent failover and task re-queuing on eviction.\n6. Flexible dispatch: push mode (hub → agent HTTP POST) or pull mode (agent SSE stream).\n\nThese are the key benefits mentioned in the provided context.",
+  "hub": "http://192.168.0.177:9000",
+  "output_tokens": 134,
+  "state": "COMPLETE",
+  "timestamp": "2026-03-15T13:17:27-04:00"
+}

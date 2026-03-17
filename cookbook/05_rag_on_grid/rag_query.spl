@@ -1,0 +1,18 @@
+-- Recipe 05: RAG on Grid
+-- Embeds a context snippet directly into the prompt and answers on the grid.
+PROMPT rag_answer
+SELECT
+    SYSTEM_ROLE('You are a helpful assistant that answers questions based only on the provided context. Do not use outside knowledge. If the context does not contain the answer, say so.')
+GENERATE llm('Context:
+1. Reduced hardware requirements for clients — inference runs on GPU nodes, not the requester.
+2. Parallel execution across multiple GPU nodes for high throughput.
+3. Centralized task management with priority queuing and retry logic.
+4. Reward tracking — operators earn credits per 1000 output tokens.
+5. Resilience via automatic agent failover and task re-queuing on eviction.
+6. Flexible dispatch: push mode (hub to agent HTTP POST) or pull mode (agent SSE stream).
+
+---
+
+Question: What are the key benefits of hub-and-spoke inference?')
+USING MODEL 'llama3'
+ON GRID;

@@ -1,0 +1,491 @@
+{
+  "concurrency": 20,
+  "hub": "http://localhost:9000",
+  "label": "run-011301",
+  "model": "llama3",
+  "num_tasks": 60,
+  "results": [
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 39.038682801,
+      "OutputTokens": 128,
+      "TPS": 3.27879915038325,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.324236354,
+      "OutputTokens": 85,
+      "TPS": 1.758951747883424,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 31.27763067,
+      "OutputTokens": 128,
+      "TPS": 4.092381592150822,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 8.107925874,
+      "OutputTokens": 128,
+      "TPS": 15.787021488499613,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 11.219644038,
+      "OutputTokens": 8,
+      "TPS": 0.7130350992335109,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.306512267,
+      "OutputTokens": 128,
+      "TPS": 2.6497462555880196,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 31.277642772,
+      "OutputTokens": 128,
+      "TPS": 4.092380008719411,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 11.220042602,
+      "OutputTokens": 128,
+      "TPS": 11.40815632706989,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 24.849812392,
+      "OutputTokens": 128,
+      "TPS": 5.150944320256017,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.24751217,
+      "OutputTokens": 128,
+      "TPS": 2.652986532217294,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.245636309,
+      "OutputTokens": 128,
+      "TPS": 2.6530896842192173,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.240554234,
+      "OutputTokens": 109,
+      "TPS": 2.2595096953338207,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.240187207,
+      "OutputTokens": 128,
+      "TPS": 2.6533893712051406,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.258980843,
+      "OutputTokens": 128,
+      "TPS": 2.6523560540248434,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.258865085,
+      "OutputTokens": 8,
+      "TPS": 0.16577265101260308,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.243996491,
+      "OutputTokens": 128,
+      "TPS": 2.6531798629883125,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.2466701,
+      "OutputTokens": 128,
+      "TPS": 2.653032835938661,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.239029592,
+      "OutputTokens": 128,
+      "TPS": 2.653453045855376,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.241609272,
+      "OutputTokens": 128,
+      "TPS": 2.653311154656955,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.241680533,
+      "OutputTokens": 128,
+      "TPS": 2.653307235274295,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 39.018083609,
+      "OutputTokens": 128,
+      "TPS": 3.2805301583411244,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.239855492,
+      "OutputTokens": 91,
+      "TPS": 1.8864069776305872,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.240934065,
+      "OutputTokens": 128,
+      "TPS": 2.6533482918786846,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 38.962434109,
+      "OutputTokens": 128,
+      "TPS": 3.285215693709266,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.239876052,
+      "OutputTokens": 8,
+      "TPS": 0.1658379053747242,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 39.017957096,
+      "OutputTokens": 128,
+      "TPS": 3.2805407952309773,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 38.953061589,
+      "OutputTokens": 128,
+      "TPS": 3.286006151468876,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 5.51539708,
+      "OutputTokens": 128,
+      "TPS": 23.207757871895602,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.32406408,
+      "OutputTokens": 128,
+      "TPS": 2.648783839622787,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 14.969846675,
+      "OutputTokens": 128,
+      "TPS": 8.550521777471712,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 24.826314172,
+      "OutputTokens": 128,
+      "TPS": 5.15581971263229,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.240760012,
+      "OutputTokens": 96,
+      "TPS": 1.9900183988834292,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 38.95881807,
+      "OutputTokens": 128,
+      "TPS": 3.2855206174379714,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 14.97005708,
+      "OutputTokens": 128,
+      "TPS": 8.550401599403921,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 39.040771784,
+      "OutputTokens": 8,
+      "TPS": 0.20491398183062107,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 57.594623247,
+      "OutputTokens": 128,
+      "TPS": 2.222429678045811,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 19.467796551,
+      "OutputTokens": 128,
+      "TPS": 6.574960841853725,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.242141214,
+      "OutputTokens": 128,
+      "TPS": 2.6532818979198636,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.24118179,
+      "OutputTokens": 128,
+      "TPS": 2.6533346665759616,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.241167527,
+      "OutputTokens": 128,
+      "TPS": 2.6533354510617917,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.239899412,
+      "OutputTokens": 128,
+      "TPS": 2.653405201092918,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.237727242,
+      "OutputTokens": 78,
+      "TPS": 1.616991605112074,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.243952429,
+      "OutputTokens": 128,
+      "TPS": 2.653182286181381,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.23882452,
+      "OutputTokens": 128,
+      "TPS": 2.6534643261659645,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.238882356,
+      "OutputTokens": 8,
+      "TPS": 0.16584132154970943,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.244439119,
+      "OutputTokens": 128,
+      "TPS": 2.6531555208730793,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.244963631,
+      "OutputTokens": 128,
+      "TPS": 2.6531266761646615,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.244729522,
+      "OutputTokens": 128,
+      "TPS": 2.653139550541597,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.246188618,
+      "OutputTokens": 128,
+      "TPS": 2.6530593123835886,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.246200905,
+      "OutputTokens": 128,
+      "TPS": 2.653058636721274,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.240868073,
+      "OutputTokens": 128,
+      "TPS": 2.6533519215762307,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.240848205,
+      "OutputTokens": 79,
+      "TPS": 1.6376163135500574,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.247752838,
+      "OutputTokens": 128,
+      "TPS": 2.652973298669094,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.246598186,
+      "OutputTokens": 128,
+      "TPS": 2.6530367904185734,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.239943425,
+      "OutputTokens": 8,
+      "TPS": 0.16583767376174116,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 38.959968484,
+      "OutputTokens": 128,
+      "TPS": 3.2854236022435894,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.24827327,
+      "OutputTokens": 128,
+      "TPS": 2.6529446822626155,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.247806077,
+      "OutputTokens": 128,
+      "TPS": 2.6529703712479957,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 48.242400132,
+      "OutputTokens": 128,
+      "TPS": 2.6532676576988017,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 31.277641309,
+      "OutputTokens": 128,
+      "TPS": 4.092380200138959,
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T01:15:26-04:00",
+  "wall_time_s": 144.804216687
+}

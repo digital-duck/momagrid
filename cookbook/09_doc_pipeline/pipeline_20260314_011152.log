@@ -1,0 +1,35 @@
+
+  Document Pipeline
+    Source:  demo_text.txt
+    Hub:     http://localhost:9000
+    Model:   llama3
+
+  [1/3] Preparing text... 1005 chars
+  [2/3] Summarizing on grid (llama3)... 267 tokens  9263ms
+  [3/3] Formatting output...
+
+  Here is a structured summary of the document:
+
+**Overview**
+This document discusses the concept of Artificial Intelligence (AI) and Machine Learning (ML), highlighting their relationship and key characteristics. The focus is on ML, specifically its ability to enable systems to learn and improve from experience without explicit programming.
+
+**Key Points**
+
+* Machine learning is a subset of artificial intelligence
+* Focuses on developing computer programs that can access data and use it to learn for themselves
+* Primary aim: allow computers to learn automatically without human intervention or assistance
+* Deep learning is part of the broader machine learning methods based on artificial neural networks with representation learning
+
+**Details**
+
+* The process begins with observations or data, such as examples, direct experience, or instruction
+* Computers use this data to look for patterns and make better decisions in the future
+* Machine learning can be supervised, semi-supervised, or unsupervised
+* Deep learning architectures like convolutional neural networks, recurrent neural networks, and transformers have been applied to fields including computer vision, natural language processing, and speech recognition
+
+**Conclusion**
+The main takeaway is that machine learning is a powerful subset of artificial intelligence that enables systems to learn and improve from experience without explicit programming. This technology has far-reaching applications in various fields, including computer vision, natural language processing, and speech recognition.
+
+  Done! Agent: ..ent-0577c8be
+
+  Results saved: out/doc_pipeline_20260314_011205.json

@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Welcome to the i-grid! The i-grid is a decentralized, peer-to-peer infrastructure that enables efficient and scalable distributed inference across multiple devices, allowing complex AI models to be trained and executed on a vast network of interconnected nodes. By leveraging the collective computing power of these nodes, the i-grid facilitates real-time processing and decision-making in various applications, from autonomous systems to edge analytics and beyond.
+
+[model=llama3 tokens=33+79 latency=1554ms]

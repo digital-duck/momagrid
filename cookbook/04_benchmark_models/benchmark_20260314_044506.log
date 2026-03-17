@@ -1,0 +1,8 @@
+Benchmarking [llama3 mistral phi3] on http://localhost:9000
+
+MODEL           STATE        TOKENS    LATENCY      TPS
+-------------------------------------------------------
+llama3          SUBMIT_FAILED        0       0.00      0.0
+mistral         SUBMIT_FAILED        0       0.00      0.0
+phi3            SUBMIT_FAILED        0       0.00      0.0
+Results saved: out/benchmark_20260314_044506.json

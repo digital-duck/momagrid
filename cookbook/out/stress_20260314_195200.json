@@ -1,0 +1,147 @@
+{
+  "completed": 15,
+  "concurrency": 5,
+  "hub": "http://192.168.0.177:9000",
+  "model": "llama3",
+  "num_tasks": 15,
+  "results": [
+    {
+      "task_id": "e83fe159-60b2-4d35-bb71-bb32d881a2d1",
+      "state": "COMPLETE",
+      "prompt": "Summarize the plot of Hamlet in three sentences.",
+      "agent_id": "agent-e52c4919",
+      "output_tokens": 148,
+      "latency_ms": 4828,
+      "tps": 18.420577531672343
+    },
+    {
+      "task_id": "550a054c-7c79-4bd1-a212-a19d212946cb",
+      "state": "COMPLETE",
+      "prompt": "What are the primary differences between TCP and UDP?",
+      "agent_id": "agent-fde66a4b",
+      "output_tokens": 392,
+      "latency_ms": 7611,
+      "tps": 39.141864444065604
+    },
+    {
+      "task_id": "20a94aae-dc32-4e74-a375-388cea74c549",
+      "state": "COMPLETE",
+      "prompt": "Write a short story about a robot who discovers music.",
+      "agent_id": "agent-574772ab",
+      "output_tokens": 662,
+      "latency_ms": 12506,
+      "tps": 41.325139826658486
+    },
+    {
+      "task_id": "cd01db3c-703b-4186-9c28-c7293ac7c2ae",
+      "state": "COMPLETE",
+      "prompt": "How do neural networks learn from data?",
+      "agent_id": "agent-e52c4919",
+      "output_tokens": 486,
+      "latency_ms": 13315,
+      "tps": 30.337935592315663
+    },
+    {
+      "task_id": "801f9abc-db58-4fdb-ad7f-ec866fa165e6",
+      "state": "COMPLETE",
+      "prompt": "Explain the concept of entropy in thermodynamics.",
+      "agent_id": "agent-fde66a4b",
+      "output_tokens": 551,
+      "latency_ms": 18420,
+      "tps": 27.47830155608117
+    },
+    {
+      "task_id": "188716b2-0d3c-41ac-b2e9-1029500b6e40",
+      "state": "COMPLETE",
+      "prompt": "Explain the prisoner's dilemma in game theory.",
+      "agent_id": "agent-574772ab",
+      "output_tokens": 600,
+      "latency_ms": 15807,
+      "tps": 33.30870998235839
+    },
+    {
+      "task_id": "8759ea78-a195-42f3-9dea-74d60495fa40",
+      "state": "COMPLETE",
+      "prompt": "What is the significance of the Turing test?",
+      "agent_id": "agent-e52c4919",
+      "output_tokens": 424,
+      "latency_ms": 14339,
+      "tps": 26.433218591190997
+    },
+    {
+      "task_id": "b645ff57-0b1c-410e-9115-426305f9ca47",
+      "state": "COMPLETE",
+      "prompt": "What are the key features of the Go programming language?",
+      "agent_id": "agent-fde66a4b",
+      "output_tokens": 458,
+      "latency_ms": 9068,
+      "tps": 38.13582946610092
+    },
+    {
+      "task_id": "42e34195-f04e-4214-9be4-39798081307b",
+      "state": "COMPLETE",
+      "prompt": "Describe the lifecycle of a star.",
+      "agent_id": "agent-574772ab",
+      "output_tokens": 649,
+      "latency_ms": 20057,
+      "tps": 29.467418619953953
+    },
+    {
+      "task_id": "ae040939-9f21-49e8-b3a5-eb6ffbd1a621",
+      "state": "COMPLETE",
+      "prompt": "How does photosynthesis work at a molecular level?",
+      "agent_id": "agent-e52c4919",
+      "output_tokens": 596,
+      "latency_ms": 22981,
+      "tps": 22.88553167766972
+    },
+    {
+      "task_id": "cd81c602-dda9-4740-82fd-98295c33aa97",
+      "state": "COMPLETE",
+      "prompt": "What are the primary differences between TCP and UDP?",
+      "agent_id": "agent-fde66a4b",
+      "output_tokens": 406,
+      "latency_ms": 7956,
+      "tps": 40.57734553002761
+    },
+    {
+      "task_id": "ec20d6fc-36d2-45d3-b405-50ee4cd0072d",
+      "state": "COMPLETE",
+      "prompt": "Summarize the plot of Hamlet in three sentences.",
+      "agent_id": "agent-fde66a4b",
+      "output_tokens": 116,
+      "latency_ms": 4143,
+      "tps": 19.313816451415747
+    },
+    {
+      "task_id": "d888b163-d642-45e1-bcfe-2a34ed79edab",
+      "state": "COMPLETE",
+      "prompt": "Explain the concept of entropy in thermodynamics.",
+      "agent_id": "agent-574772ab",
+      "output_tokens": 473,
+      "latency_ms": 18900,
+      "tps": 21.485218808156947
+    },
+    {
+      "task_id": "4d1741ae-08e3-486c-b8a4-1650d23f1e60",
+      "state": "COMPLETE",
+      "prompt": "Write a short story about a robot who discovers music.",
+      "agent_id": "agent-e52c4919",
+      "output_tokens": 682,
+      "latency_ms": 21694,
+      "tps": 28.359338186534405
+    },
+    {
+      "task_id": "a2a79b8e-78d3-44e6-8a15-3b6d59082697",
+      "state": "COMPLETE",
+      "prompt": "How do neural networks learn from data?",
+      "agent_id": "agent-fde66a4b",
+      "output_tokens": 628,
+      "latency_ms": 12582,
+      "tps": 44.76518256436174
+    }
+  ],
+  "timestamp": "2026-03-14T19:52:00-04:00",
+  "total_tokens": 7271,
+  "wall_time_s": 56.120819795
+}

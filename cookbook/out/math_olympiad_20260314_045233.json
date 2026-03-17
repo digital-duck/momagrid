@@ -1,0 +1,141 @@
+{
+  "difficulty": "medium",
+  "hub": "http://localhost:9000",
+  "models": [
+    "mathstral",
+    "qwen2-math"
+  ],
+  "results": [
+    {
+      "model": "mathstral",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "1. To find the derivative of f(x), we apply the power rule for differentiation, which states that if f(x) = ax^n, then f'(x) = anx^(n-1).\n2. Applying the power rule to each term in the function:\n   - ",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 8.119851095,
+      "output_tokens": 189,
+      "tps": 23.27628891081284,
+      "agent_id": "agent-4be29801",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "1. The probability of rolling a six on one die is $\\frac{1}{6}$. Since the events are independent when rolling two dice, we multiply the probabilities for each die to get the probability of rolling a ",
+      "correct": false,
+      "state": "COMPLETE",
+      "latency_s": 8.273750709,
+      "output_tokens": 112,
+      "tps": 13.536786874442436,
+      "agent_id": "agent-4be29801",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "\nTo solve for x in the equation \\(\\log_2(x) = 5\\), we need to convert the logarithmic equation to its exponential form. The general conversion rule is that if \\(\\log_b(a) = c\\), then \\(b^c = a\\). Appl",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 14.949454640999999,
+      "output_tokens": 166,
+      "tps": 11.104083994123275,
+      "agent_id": "agent-4be29801",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "1. We start by factoring the quadratic equation x^2 - 5x + 6 = 0.\n2. To factor, we find two numbers that multiply to give the constant term (6) and add to give the coefficient of x (-5). These numbers",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 16.733885033,
+      "output_tokens": 165,
+      "tps": 9.860232676070877,
+      "agent_id": "agent-7a2dde45",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "\n\nTo find the derivative of f(x) = x^3 - 4x^2 + 2x - 1, we apply the power rule to each term. The power rule states that if f(x) = x^n, then f'(x) = nx^(n-1).\n\nApplying this rule:\n\n- For x^3, the deri",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 19.453325456,
+      "output_tokens": 205,
+      "tps": 10.538044020477317,
+      "agent_id": "agent-4be29801",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "\nTo solve the quadratic equation x^2 - 5x + 6 = 0, we can factor it. We need to find two numbers that multiply to 6 and add up to -5. These numbers are -2 and -3.\n\nSo, we can rewrite the equation as:\n",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 31.264182239,
+      "output_tokens": 156,
+      "tps": 4.989735500114898,
+      "agent_id": "agent-7a2dde45",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "\nTo find the probability of rolling two sixes with two fair dice, we need to follow these steps:\n\n1. Determine the total number of possible outcomes when rolling two dice.\n2. Determine the number of f",
+      "correct": false,
+      "state": "COMPLETE",
+      "latency_s": 31.264160342,
+      "output_tokens": 268,
+      "tps": 8.57211570911665,
+      "agent_id": "agent-7a2dde45",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "1. Recall that the antiderivative of a function F(x) is H(x) + C, where C is an arbitrary constant and H'(x) = F(x). Here, we have F(x) = 2x + 3.\n\n2. To find H(x), integrate each term separately: ∫(",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 39.063103982,
+      "output_tokens": 283,
+      "tps": 7.244687983074883,
+      "agent_id": "agent-0577c8be",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "2^5 = x\n32 = x\nAnswer: 32",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 39.23522608,
+      "output_tokens": 18,
+      "tps": 0.4587714102449235,
+      "agent_id": "agent-0577c8be",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "\n\nTo integrate the function \\( \\int (2x + 3) \\, dx \\), we can integrate each term separately.\n\n1. Integrate \\( 2x \\):\n\\[ \\int 2x \\, dx = 2 \\int x \\, dx = 2 \\left( \\frac{x^2}{2} \\right) = x^2 \\]\n\n2. In",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 58.052002333,
+      "output_tokens": 165,
+      "tps": 2.8422792215421104,
+      "agent_id": "agent-0577c8be",
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T04:52:33-04:00"
+}

@@ -1,0 +1,5 @@
+Starting reasoning chain for: quantum computing
+Model: llama3  Hub: http://localhost:9000
+
+Step 1: Research   ... FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+exit status 1

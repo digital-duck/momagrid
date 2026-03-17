@@ -1,0 +1,168 @@
+{
+  "hub": "http://localhost:9000",
+  "model": "llama3",
+  "num_tasks": 20,
+  "results": [
+    {
+      "TaskID": "failover-ead135b4",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.001844117,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-8796d917",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.001207912,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-520834d4",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.009666871,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-c465a8fa",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.008504451,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-7f9bdd4f",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.00172474,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-410e78db",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.001192386,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-d5b13413",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.001700479,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-ed787ecc",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.001557137,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-f930f2c3",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.00153003,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-d757e2e6",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.008361326,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-cf48d684",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.009528221,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-212021c4",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.008521359,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-01b02e5f",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.001564957,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-d87fbc74",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 0.001622189,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-abcf1b8e",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 1.5106393059999998,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-5f9ba8e5",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 3.304256781,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-b7697a39",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 3.311438846,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-cfd14206",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 5.466377199,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-cf7fab65",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 5.466318949,
+      "OutputTokens": 64,
+      "Error": ""
+    },
+    {
+      "TaskID": "failover-88a8c8f0",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 8.065298317,
+      "OutputTokens": 64,
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-13T10:47:32-04:00"
+}

@@ -1,0 +1,118 @@
+{
+  "hub": "http://localhost:9000",
+  "model": "llama3",
+  "results": [
+    {
+      "Language": "Arabic",
+      "Question": "ما هو الذكاء الاصطناعي؟",
+      "State": "COMPLETE",
+      "Answer": "الذكاء الاصطناعي (Artificial Intelligence) هو التكنولوجيا التي تتيح dla أجهزة الكمبيوتر والبرمجيات أن تستشيط ويستفيد من المعلومات والمنهجيات لتحقيق الأهداف دون تدخل إنساني مباشر. هذا يعني أن البرامج يمكنها النظر في البيانات والاتخاذ القرارات والمعالجة للمعلومات مثل الإنسان، لكن بدون تفكير إنساني مباشر.",
+      "LatencyS": 11.182993488,
+      "OutputTokens": 103,
+      "TPS": 9.210414019334356,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Chinese",
+      "Question": "人工智能是什么？",
+      "State": "COMPLETE",
+      "Answer": "人工智能（Artificial Intelligence）是指通过计算机或机器学习、模仿人类智慧的能力，例如解决问题、学习和认知等。它可以通过算法和数据来分析、预测和决策，可以模拟人类智能的行为和思维方式。",
+      "LatencyS": 11.182846107,
+      "OutputTokens": 64,
+      "TPS": 5.723051125593032,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "English",
+      "Question": "What is artificial intelligence?",
+      "State": "COMPLETE",
+      "Answer": "Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding natural language. AI systems use algorithms and data to analyze and make decisions, allowing them to simulate intelligent behavior. This technology has many applications, including virtual assistants, facial recognition, and predictive analytics.",
+      "LatencyS": 3.312896715,
+      "OutputTokens": 75,
+      "TPS": 22.6387981431531,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "French",
+      "Question": "Qu'est-ce que l'intelligence artificielle?",
+      "State": "COMPLETE",
+      "Answer": "L'intelligence artificielle (IA) est une discipline qui vise à créer des machines capables de reproduire certaines fonctions intellectuelles, telles que l'apprentissage, la résolution de problèmes et la prise de décision. Elle utilise des algorithmes et des données pour analyser et répondre aux situations, tout en apprenant de ses erreurs. L'IA est utilisée dans de nombreux domaines, tels que le traitement du langage naturel, l'image, la reconnaissance vocale et bien plus encore.",
+      "LatencyS": 14.918711228,
+      "OutputTokens": 117,
+      "TPS": 7.842500482240717,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "German",
+      "Question": "Was ist künstliche Intelligenz?",
+      "State": "COMPLETE",
+      "Answer": "Künstliche Intelligenz (KI) bezeichnet die Fähigkeit von Maschinen, durch Lernen und Analyse Daten zu verstehen und auf ihre Umgebung reagieren zu können, wie auch menschliche Intelligenz. KI-Systeme werden verwendet, um Aufgaben auszuführen, die ursprünglich menschliche Fähigkeiten erforderten, wie zum Beispiel Bilderkennung, Sprachverständnis und Entscheidungsfindung.",
+      "LatencyS": 19.400049027,
+      "OutputTokens": 107,
+      "TPS": 5.515449979073911,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Hindi",
+      "Question": "कृत्रिम बुद्धिमत्ता क्या है?",
+      "State": "COMPLETE",
+      "Answer": "कृत्रिम बुद्धिमत्ता (Artificial Intelligence) किसे कहते हैं, एक सिद्धांत जिसमें एक मशीन या कอม्प्यूटर प्रोग्राम ने अपनी बुद्धिमत्ता स्वयं विकसित करता है, इसके लिए वह सीखने, संशोधन और निर्णय लेने में सक्षम होता है।",
+      "LatencyS": 8.069093738,
+      "OutputTokens": 102,
+      "TPS": 12.64082477064911,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Japanese",
+      "Question": "人工知能とは何ですか？",
+      "State": "COMPLETE",
+      "Answer": "人工知能（Artificial Intelligence）は、コンピュータープログラムが人間の知性や判断能力を模倣して、情報を集め、分析し、決定することを指します。具体的には、画像認識、自然言語処理、機械学習などの技術を組み合わせて、人に似た問題解決能力を持つシステムを作成しています。",
+      "LatencyS": 5.475206604,
+      "OutputTokens": 88,
+      "TPS": 16.072452852411118,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Portuguese",
+      "Question": "O que é inteligência artificial?",
+      "State": "COMPLETE",
+      "Answer": "A inteligência artificial (IA) refere-se ao campo de estudos e tecnologias que buscam replicar ou imitar o pensamento, a razão e a tomada de decisões humanas por meio de algoritmos e máquinas. A IA é usada para desenvolver sistemas que podem aprender, raciocinar e tomar decisões sem intervenção humana direta.",
+      "LatencyS": 8.069045701,
+      "OutputTokens": 82,
+      "TPS": 10.162292176612372,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Russian",
+      "Question": "Что такое искусственный интеллект?",
+      "State": "COMPLETE",
+      "Answer": "Искусственный интеллект (ИИ) - это компьютерная программа или алгоритм, который может имитировать человеческое мышление и поведение, в том числе выполнять задачи, требующие анализа, синтеза и принятия решений. ИИ использует данные и алгоритмы для поиска решения, которое обычно не отличается от человеческого.",
+      "LatencyS": 19.400598462,
+      "OutputTokens": 92,
+      "TPS": 4.742121753625313,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Spanish",
+      "Question": "¿Qué es la inteligencia artificial?",
+      "State": "COMPLETE",
+      "Answer": "La inteligencia artificial (IA) se refiere al desarrollo de máquinas que pueden realizar tareas que habitualmente requieren la inteligencia humana, como el aprendizaje y la resolución de problemas. Estas máquinas utilizan algoritmos y datos para tomar decisiones y aprender de sus experiencias, lo que les permite mejorar con el tiempo.",
+      "LatencyS": 19.400326857,
+      "OutputTokens": 77,
+      "TPS": 3.969005293960651,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T01:22:03-04:00",
+  "wall_time_s": 19.400722933
+}

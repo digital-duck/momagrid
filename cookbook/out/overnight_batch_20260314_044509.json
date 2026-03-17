@@ -1,0 +1,12 @@
+{
+  "completed": 0,
+  "failed": 0,
+  "hub": "http://localhost:9000",
+  "model": "llama3",
+  "num_tasks": 10,
+  "results": [],
+  "throughput": 0,
+  "timestamp": "2026-03-14T04:45:09-04:00",
+  "total_tokens": 0,
+  "wall_time_s": 0.001646105
+}

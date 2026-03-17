@@ -1,0 +1,91 @@
+{
+  "concurrency": 20,
+  "hub": "http://localhost:9000",
+  "label": "run-103217",
+  "model": "llama3",
+  "num_tasks": 10,
+  "results": [
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 19.400913301,
+      "OutputTokens": 128,
+      "TPS": 6.59762754536934,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 19.400881949,
+      "OutputTokens": 94,
+      "TPS": 4.845140558408746,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 8.068474912,
+      "OutputTokens": 128,
+      "TPS": 15.864212431227799,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 24.780636322,
+      "OutputTokens": 128,
+      "TPS": 5.165323373329316,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 19.400791338,
+      "OutputTokens": 8,
+      "TPS": 0.41235431383309273,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 8.068449862,
+      "OutputTokens": 128,
+      "TPS": 15.864261684619489,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 24.780571696,
+      "OutputTokens": 128,
+      "TPS": 5.165336844131863,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 11.181653329,
+      "OutputTokens": 128,
+      "TPS": 11.447323238686682,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 31.233365173,
+      "OutputTokens": 128,
+      "TPS": 4.098181521299885,
+      "Error": ""
+    },
+    {
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 14.92127942,
+      "OutputTokens": 128,
+      "TPS": 8.578352860843351,
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-13T10:32:48-04:00",
+  "wall_time_s": 31.2335179
+}

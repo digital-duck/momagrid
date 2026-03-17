@@ -1,0 +1,21 @@
+
+  Tier-Aware Dispatch
+    Hub:   http://192.168.0.177:9000
+    Tasks: 4
+
+  Available agents:
+    cat                  tier=GOLD       vram=11GB  status=ONLINE
+    papa                 tier=GOLD       vram=11GB  status=ONLINE
+    duck                 tier=GOLD       vram=11GB  status=ONLINE
+    dog                  tier=SILVER     vram=8GB  status=ONLINE
+
+  Label                            VRAM  State                     Agent     Lat    Tok
+  -------------------------------------------------------------------------------------
+  No VRAM constraint                 0G  COMPLETE       ..agent-fde66a4b    8.1s     84
+  VRAM >= 4 GB                       4G  COMPLETE       ..agent-574772ab    5.5s    128
+  VRAM >= 8 GB                       8G  COMPLETE       ..agent-fde66a4b    5.5s    117
+  VRAM >= 10 GB                     10G  COMPLETE       ..agent-e52c4919    5.5s    128
+
+  4/4 dispatched successfully
+
+  Results saved: out/tier_dispatch_20260314_195311.json

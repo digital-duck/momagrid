@@ -1,0 +1,50 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "results": [
+    {
+      "label": "No VRAM constraint",
+      "model": "llama3",
+      "min_vram_gb": 0,
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 5.498710878,
+      "output_tokens": 73,
+      "tps": 13.275838941099533,
+      "error": ""
+    },
+    {
+      "label": "VRAM \u003e= 4 GB",
+      "model": "llama3",
+      "min_vram_gb": 4,
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 3.326592241,
+      "output_tokens": 128,
+      "tps": 38.47781475060562,
+      "error": ""
+    },
+    {
+      "label": "VRAM \u003e= 8 GB",
+      "model": "llama3",
+      "min_vram_gb": 8,
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 3.326645161,
+      "output_tokens": 128,
+      "tps": 38.47720264866566,
+      "error": ""
+    },
+    {
+      "label": "VRAM \u003e= 10 GB",
+      "model": "llama3",
+      "min_vram_gb": 10,
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 8.102539417,
+      "output_tokens": 128,
+      "tps": 15.797516483714011,
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T13:19:31-04:00"
+}

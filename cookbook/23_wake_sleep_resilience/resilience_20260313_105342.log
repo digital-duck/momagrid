@@ -1,0 +1,72 @@
+
+  Wake/Sleep Resilience Test
+    Hub:      http://localhost:9000
+    Duration: 60s
+    Model:    llama3
+    Interval: 3.0s between tasks
+
+  Continuously submitting tasks. Bring agents online/offline to test.
+  (`moma join` on another machine, or `moma down` to stop an agent)
+
+  [10:53:43] Task    1 submitted  (59s remaining)
+  -> COMPLETE  ..ent-0577c8be  1.5s
+  [10:53:46] Task    2 submitted  (56s remaining)
+
+  +  [10:53:48] NEW AGENT: wen (ONLINE)
+  [10:53:49] Task    3 submitted  (53s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:53:52] Task    4 submitted  (50s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:53:55] Task    5 submitted  (47s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:53:58] Task    6 submitted  (44s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:01] Task    7 submitted  (41s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:04] Task    8 submitted  (38s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:07] Task    9 submitted  (35s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:10] Task   10 submitted  (32s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:13] Task   11 submitted  (29s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:16] Task   12 submitted  (26s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:19] Task   13 submitted  (23s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:22] Task   14 submitted  (20s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:25] Task   15 submitted  (17s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:28] Task   16 submitted  (14s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:31] Task   17 submitted  (11s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:34] Task   18 submitted  (8s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:37] Task   19 submitted  (5s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+  [10:54:40] Task   20 submitted  (2s remaining)
+  -> COMPLETE  ..ent-0577c8be  3.3s
+
+  Waiting for in-flight tasks...
+  -> COMPLETE  ..ent-0577c8be  3.3s
+
+  ============================================================
+  Resilience Test Complete
+  Duration:  60s
+  Tasks:     20 submitted
+  Completed: 20
+  Failed:    0
+  Success:   100.0%
+
+  Agent events during test:
+    [10:53:48] JOINED     wen
+
+  Task distribution across agents:
+    ..agent-0577c8be     20 tasks  ████████████████████
+
+  PASS: 100% tasks completed despite 1 agent event(s).
+
+  Results saved: out/resilience_20260313_105443.json

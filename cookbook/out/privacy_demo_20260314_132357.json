@@ -1,0 +1,45 @@
+{
+  "assembly": {
+    "Chunk": 0,
+    "State": "COMPLETE",
+    "Content": "Here is a summary of the document analysis combining the partial analyses:\n\n**Summary**\n\nThe analyzed document outlines an agreement between \"Digital Duck Labs\" (the Provider) and \"GPU operators\" (the Contributors) for a compute resource sharing platform, Momahub. The key obligations and notable clauses are summarized below.\n\n**Main Themes**\n\n1. Compute Resource Sharing: The agreement focuses on the exchange of GPU resources between the Provider's hub infrastructure and the Contributors' compute resources.\n2. Task Management: The document outlines how tasks are dispatched to available agents, with a focus on tier, VRAM availability, and model support.\n3. Compensation: Contributors are compensated with Momahub credits based on output tokens generated.\n\n**Key Obligations**\n\n1. Compute Resource Availability: Contributors must make their GPU resources available during registered hours.\n2. Task Prompt Storage: The Provider stores task prompts for 24 hours beyond the task lifecycle (default).\n3. Credit Redemption: Credits earned by Contributors remain redeemable indefinitely, even after termination of participation.\n\n**Notable Clauses**\n\n1. Liability and Warranties: Neither party makes warranties about uptime, task completion rates, or inference quality. The Provider is not liable for indirect or consequential damages.\n2. Termination: Either party can terminate participation with 24 hours' notice. Outstanding tasks will be re-queued to available agents. Credits earned before termination remain redeemable.\n\n**Key Obligations and Notable Clauses**\n\n1. **Liability**: Neither party is responsible for indirect or consequential damages, and the Provider does not make warranties about platform performance.\n2. **Termination**: Either party can terminate participation with 24 hours' notice; outstanding tasks will be re-queued, and credits earned remain redeemable.\n\nOverall, this document outlines a collaborative agreement between the Provider (Digital Duck Labs) and Contributors (GPU operators) for sharing compute resources and managing task execution.",
+    "AgentID": "agent-94a2e41b",
+    "LatencyS": 10.781017144,
+    "OutputTokens": 0,
+    "Error": ""
+  },
+  "chunks": [
+    {
+      "Chunk": 1,
+      "State": "COMPLETE",
+      "Content": "Based on this excerpt, the key points are:\n\n* This is an agreement between two parties: \"Digital Duck Labs\" (the \"Provider\") and a group of \"GPU operators\" (the \"Contributors\").\n* The Provider operates the \"hub infrastructure\".\n* The Contributors supply compute resources via software called \"Momahub agent\".",
+      "AgentID": "agent-e5069a6b",
+      "LatencyS": 4.687906449,
+      "OutputTokens": 68,
+      "Error": ""
+    },
+    {
+      "Chunk": 2,
+      "State": "COMPLETE",
+      "Content": "Here are the key points extracted from this excerpt:\n\n**Section 2 — Compute Contribution**\n\n* Contributors must make their GPU resources available during registered hours\n* The hub dispatches tasks based on tier, VRAM availability, and model support\n* Contributors are compensated with Momahub credits at a rate of 1 credit per 1,000 output tokens generated\n\n**Section 3 — Privacy and Data Handling**\n\n* Task prompts are stored for only 24 hours beyond the task lifecycle (default)\n* Contributors acknowledge that prompt chunks may not represent complete documents\n* The hub retains sole access to task assembly and final result delivery",
+      "AgentID": "agent-94a2e41b",
+      "LatencyS": 10.789469164,
+      "OutputTokens": 126,
+      "Error": ""
+    },
+    {
+      "Chunk": 3,
+      "State": "COMPLETE",
+      "Content": "Here are the key points summarized from this excerpt:\n\n**Liability**\n\n* The Provider does not make any warranties about uptime, task completion rates, or inference quality.\n* Contributors are responsible for their own hardware and network.\n* Neither party is liable for indirect or consequential damages.\n\n**Termination**\n\n* Either party can terminate participation with 24 hours' notice.\n* Any outstanding tasks at the time of termination will be re-queued to available agents.\n* Credits earned before termination remain redeemable indefinitely.",
+      "AgentID": "agent-94a2e41b",
+      "LatencyS": 14.942511399,
+      "OutputTokens": 101,
+      "Error": ""
+    }
+  ],
+  "document": "demo_contract.txt",
+  "hub": "http://192.168.0.177:9000",
+  "num_chunks": 3,
+  "timestamp": "2026-03-14T13:23:57-04:00",
+  "wall_time_s": 25.723878045
+}

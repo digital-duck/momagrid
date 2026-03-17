@@ -1,0 +1,20 @@
+
+  Tier-Aware Dispatch
+    Hub:   http://192.168.0.177:9000
+    Tasks: 4
+
+  Available agents:
+    papa-game            tier=GOLD       vram=11GB  status=ONLINE
+    wengong              tier=GOLD       vram=11GB  status=ONLINE
+    ducklover1           tier=SILVER     vram=8GB  status=ONLINE
+
+  Label                            VRAM  State                     Agent     Lat    Tok
+  -------------------------------------------------------------------------------------
+  No VRAM constraint                 0G  COMPLETE       ..agent-94a2e41b    5.5s     73
+  VRAM >= 4 GB                       4G  COMPLETE       ..agent-e5069a6b    3.3s    128
+  VRAM >= 8 GB                       8G  COMPLETE       ..agent-94a2e41b    3.3s    128
+  VRAM >= 10 GB                     10G  COMPLETE       ..agent-e5069a6b    8.1s    128
+
+  4/4 dispatched successfully
+
+  Results saved: out/tier_dispatch_20260314_131931.json

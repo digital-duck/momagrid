@@ -1,0 +1,36 @@
+{
+  "hub": "http://localhost:9000",
+  "models": [
+    "llama3",
+    "mistral",
+    "phi3"
+  ],
+  "prompt": "Explain gradient descent in three sentences.",
+  "results": [
+    {
+      "Model": "llama3",
+      "State": "SUBMIT_FAILED",
+      "OutputTokens": 0,
+      "LatencyS": 0,
+      "TPS": 0,
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Model": "mistral",
+      "State": "SUBMIT_FAILED",
+      "OutputTokens": 0,
+      "LatencyS": 0,
+      "TPS": 0,
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Model": "phi3",
+      "State": "SUBMIT_FAILED",
+      "OutputTokens": 0,
+      "LatencyS": 0,
+      "TPS": 0,
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    }
+  ],
+  "timestamp": "2026-03-14T04:45:06-04:00"
+}

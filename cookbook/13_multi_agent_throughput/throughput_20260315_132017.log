@@ -1,0 +1,27 @@
+
+  Multi-Agent Throughput
+    Hub:         http://192.168.0.177:9000
+    Agents:      3 online
+    Tasks:       60
+    Model:       llama3
+    Concurrency: 20
+    Label:       run-132018
+      - duck (GOLD)
+      - dog (GOLD)
+      - cat (GOLD)
+
+
+  ============================================================
+  Label:      run-132018
+  Completed:  60/60
+  Wall time:  50.0s
+  Tokens:     6763
+  Throughput: 135.3 tokens/s  <- KEY METRIC
+  Avg latency:13.5s  |  Avg TPS/agent: 9.0
+
+  Agent distribution:
+    ..agent-345612c8      19 tasks  ███████████████████
+    ..agent-7f765375      21 tasks  █████████████████████
+    ..agent-ae5c6070      20 tasks  ████████████████████
+
+  Results saved: out/throughput_20260315_132108.json

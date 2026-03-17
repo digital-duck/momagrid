@@ -1,99 +1,240 @@
-# momagrid - Mixture-of-Model on Ollama
+# momagrid (Go)
 
-A decentralized LLM Inference Network via Structured Prompting - SPL
+Go implementation of the **momagrid** i-grid — hub server + CLI client. Decentralized, peer-to-peer LLM inference network.
 
+This repository contains the production-grade Go implementation of the momagrid protocol, optimized for high concurrency and scalability. It is fully compatible with the Python-based momagrid ecosystem.
 
-## Decentralized LLM Inference for the Heterogeneous Edge
+## Binary
 
-**momagrid** is a decentralized, peer-to-peer inference network that orchestrates Large Language Models (LLMs) across a grid of heterogeneous, consumer-grade GPUs. By utilizing the **Structured Prompt Language (SPL)**, momagrid treats a local area network (LAN) or wide area network (WAN) as a unified generative utility, intelligently routing logical tasks to the most efficient hardware profile.
+| Binary | Purpose |
+|--------|---------|
+| `mg` | **Unified CLI:** Hub server + all client commands |
 
----
+## Prerequisites (Go Installation)
 
-## 🚀 Key Features
+**momagrid** requires Go 1.22 or higher.
 
-* **SPL v3.0 Native:** Fully supports the `WITH BUDGET` and `GENERATE` clauses to ensure context-aware resource management.
-* **Logical Parallelism (CTE-Routing):** Decomposes massive prompts into logical **Common Table Expressions (CTEs)**. Each CTE is encrypted and dispatched to an available node.
-* **Mixture-of-Model (MoM) Orchestration:** Intelligently routes reasoning-heavy tasks to **Liquid Foundation Models (LFMs)** on low-VRAM spokes while utilizing larger models (e.g., Qwen 2.5) on high-VRAM hubs.
-* **Zero-Trust Security:** Implements a Hub-managed **PKI** where data is encrypted with the Spoke’s public key, ensuring clear-text context never exists on the wire.
-* **Hardware Democratization:** Validated on legacy Pascal-architecture GPUs (GTX 10 series), proving that high-reasoning AI is possible without H100 clusters.
-
----
-
-## 🛠 Hardware Compatibility List (Validated)
-
-The current stable build is optimized for **NVIDIA Pascal (GTX 10-series)** and newer. Our goal is to maintain a "No GPU Left Behind" policy.
-
-| Hardware | VRAM | Role | Recommended Model |
-| --- | --- | --- | --- |
-| **GTX 1080 Ti** | 11GB | Knowledge Hub / Worker | Qwen 2.5 7B, Llama 3.1 8B |
-| **GTX 1070** | 8GB | General Worker | Phi-3 Mini, Gemma-2 2B |
-| **GTX 1050 Ti** | 4GB | **Reasoning Spoke** | **Liquid LFM 1.2B-Thinking** |
-| **Jetson Orin** | 8GB+ | Edge Worker | LFM 1.2B-Instruct |
-
----
-
-## 📦 Installation & Setup
-
-### 1. Prerequisites
-
-* **Ubuntu 22.04+** (Recommended) or Windows (WSL2).
-* **Ollama 0.17.6+** installed on all nodes.
-* **Python 3.10+** for the Hub-orchestrator.
-
-### 2. Spoke Configuration
-
-On each worker node, start the Spoke proxy and register with your Hub's API key:
-
+### Ubuntu / Linux
 ```bash
-conda create -n momahub python=3.11
-conda activate momahub
+# Easiest way via snap
+sudo snap install go --classic
 
-# Set your Hub's address and your authorized API Key
-export MOMAGRID_HUB="192.168.1.100"
-export MOMAGRID_API_KEY="your-pki-authorized-key"
-
-# Launch the Spoke agent
-python3 -m momagrid.spoke --port 11434
-
+# Or manual installation
+wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
 ```
 
-### 3. Hub Initialization
-
-The Hub acts as the SPL compiler and dispatcher.
+## Build
 
 ```bash
-# Initialize the Hub and generate PKI certificates
-momagrid hub init --name "my-home-grid"
-
-# Start the Hub
-momagrid hub start
-
+go mod tidy
+go build -buildvcs=false -o mg ./cmd/mg
 ```
 
----
+## Cross-compile for Linux (from Windows/Mac)
 
-## 🔐 Security Architecture
+```bash
+# Linux x86_64
+GOOS=linux GOARCH=amd64 go build -buildvcs=false -o mg ./cmd/mg
 
-momagrid utilizes an **Identity-Based Encryption** model.
+# Linux ARM (Oracle Cloud free tier)
+GOOS=linux GOARCH=arm64 go build -buildvcs=false -o mg ./cmd/mg
+```
 
-1. **Authentication:** The Hub verifies Spoke identity via a GitHub-style API_KEY.
-2. **Key Exchange:** The Hub and Spoke exchange RSA public keys during the initial handshake.
-3. **Encrypted Dispatch:** Each SPL-generated CTE is wrapped in a "Vault" encrypted specifically for the target Spoke.
+## Setup (Recommended)
 
----
+To run `mg` from anywhere without typing `./`, link the binary to your local bin directory:
 
-## 🤝 Contributing
+```bash
+mkdir -p ~/.local/bin
+ln -sf $(pwd)/mg ~/.local/bin/mg
 
-We welcome contributions from the community! Please see our [CONTRIBUTING.md](https://www.google.com/search?q=CONTRIBUTING.md) for details on our development workflow and our **Zero-Footprint Privacy** requirements.
+# Ensure ~/.local/bin is in your PATH (add to ~/.bashrc if needed)
+export PATH=$PATH:$HOME/.local/bin
+```
 
----
+## Database Options
 
-## 📜 License
+**momagrid** supports two database backends:
 
-This project is licensed under the **Apache License 2.0** - see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details. The patent grant in this license ensures that momagrid remains a safe, open utility for the decentralized AI community.
+1.  **SQLite (Default):** Zero-configuration. Perfect for local testing and small grids. No C libraries needed.
+2.  **PostgreSQL:** Recommended for production and high-concurrency tasks (like parallel translations). 
 
----
+### Setup PostgreSQL on Ubuntu
 
-**Developed by wen.gong.research@gmail.com
+If you don't have Postgres installed:
 
----
+```bash
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+# Start and enable the service
+sudo systemctl status postgresql
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
+# Create a database and user
+sudo -u postgres psql -c "CREATE USER mguser WITH PASSWORD 'mgpass';"
+sudo -u postgres psql -c "CREATE DATABASE momagrid OWNER mguser;"
+```
+
+### Running the Hub with PostgreSQL
+
+Use the `--db` flag with a standard PostgreSQL connection string:
+
+```bash
+# 1. Build: 
+go build -buildvcs=false -o mg ./cmd/mg
+
+# 2. Migrate: 
+mg hub migrate --from .igrid/hub.db --to "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable"
+
+# 3. Run: 
+# Format: postgres://<user>:<password>@<host>:<port>/<dbname>?sslmode=disable
+mg hub up --db "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable"  --port 9000
+```
+
+### Migrating from SQLite to PostgreSQL
+
+If you have an existing SQLite database and want to move its history to PostgreSQL:
+
+1. **Stop the hub** (if it's running).
+2. **Run the migration command**:
+   ```bash
+   mg hub migrate --from .igrid/hub.db --to "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable"
+   ```
+3. **Restart the hub** using the Postgres connection string.
+
+## Usage
+
+```bash
+# Start the hub
+mg hub up --port 9000
+
+# Stop the hub
+# If in foreground: Press Ctrl+C
+# If in background: pkill mg
+
+# Query the grid
+mg status
+mg agents
+mg tasks --detail
+mg rewards
+mg logs --follow
+
+# Submit a task
+mg submit "What is 10 !" --model qwen3
+
+mg submit "Explain quantum computing" --model llama3.1:8b
+
+# Export results
+mg export --label "run-1" --output results.json
+
+# Run test suite
+mg test --prompts prompts.json --concurrency 4 --repeat 3
+
+# Admin mode
+mg hub up --admin
+mg hub pending
+mg hub approve <agent_id>
+
+# Cluster
+mg peer add http://192.168.1.20:9000
+mg peer list
+
+# Config (reads ~/.igrid/config.yaml)
+mg config
+mg config --set operator_id=myname
+```
+
+## Documentation
+
+- **[User Guide](docs/USER-GUIDE.md)** — LAN setup, two-machine grid, SPL scripts, mgui web UI (default port 9080), compute tiers, monitoring commands, troubleshooting, and cookbook recipes.
+
+## Hub Server Flags
+
+```
+mg hub up [flags]
+```
+  --host            Listen address (default: 0.0.0.0)
+  --port            Listen port (default: 9000)
+  --hub-url         Public hub URL (default: auto-detect LAN IP)
+  --db              SQLite database path (default: .igrid/hub.db)
+  --operator-id     Operator ID (default: duck)
+  --api-key         API key for agent registration
+  --admin           Enable admin mode (agents require verification)
+  --max-concurrent  Max concurrent tasks per agent (default: 3)
+```
+
+## Security — Ed25519 Agent Identity
+
+Each agent generates a unique Ed25519 keypair on first start (`~/.igrid/agent_key.pem`). The public key is included in `JoinRequest`. On every pulse, the agent signs `agentID:timestamp` — proving it holds the private key. The hub verifies the signature and rejects pulses that fail verification.
+
+**Why this matters for public grids:** Without signing, any node can claim any `operator_id` and collect rewards for another operator's identity. Ed25519 prevents this at zero wire overhead (32-byte keys, 64-byte signatures, stdlib only).
+
+Agents without a key (e.g. the Python implementation, trusted LAN nodes) are still accepted — the signature check is skipped when no public key is on file.
+
+```
+internal/identity/identity.go   LoadOrCreate, Sign, Verify, MakeChallenge
+```
+
+## Cluster Forwarding — Webhook Callback
+
+When Hub A has no eligible agent for a task, it forwards the task to a peer hub (Hub B) via `POST /tasks`. Previously, Hub A polled `GET /tasks/{id}` on Hub B until the task completed — introducing up to 10 seconds of extra latency.
+
+Now Hub A sets `callback_url = hubA/cluster/result` in the forwarded `TaskRequest`. When Hub B completes the task, it POSTs the result to Hub A's `/cluster/result` endpoint immediately. Hub A resolves the task in <1s instead of waiting for the next poll cycle. Polling is kept as a fallback if the callback is not received within the task timeout.
+
+## Architecture
+
+```
+cmd/mg/main.go               CLI entry point (subcommand dispatch)
+internal/identity/identity.go Ed25519 keypair: generate, load, sign, verify
+internal/cli/config.go       Config management (~/.igrid/config.yaml)
+internal/cli/http.go         HTTP client helpers (getJSON, postJSON)
+internal/cli/hub.go          Hub commands (up, pending, approve, reject)
+internal/cli/client.go       Client commands (status, agents, tasks, submit, etc.)
+internal/cli/peer.go         Peer commands (add, list)
+internal/cli/test.go         Test runner (concurrent batch, report generation)
+internal/schema/             Go structs matching the momagrid wire protocol
+internal/hub/app.go          HTTP server — all 20 endpoints incl. /cluster/result
+internal/hub/db.go           DB init: SQLite (WAL) + PostgreSQL, migrations
+internal/hub/state.go        GridState: all DB operations + AgentPublicKey lookup
+internal/hub/dispatcher.go   Task dispatch + fireCallback (webhook to origin hub)
+internal/hub/cluster.go      Hub-to-hub peering + webhook-first ForwardTask
+internal/hub/monitor.go      Background goroutines: eviction, cluster sync, dispatch
+internal/hub/verification.go Agent auto-approval pipeline
+internal/hub/sse.go          SSE task streaming for pull-mode (NAT-traversal) agents
+```
+
+## PostgreSQL — Connection Pool Tuning
+
+For grids with 50+ simultaneous agents, increase the pool size:
+
+```bash
+# Default is 20 open connections — sufficient for most LAN deployments.
+# For public grids, tune via Postgres max_connections and pool size:
+mg hub up --db "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable&pool_max_conns=50"
+```
+
+SQLite uses WAL mode automatically — no tuning needed for up to ~30 concurrent agents.
+
+## Dependencies
+
+| Dependency | Purpose |
+|-----------|---------|
+| `github.com/go-chi/chi/v5` | HTTP router |
+| `github.com/google/uuid` | UUID generation |
+| `modernc.org/sqlite` | Pure-Go SQLite (no CGO) |
+| `gopkg.in/yaml.v3` | Config file (YAML) |
+
+## Compatibility
+
+The Go binaries are fully compatible with:
+- Python agents (`mg join`)
+- Python CLI (`mg status`, `mg tasks`, etc.)
+- Streamlit dashboard (`mg-ui`)
+- SPL runner (`mg run`)
+- Test runner (`mg test`)
+
+All communicate via HTTP JSON — the hub's implementation language is transparent.

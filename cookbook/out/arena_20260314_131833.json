@@ -1,0 +1,42 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "models": [
+    "llama3",
+    "mistral",
+    "phi3"
+  ],
+  "prompt": "Explain factorials",
+  "results": [
+    {
+      "model": "llama3",
+      "state": "COMPLETE",
+      "content": "The fascinating world of factorials!\n\nA factorial is a mathematical operation that involves multiplying a number by all the positive integers that are smaller than it, in descending order. The result is always an integer.\n\nThe notation for a factorial is \"n!\" (read as \"n factorial\"), where n is the number being factored. For example:\n\n* 5! = 5 × 4 × 3 × 2 × 1 = 120\n* 3! = 3 × 2 × 1 = 6\n* 0! = 1 (yes, 0 factorial is equal to 1!)\n\nHere's the recursive formula for calculating a factorial:\n\nn! = n × (n-1)! (for n \u003e 0)\n\nIn other words, to calculate the factorial of a number, you multiply it by the factorial of the number that comes before it. This process continues until you reach 1.\n\nFactorials have many applications in mathematics and computer science, such as:\n\n1. **Combinatorics**: Factorials are used to count the number of ways to arrange objects in different orders.\n2. **Probability**: Factorials appear in probability theory, particularly when calculating the number of possible outcomes for a random event.\n3. **Algorithms**: Factorials are used in algorithms for solving problems involving permutations and combinations.\n\nSome interesting properties of factorials include:\n\n1. **Factorial growth**: The value of n! grows extremely quickly as n increases. For example, 10! = 10 × 9 × ... × 2 × 1 = 3,628,800, while 20! = 20 × 19 × ... × 2 × 1 = 2,432,902,008,176,000.\n2. **Factorial zeros**: Many factorials have trailing zeros, which can be important in certain applications.\n\nNow that you know what factorials are, you might wonder why they're useful or how to calculate them quickly. If you have any questions or would like to learn more, feel free to ask!",
+      "output_tokens": 423,
+      "latency_s": 12.42107485,
+      "tps": 34.05502382911733,
+      "agent_id": "agent-94a2e41b",
+      "error": ""
+    },
+    {
+      "model": "mistral",
+      "state": "COMPLETE",
+      "content": " Factorial is a mathematical function, denoted by the symbol \"!\", that represents the product of all positive integers up to a given number. The factorial of a non-negative integer n (denoted as n!) is calculated by multiplying all numbers from 1 to n, inclusive.\n\nHere are some examples:\n\n* Factorial of 0 is 1 (0! = 1) because the product of no numbers (i.e., an empty set) is 1.\n* Factorial of 1 is 1 (1! = 1), since the product of one number, 1, is itself.\n* Factorial of 2 is 2 (2! = 2), because 2 × 1 equals 2.\n* Factorial of 3 is 6 (3! = 6), because 3 × 2 × 1 equals 6.\n* Factorial of 4 is 24 (4! = 24), because 4 × 3 × 2 × 1 equals 24.\n* In general, the factorial of n (n!) is calculated by multiplying all numbers from 1 to n.\n\nFactorials are important in various areas of mathematics, such as combinatorics (counting problems), probability theory, and statistics. They also appear in many real-world applications like coding theory, computer science, and even physics.",
+      "output_tokens": 309,
+      "latency_s": 8.022395914,
+      "tps": 38.51717159218726,
+      "agent_id": "agent-e5069a6b",
+      "error": ""
+    },
+    {
+      "model": "phi3",
+      "state": "COMPLETE",
+      "content": "Factorial is a mathematical operation represented by an exclamation mark (!). It's used primarily in combinatorries and calculus. The factorial of a non-negative integer n, denoted as n!, is the product of all positive integers less than or equal to n. Here’s how you calculate it:\n\nFor example, if we want to find 5! (read five factorial), we would multiply every whole number from our chosen first term down to one:\n\n   5 * 4 * 3 * 2 * 1 = 120  \nSo the value of 5! is equal to 120. One key property about factorials, as n gets larger (beyond a certain point), so does its factorial exponentially due to repeated multiplication; thus making it grow extremely fast. For large values of 'n', we often encounter situations where direct computation may not be feasible and require approximation methods or use software that can handle big numbers efficiently.",
+      "output_tokens": 209,
+      "latency_s": 8.020197426,
+      "tps": 26.059208882123098,
+      "agent_id": "agent-94a2e41b",
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T13:18:33-04:00"
+}

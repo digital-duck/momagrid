@@ -1,0 +1,118 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "model": "llama3",
+  "results": [
+    {
+      "Language": "Arabic",
+      "Question": "ما هو الذكاء الاصطناعي؟",
+      "State": "COMPLETE",
+      "Answer": " Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making. AI uses algorithms and data analysis to simulate human thought processes, enabling machines to make predictions, classify information, and generate insights. The goal of AI is to create intelligent machines that can augment and assist human capabilities, rather than replace them.",
+      "LatencyS": 3.339646527,
+      "OutputTokens": 81,
+      "TPS": 24.254063819371382,
+      "AgentID": "agent-7a2dde45",
+      "Error": ""
+    },
+    {
+      "Language": "Chinese",
+      "Question": "人工智能是什么？",
+      "State": "COMPLETE",
+      "Answer": "人工智能（Artificial Intelligence，AI）是指计算机或软件能够模拟人类智能的能力，以进行学习、推理和决策等智能行为。 AI 技术可以使计算机更好地理解自然语言、识别图像、执行复杂任务等。",
+      "LatencyS": 8.102950464,
+      "OutputTokens": 62,
+      "TPS": 7.6515338795979595,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "English",
+      "Question": "What is artificial intelligence?",
+      "State": "COMPLETE",
+      "Answer": "Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and understanding natural language. AI involves creating algorithms and models that enable machines to make predictions, classify data, and make decisions without being explicitly programmed.",
+      "LatencyS": 3.342184053,
+      "OutputTokens": 63,
+      "TPS": 18.849949314864975,
+      "AgentID": "agent-7a2dde45",
+      "Error": ""
+    },
+    {
+      "Language": "French",
+      "Question": "Qu'est-ce que l'intelligence artificielle?",
+      "State": "COMPLETE",
+      "Answer": "L'intelligence artificielle (IA) est une technologie qui permet aux ordinateurs et aux autres systèmes de prendre des décisions et d'apprendre à partir de données, en simulant l'intelligence humaine. Elle utilise diverses techniques telles que l'apprentissage automatique, les réseaux de neurones et les algorithmes pour résoudre des problèmes complexes.",
+      "LatencyS": 5.500039124,
+      "OutputTokens": 86,
+      "TPS": 15.636252408592867,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "German",
+      "Question": "Was ist künstliche Intelligenz?",
+      "State": "COMPLETE",
+      "Answer": "Künstliche Intelligenz (KI) bezeichnet die Fähigkeit von Maschinen, wie Computersystemen oder Robotern, durch Lernen und Analyse aus Daten zu einem menschlichartigen Verhalten zu kommen. Dies umfasst Fähigkeiten wie Erkennung von Mustern, Problem Lösung und Entscheidungsfindung, die aufwärts kompatibel mit menschlichen Intelligenzfunktionen sind.",
+      "LatencyS": 5.508879977,
+      "OutputTokens": 97,
+      "TPS": 17.607934898742123,
+      "AgentID": "agent-4be29801",
+      "Error": ""
+    },
+    {
+      "Language": "Hindi",
+      "Question": "कृत्रिम बुद्धिमत्ता क्या है?",
+      "State": "COMPLETE",
+      "Answer": "कृत्रिम बुद्धिमत्ता (Artificial Intelligence) का मतलब एक मशीन या सिस्टम जो मानवीय Thoughts और Actions से प्रेरित होने की जगह, automated decision-making और problem-solving करने के लिए डिज़ाइन किया गया है।",
+      "LatencyS": 3.3421752270000002,
+      "OutputTokens": 72,
+      "TPS": 21.542856107107394,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Japanese",
+      "Question": "人工知能とは何ですか？",
+      "State": "COMPLETE",
+      "Answer": "人工知能（AI）とは、計算機が自己の判断や推測を行うことを可能にする技術です。これは、データを分析し、学習することで、新しい知識やパターンを獲得し、将来の事象に対応して適切な反応を示すことができます。",
+      "LatencyS": 3.342144328,
+      "OutputTokens": 69,
+      "TPS": 20.645427973270937,
+      "AgentID": "agent-4be29801",
+      "Error": ""
+    },
+    {
+      "Language": "Portuguese",
+      "Question": "O que é inteligência artificial?",
+      "State": "COMPLETE",
+      "Answer": "A inteligência artificial (IA) é uma área da ciência e tecnologia que se refere à capacidade de uma máquina ou programa computacional realizar tarefas que normalmente requerem habilidades humanas, como aprendizado, resolução de problemas e tomada de decisões. Essa tecnologia utiliza algoritmos e dados para simular inteligência humana, permitindo que as máquinas sejam treinadas para realizar tarefas específicas com maior precisão e eficiência.",
+      "LatencyS": 3.342173267,
+      "OutputTokens": 107,
+      "TPS": 32.015096600914795,
+      "AgentID": "agent-4be29801",
+      "Error": ""
+    },
+    {
+      "Language": "Russian",
+      "Question": "Что такое искусственный интеллект?",
+      "State": "COMPLETE",
+      "Answer": "Искусственный интеллект (ИИ) - это система, которая может выполнять задачи, обычно требующие человеческого разума, такие как рассуждение, решение и обучение, используя программное обеспечение и алгоритмы. ИИ не является живым существом, но может принимать решения, основываясь на доступной информации и данных.",
+      "LatencyS": 5.50032507,
+      "OutputTokens": 80,
+      "TPS": 14.544594907006106,
+      "AgentID": "agent-0577c8be",
+      "Error": ""
+    },
+    {
+      "Language": "Spanish",
+      "Question": "¿Qué es la inteligencia artificial?",
+      "State": "COMPLETE",
+      "Answer": "La inteligencia artificial (IA) se refiere a la capacidad de un programa o máquina para realizar tareas que habitualmente requieren la inteligencia humana, como aprender, razonar y tomar decisiones. La IA utiliza algoritmos y datos para analizar información y hacer predicciones, sin necesidad de ser programada explícitamente para cada tarea específica.",
+      "LatencyS": 5.500228525,
+      "OutputTokens": 81,
+      "TPS": 14.726660834515053,
+      "AgentID": "agent-7a2dde45",
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T05:16:34-04:00",
+  "wall_time_s": 8.103222687
+}

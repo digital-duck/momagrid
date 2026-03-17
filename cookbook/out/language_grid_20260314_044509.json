@@ -1,0 +1,118 @@
+{
+  "hub": "http://localhost:9000",
+  "model": "llama3",
+  "results": [
+    {
+      "Language": "Arabic",
+      "Question": "ما هو الذكاء الاصطناعي؟",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "Chinese",
+      "Question": "人工智能是什么？",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "English",
+      "Question": "What is artificial intelligence?",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "French",
+      "Question": "Qu'est-ce que l'intelligence artificielle?",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "German",
+      "Question": "Was ist künstliche Intelligenz?",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "Hindi",
+      "Question": "कृत्रिम बुद्धिमत्ता क्या है?",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "Japanese",
+      "Question": "人工知能とは何ですか？",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "Portuguese",
+      "Question": "O que é inteligência artificial?",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "Russian",
+      "Question": "Что такое искусственный интеллект?",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "Language": "Spanish",
+      "Question": "¿Qué es la inteligencia artificial?",
+      "State": "SUBMIT_FAILED",
+      "Answer": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "TPS": 0,
+      "AgentID": "",
+      "Error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    }
+  ],
+  "timestamp": "2026-03-14T04:45:09-04:00",
+  "wall_time_s": 0.000584464
+}

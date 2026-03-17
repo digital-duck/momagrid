@@ -1,0 +1,8 @@
+Benchmarking [llama3 mistral phi3] on http://192.168.0.177:9000
+
+MODEL           STATE        TOKENS    LATENCY      TPS
+-------------------------------------------------------
+llama3          COMPLETE         94       2.03     46.2
+mistral         COMPLETE        130       4.85     26.8
+phi3            COMPLETE         91      18.15      5.0
+Results saved: out/benchmark_20260314_131659.json

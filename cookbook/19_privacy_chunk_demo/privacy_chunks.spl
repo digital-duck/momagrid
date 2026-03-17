@@ -1,0 +1,14 @@
+-- Recipe 19: Privacy Chunk Demo
+-- Split a document into 3 independent chunks, each processed by a separate agent.
+-- No single agent sees the full document — the hub assembles the final analysis.
+-- This demonstrates the Phase 8 privacy architecture without requiring encryption.
+
+PROMPT chunk1_analysis
+USING MODEL 'llama3'
+ON GRID
+
+SELECT
+    system_role('You are a document analyst. Analyse only the excerpt provided. Extract key entities, dates, and facts.')
+
+GENERATE
+    analyst('Analyse this document excerpt: The distributed inference network was founded in 2026 by researchers at Digital Duck Labs. The system uses a hub-and-spoke architecture connecting GPU nodes across multiple locations.');

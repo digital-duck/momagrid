@@ -1,0 +1,47 @@
+
+  Agent Failover Test
+    Hub:    http://192.168.0.177:9000
+    Tasks:  20
+    Model:  llama3
+
+  Initial agents (3 online):
+    - wen                  BRONZE     ONLINE
+    - ducklover1           BRONZE     ONLINE
+    - wengong              BRONZE     ONLINE
+
+  Submitting tasks... Kill an agent mid-run to test failover.
+  (Use `moma down` on the agent machine, or stop the agent process)
+
+  Submit failed at 1: HTTP 429
+  Submit failed at 2: HTTP 429
+  Submit failed at 3: HTTP 429
+  Submit failed at 4: HTTP 429
+  Submit failed at 5: HTTP 429
+  Submit failed at 6: HTTP 429
+  Submit failed at 7: HTTP 429
+  Submit failed at 8: HTTP 429
+  Submit failed at 9: HTTP 429
+  Submit failed at 10: HTTP 429
+  Submit failed at 11: HTTP 429
+  Submit failed at 12: HTTP 429
+  Submit failed at 13: HTTP 429
+  Submit failed at 14: HTTP 429
+  Submit failed at 15: HTTP 429
+  Submit failed at 16: HTTP 429
+  Submit failed at 17: HTTP 429
+  Submit failed at 18: HTTP 429
+  Submit failed at 19: HTTP 429
+  Submit failed at 20: HTTP 429
+
+  All 0 tasks submitted. Waiting for completion...
+
+  ============================================================
+  Completed: 0/0
+  Failed:    0
+  Timed out: 0
+
+  Agent distribution (post-failover):
+
+  PASS: All 0 tasks completed despite any failover events.
+
+  Results saved: out/failover_20260314_051058.json

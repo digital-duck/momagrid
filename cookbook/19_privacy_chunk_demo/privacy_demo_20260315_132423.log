@@ -1,0 +1,57 @@
+
+  Privacy Chunk Demo
+    Hub:           http://192.168.0.177:9000
+    Document:      demo_contract.txt (1418 chars)
+    Chunks:        3 (dispatched in parallel)
+    Chunk model:   llama3
+    Assembly model:llama3
+
+  Privacy guarantee: no single agent sees the full document.
+  The hub is the only point that assembles all chunk analyses.
+
+  Active agents: 3
+    - duck (GOLD)
+    - dog (GOLD)
+    - cat (GOLD)
+
+  → Chunk 3: dispatching to agent (490 chars)...
+  → Chunk 1: dispatching to agent (308 chars)...
+  → Chunk 2: dispatching to agent (614 chars)...
+    OK Chunk 1 complete  4.4s  agent=..ent-7f765375
+    OK Chunk 2 complete  10.8s  agent=..ent-ae5c6070
+    OK Chunk 3 complete  19.9s  agent=..ent-345612c8
+
+  → Assembly: combining 3 chunk analyses...
+    OK Assembly complete  10.8s
+
+  Chunks handled by 3 agent(s): ..agent-7f765375, ..agent-ae5c6070, ..agent-345612c8
+  (Each agent saw only 1/3 of the document)
+
+  ============================================================
+  ASSEMBLED ANALYSIS
+  ------------------------------------------------------------
+  **Summary: Distributed Inference Agreement**
+
+The Distributed Inference Agreement is a contract between Digital Duck Labs ("Provider") and Participating GPU operators ("Contributors"). The agreement outlines the terms for contributors to supply compute resources (GPUs) to the Provider, which operates infrastructure to facilitate inference tasks.
+
+**Main Themes:**
+
+1. **Compute Contribution:** Contributors agree to make their GPUs available during registered hours and receive compensation in Momahub credits based on output tokens generated.
+2. **Privacy and Data Handling:** Task prompts are stored for a limited time (default: 24 hours), and contributors acknowledge that prompt chunks may not represent complete documents.
+3. **Liability and Termination:** The Provider does not guarantee uptime, task completion rates, or inference quality; Contributors are responsible for their own hardware and network. Either party can terminate participation with 24 hours' notice using a specific process (moma down).
+
+**Key Obligations:**
+
+1. Compute Contribution: Provide GPU resources during registered hours.
+2. Data Handling: Store task prompts for a limited time and acknowledge the nature of prompt chunks.
+
+**Notable Clauses:**
+
+1. **Moma Down:** Either party can terminate participation with 24 hours' notice using this specific process.
+2. **Credit Redeemability:** Credits earned prior to termination remain redeemable indefinitely.
+
+By analyzing these excerpts, we see that the Distributed Inference Agreement focuses on the terms of compute resource contribution, data handling, and liability, as well as the procedures for terminating participation.
+
+  Wall time: 30.7s
+
+  Results saved: out/privacy_demo_20260315_132454.json

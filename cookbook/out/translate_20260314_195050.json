@@ -1,0 +1,46 @@
+{
+  "elapsed_s": 2.0365690340000002,
+  "hub": "http://192.168.0.177:9000",
+  "languages": [
+    "French",
+    "German",
+    "Chinese",
+    "Spanish"
+  ],
+  "model": "llama3",
+  "results": [
+    {
+      "language": "French",
+      "state": "COMPLETE",
+      "translation": "Bonjour Maman Hubb",
+      "output_tokens": 5,
+      "latency_ms": 272,
+      "agent_id": "agent-e52c4919"
+    },
+    {
+      "language": "Chinese",
+      "state": "COMPLETE",
+      "translation": "（nǐ hǎo mā hù）",
+      "output_tokens": 12,
+      "latency_ms": 342,
+      "agent_id": "agent-fde66a4b"
+    },
+    {
+      "language": "German",
+      "state": "COMPLETE",
+      "translation": "Hallo Mutterhub",
+      "output_tokens": 5,
+      "latency_ms": 338,
+      "agent_id": "agent-574772ab"
+    },
+    {
+      "language": "Spanish",
+      "state": "COMPLETE",
+      "translation": "Hola Mamuhub",
+      "output_tokens": 5,
+      "latency_ms": 305,
+      "agent_id": "agent-e52c4919"
+    }
+  ],
+  "timestamp": "2026-03-14T19:50:50-04:00"
+}

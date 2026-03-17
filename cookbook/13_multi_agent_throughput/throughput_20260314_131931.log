@@ -1,0 +1,27 @@
+
+  Multi-Agent Throughput
+    Hub:         http://192.168.0.177:9000
+    Agents:      3 online
+    Tasks:       60
+    Model:       llama3
+    Concurrency: 20
+    Label:       run-131931
+      - wengong (GOLD)
+      - papa-game (GOLD)
+      - ducklover1 (SILVER)
+
+
+  ============================================================
+  Label:      run-131931
+  Completed:  60/60
+  Wall time:  42.4s
+  Tokens:     6790
+  Throughput: 160.2 tokens/s  <- KEY METRIC
+  Avg latency:11.6s  |  Avg TPS/agent: 11.0
+
+  Agent distribution:
+    ..agent-94a2e41b      19 tasks  ███████████████████
+    ..agent-52f71884      23 tasks  ███████████████████████
+    ..agent-e5069a6b      18 tasks  ██████████████████
+
+  Results saved: out/throughput_20260314_132013.json

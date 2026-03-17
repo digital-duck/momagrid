@@ -1,0 +1,67 @@
+
+  Momahub Compiler Pipeline Demo
+    Hub:     http://localhost:9000
+    Input:   What is distributed inference and why does it matter?
+
+  Front-end:
+  → [translate ] llama3               ... OK 3.3s  40 tok  agent=..t-0577c8be
+
+  Mid-end (parallel):
+  → [optimise  ] llama3               ...  → [concepts  ] llama3               ... OK 3.3s  87 tok  agent=..t-0577c8be
+ OK 3.3s  11 tok  agent=..t-0577c8be
+
+  Back-end:
+  → [generate  ] llama3               ... OK 5.5s  129 tok  agent=..t-0577c8be
+  → [format    ] llama3               ... OK 11.2s  382 tok  agent=..t-0577c8be
+
+  ============================================================
+  PIPELINE RESULTS
+  ------------------------------------------------------------
+  Original query:  What is distributed inference and why does it matter?
+  English:         What is distributed inference and why does it matter?
+
+In this case, the input is already in English, so I won't change a thing:
+
+What is distributed inference and why does it matter?
+  Key concepts:    Distributed Inference, Artificial Intelligence, Machine Learning
+  Optimised query: Here's a rewritten version of your query that's clearer, more specific, and likely to elicit a precise answer:
+
+"Can you explain the concept of distributed inference, which involves processing large datasets across multiple machines or devices, and how this approach differs from traditional centralized inference methods? What specific advantages or challenges arise when applying distributed inference in machine learning applications, and what are some real-world use cases where this technique provides significant benefits?"
+
+  FINAL OUTPUT:
+  ------------------------------------------------------------
+  Here is the rewritten summary:
+
+**TL;DR:** Distributed inference is a machine learning paradigm that enables fast computation and improved scalability by processing large datasets across multiple machines or devices.
+
+**Full Explanation:**
+
+Distributed inference is a machine learning approach that allows for the efficient processing of large datasets by distributing the computational load across multiple machines or devices. Unlike traditional centralized inference methods, which rely on a single node to process data, distributed inference breaks down the task into smaller pieces and assigns them to multiple nodes, making it more suitable for big data applications.
+
+This paradigm offers several advantages, including:
+
+* Increased speed: By processing data in parallel across multiple nodes, distributed inference can significantly reduce computation times.
+* Improved scalability: Distributed inference enables the handling of large datasets that would be impractical or impossible to process on a single machine.
+* Reduced costs: With distributed inference, you only need to maintain and upgrade multiple machines, rather than relying on a single, powerful node.
+
+However, this approach also introduces challenges related to:
+
+* Communication overhead: Coordinating communication between nodes can add complexity and slow down the overall processing time.
+* Data synchronization: Ensuring that data is consistent across all nodes can be a challenge, especially in real-time applications.
+* Consistency among nodes: Guaranteeing that all nodes are processing data consistently can be difficult to achieve.
+
+Despite these challenges, distributed inference has several real-world use cases, including:
+
+* Natural language processing (NLP): Distributed inference can significantly improve model training and prediction times for NLP tasks like text classification and sentiment analysis.
+* Computer vision: By distributing the computational load across multiple nodes, distributed inference can speed up image processing and object detection tasks.
+* Recommender systems: Distributed inference can help improve the efficiency of recommender systems by processing large datasets in parallel.
+
+Overall, distributed inference is a powerful approach that can unlock new possibilities for machine learning applications with big data.
+
+  ============================================================
+  Wall time:   23.3s
+  Steps:       5 (1 sequential + 2 parallel + 2 sequential)
+  Agents used: 1
+  Total tokens:649
+
+  Results saved: out/compiler_pipeline_20260314_012328.json

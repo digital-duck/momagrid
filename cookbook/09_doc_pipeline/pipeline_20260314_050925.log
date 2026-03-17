@@ -1,0 +1,29 @@
+
+  Document Pipeline
+    Source:  demo_text.txt
+    Hub:     http://192.168.0.177:9000
+    Model:   llama3
+
+  [1/3] Preparing text... 1005 chars
+  [2/3] Summarizing on grid (llama3)... 194 tokens  4463ms
+  [3/3] Formatting output...
+
+  Here is a structured summary of the document:
+
+### Overview
+This document discusses the concepts of Artificial Intelligence (AI) and Machine Learning (ML), focusing on how ML enables systems to learn and improve without explicit programming. The text explores the process of ML, including deep learning methods, and their applications in various fields.
+
+### Key Points
+
+* Machine learning is a subset of artificial intelligence that enables systems to learn from experience without being explicitly programmed.
+* The primary aim of machine learning is to allow computers to learn automatically without human intervention or assistance.
+* Deep learning is part of a broader family of machine learning methods based on artificial neural networks with representation learning.
+
+### Details
+
+* According to the text, machine learning begins with observations or data, such as examples, direct experience, or instruction, which allows computers to look for patterns in data and make better decisions in the future.
+* The process involves developing computer programs that can access data and use it to learn for themselves.
+
+  Done! Agent: ..ent-0577c8be
+
+  Results saved: out/doc_pipeline_20260314_050934.json

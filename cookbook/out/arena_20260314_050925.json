@@ -1,0 +1,42 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "models": [
+    "llama3",
+    "mistral",
+    "phi3"
+  ],
+  "prompt": "Explain factorials",
+  "results": [
+    {
+      "model": "llama3",
+      "state": "COMPLETE",
+      "content": "Factorials!\n\nIn mathematics, a factorial is a mathematical operation that involves multiplying a number by all positive integers that are smaller than it. The symbol for factorial is ! (exclamation mark).\n\nThe formula for calculating the factorial of a number n is:\n\nn! = n × (n-1) × (n-2) × ... × 2 × 1\n\nFor example, let's calculate the factorial of 5:\n\n5! = 5 × 4 × 3 × 2 × 1 = 120\n\nAs you can see, the result is a large number!\n\nHere are some more examples to illustrate how factorials work:\n\n* 0! = 1 (by convention)\n* 1! = 1\n* 2! = 2 × 1 = 2\n* 3! = 3 × 2 × 1 = 6\n* 4! = 4 × 3 × 2 × 1 = 24\n* 5! = 5 × 4 × 3 × 2 × 1 = 120\n\nNotice how the result grows rapidly as you increase the input number!\n\nFactorials have many applications in mathematics, science, and engineering. Here are a few examples:\n\n1. **Combinatorics**: Factorials help us count the number of ways to arrange objects in a certain order.\n2. **Probability**: Factorials appear in probability theory when calculating the number of possible outcomes in an experiment.\n3. **Statistics**: Factorials are used in statistical analysis, such as calculating the number of possible samples from a population.\n4. **Algebra**: Factorials play a role in solving equations and manipulating algebraic expressions.\n\nNow, you might be wondering why factorials are important. Well, they have many real-world applications, such as:\n\n1. **Cryptography**: Factorials are used to create secure encryption algorithms.\n2. **Computer Science**: Factorials appear in programming languages, data structures, and algorithms.\n3. **Biology**: Factorials help us understand population growth models and gene expression.\n\nIn conclusion, factorials are a fundamental concept in mathematics that have far-reaching implications across various fields.",
+      "output_tokens": 447,
+      "latency_s": 12.388323189,
+      "tps": 36.08236507721288,
+      "agent_id": "agent-7a2dde45",
+      "error": ""
+    },
+    {
+      "model": "mistral",
+      "state": "COMPLETE",
+      "content": " Factorials are a mathematical function used to multiply a given number by each integer less than it, all the way down to one. The factorial of a non-negative integer n, denoted as n! (read as \"n factorial\"), is calculated by multiplying all positive integers not exceeding n.\n\nFor example:\n- Factorial of 0 (0!) is defined to be 1.\n- Factorial of 1 (1!) equals 1.\n- Factorial of 2 (2!) equals 2 * 1 = 2.\n- Factorial of 3 (3!) equals 3 * 2 * 1 = 6.\n- Factorial of 4 (4!) equals 4 * 3 * 2 * 1 = 24.\n- And so on.\n\nSo, in general, the factorial of a positive integer n is n*(n-1)*(n-2)...*2*1. Factorials are useful in many branches of mathematics and are often used in probability problems related to permutations and combinations.",
+      "output_tokens": 242,
+      "latency_s": 7.990285445,
+      "tps": 30.2867778211145,
+      "agent_id": "agent-0577c8be",
+      "error": ""
+    },
+    {
+      "model": "phi3",
+      "state": "COMPLETE",
+      "content": "Factorial is a mathematical operation denoted by an exclamation mark (!) and applied to non-negative integers. The factorial of any number \\(n\\) (where n is greater than or equal to zero) is the product of all positive integers less than or equal to that number:\n\n\\[n! = n \\times (n-1) \\times (n-2) \\times \\ldots \\times 3 \\times 2 \\times 1\\]\n\nFor instance, if we take \\(5!\\), it would be calculated as follows:\n\n\\[5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\\]\n\nOne of the special cases is when you calculate factorials for zero. According to convention, this value is defined to equal one (\\(0! = 1\\)). Factorial values are widely used in permutations and combinations calculations as they give us ways of counting how many possible arrangements or selections can be made from a given set under certain restrictions (like without repetition for simple factorials, with repetition for multinth factorials etc.). It is also important to note that the value grows extremely fast - even at relatively small input values. This property of rapidly growing output makes it essential in fields like mathematics and computer science when dealing with large datasets or complex algorithms where we need quick ways of counting possibilities, albeit being aware about its exponential growth behavior which can lead to performance issues if misused without caution!",
+      "output_tokens": 322,
+      "latency_s": 7.990008909,
+      "tps": 40.300330533711545,
+      "agent_id": "agent-4be29801",
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T05:09:25-04:00"
+}

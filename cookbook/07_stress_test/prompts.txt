@@ -1,0 +1,20 @@
+Explain Newton's first law in two sentences.
+What is the difference between TCP and UDP?
+Write a haiku about distributed computing.
+Summarize the concept of entropy in physics.
+What is a hash table and why is it fast?
+Explain the double-slit experiment simply.
+What is gradient descent in machine learning?
+Describe the CAP theorem in distributed systems.
+What is the Turing test?
+Explain the concept of recursion with an example.
+What is quantum entanglement?
+How does public-key cryptography work?
+What is the Big Bang theory?
+Explain MapReduce in three sentences.
+What is natural selection?
+How does a neural network learn?
+What is the halting problem?
+Explain the second law of thermodynamics.
+What is a blockchain?
+Describe the observer effect in quantum mechanics.

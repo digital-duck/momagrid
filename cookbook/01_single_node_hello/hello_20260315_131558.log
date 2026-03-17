@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Welcome to the i-grid! The i-grid is a distributed inference network that enables scalable, efficient, and flexible machine learning computations by breaking down complex models into smaller, interchangeable building blocks that can be executed across a decentralized grid of interconnected nodes. This innovative architecture allows for seamless integration of diverse AI frameworks and tools, facilitating collaboration and innovation in the world of artificial intelligence.
+
+[model=llama3 tokens=33+74 latency=1942ms]

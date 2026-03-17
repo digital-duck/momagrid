@@ -1,0 +1,356 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "results": [
+    {
+      "model": "bge-m3:latest",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "codegeex4:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 41654,
+      "infer_ms": 147,
+      "tps": 27.2108843537415,
+      "tokens": 4
+    },
+    {
+      "model": "codegemma:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 41648,
+      "infer_ms": 154,
+      "tps": 25.974025974025974,
+      "tokens": 4
+    },
+    {
+      "model": "deepseek-coder-v2:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 58873,
+      "infer_ms": 92,
+      "tps": 43.47826086956522,
+      "tokens": 4
+    },
+    {
+      "model": "deepseek-ocr:latest",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 19890,
+      "infer_ms": 273,
+      "tps": 73.26007326007326,
+      "tokens": 20
+    },
+    {
+      "model": "deepseek-r1:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 33045,
+      "infer_ms": 479,
+      "tps": 41.75365344467641,
+      "tokens": 20
+    },
+    {
+      "model": "duckdb-nsql:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 33046,
+      "infer_ms": 164,
+      "tps": 54.8780487804878,
+      "tokens": 9
+    },
+    {
+      "model": "embeddinggemma:latest",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "gemma3:12b",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 84693,
+      "infer_ms": 488,
+      "tps": 8.19672131147541,
+      "tokens": 4
+    },
+    {
+      "model": "gemma3:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 67474,
+      "infer_ms": 205,
+      "tps": 19.51219512195122,
+      "tokens": 4
+    },
+    {
+      "model": "granite-code:8b",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 33044,
+      "infer_ms": 156,
+      "tps": 32.05128205128205,
+      "tokens": 5
+    },
+    {
+      "model": "lfm2.5-thinking:latest",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 4419,
+      "infer_ms": 103,
+      "tps": 58.25242718446602,
+      "tokens": 6
+    },
+    {
+      "model": "llama3",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 50261,
+      "infer_ms": 151,
+      "tps": 26.490066225165563,
+      "tokens": 4
+    },
+    {
+      "model": "llama3.1:latest",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 14912,
+      "infer_ms": 30050,
+      "tps": 0.13311148086522462,
+      "tokens": 4
+    },
+    {
+      "model": "llama3.2-vision:latest",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "llama3.2:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 25873,
+      "infer_ms": 118,
+      "tps": 33.898305084745765,
+      "tokens": 4
+    },
+    {
+      "model": "llama3:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 4414,
+      "infer_ms": 146,
+      "tps": 27.397260273972606,
+      "tokens": 4
+    },
+    {
+      "model": "mathstral:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 58867,
+      "infer_ms": 110,
+      "tps": 54.54545454545455,
+      "tokens": 6
+    },
+    {
+      "model": "mistral:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 41651,
+      "infer_ms": 100,
+      "tps": 40,
+      "tokens": 4
+    },
+    {
+      "model": "nomic-embed-text-v2-moe:latest",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "nomic-embed-text:latest",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "phi3:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 25872,
+      "infer_ms": 222,
+      "tps": 90.09009009009009,
+      "tokens": 20
+    },
+    {
+      "model": "phi4-mini:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 33043,
+      "infer_ms": 140,
+      "tps": 28.57142857142857,
+      "tokens": 4
+    },
+    {
+      "model": "phi4:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 67483,
+      "infer_ms": 355,
+      "tps": 11.267605633802818,
+      "tokens": 4
+    },
+    {
+      "model": "qwen2-math:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 41649,
+      "infer_ms": 219,
+      "tps": 18.264840182648403,
+      "tokens": 4
+    },
+    {
+      "model": "qwen2.5-coder:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 110537,
+      "infer_ms": 11347,
+      "tps": 0.3525160835463118,
+      "tokens": 4
+    },
+    {
+      "model": "qwen2.5:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 101956,
+      "infer_ms": 423,
+      "tps": 9.456264775413711,
+      "tokens": 4
+    },
+    {
+      "model": "qwen3-embedding:0.6b",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "qwen3-embedding:4b",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "qwen3-vl:4b",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 10810,
+      "infer_ms": 422,
+      "tps": 47.39336492890995,
+      "tokens": 20
+    },
+    {
+      "model": "qwen3-vl:8b",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 19939,
+      "infer_ms": 564,
+      "tps": 35.46099290780142,
+      "tokens": 20
+    },
+    {
+      "model": "qwen3:4b",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 7307,
+      "infer_ms": 388,
+      "tps": 51.54639175257732,
+      "tokens": 20
+    },
+    {
+      "model": "qwen3:latest",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 14967,
+      "infer_ms": 66703,
+      "tps": 0.2998365890589629,
+      "tokens": 20
+    },
+    {
+      "model": "snowflake-arctic-embed2:latest",
+      "agent_id": "",
+      "agent_name": "",
+      "load_time_ms": 0,
+      "infer_ms": 0,
+      "tps": 0,
+      "tokens": 0,
+      "error": "warmup: task failed"
+    },
+    {
+      "model": "starcoder2:7b",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 34469,
+      "infer_ms": 621,
+      "tps": 32.2061191626409,
+      "tokens": 20
+    },
+    {
+      "model": "tinyllama:latest",
+      "agent_id": "agent-94a2e41b",
+      "agent_name": "papa-game",
+      "load_time_ms": 10766,
+      "infer_ms": 137,
+      "tps": 145.985401459854,
+      "tokens": 20
+    },
+    {
+      "model": "translategemma:12b",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 19911,
+      "infer_ms": 518,
+      "tps": 9.652509652509652,
+      "tokens": 5
+    },
+    {
+      "model": "translategemma:latest",
+      "agent_id": "agent-e5069a6b",
+      "agent_name": "wengong",
+      "load_time_ms": 10758,
+      "infer_ms": 396,
+      "tps": 12.626262626262626,
+      "tokens": 5
+    }
+  ],
+  "timestamp": "2026-03-14T12:30:39-04:00"
+}

@@ -1,0 +1,27 @@
+
+  Multi-Agent Throughput
+    Hub:         http://192.168.0.177:9000
+    Agents:      3 online
+    Tasks:       60
+    Model:       llama3
+    Concurrency: 20
+    Label:       run-051020
+      - wen (BRONZE)
+      - ducklover1 (BRONZE)
+      - wengong (BRONZE)
+
+
+  ============================================================
+  Label:      run-051020
+  Completed:  54/60
+  Wall time:  37.9s
+  Tokens:     6059
+  Throughput: 159.8 tokens/s  <- KEY METRIC
+  Avg latency:10.8s  |  Avg TPS/agent: 12.3
+
+  Agent distribution:
+    ..agent-4be29801      23 tasks  ███████████████████████
+    ..agent-0577c8be      17 tasks  █████████████████
+    ..agent-7a2dde45      14 tasks  ██████████████
+
+  Results saved: out/throughput_20260314_051058.json

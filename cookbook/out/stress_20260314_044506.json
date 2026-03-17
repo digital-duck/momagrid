@@ -1,0 +1,162 @@
+{
+  "completed": 0,
+  "concurrency": 5,
+  "hub": "http://localhost:9000",
+  "model": "llama3",
+  "num_tasks": 15,
+  "results": [
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "task_id": "",
+      "state": "SUBMIT_FAILED",
+      "prompt": "",
+      "agent_id": "",
+      "output_tokens": 0,
+      "latency_ms": 0,
+      "tps": 0,
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    }
+  ],
+  "timestamp": "2026-03-14T04:45:06-04:00",
+  "total_tokens": 0,
+  "wall_time_s": 0.001055644
+}

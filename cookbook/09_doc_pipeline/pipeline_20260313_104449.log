@@ -1,0 +1,34 @@
+
+  Document Pipeline
+    Source:  demo_text.txt
+    Hub:     http://localhost:9000
+    Model:   llama3
+
+  [1/3] Preparing text... 1005 chars
+  [2/3] Summarizing on grid (llama3)... 284 tokens  6077ms
+  [3/3] Formatting output...
+
+  Here is a structured summary of the document:
+
+### Overview
+This document discusses the topics of Artificial Intelligence and Machine Learning. It defines machine learning as a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed.
+
+### Key Points
+
+• Machine learning focuses on developing computer programs that can access data and use it to learn for themselves.
+• The process begins with observations or data, such as examples, direct experience, or instruction.
+• Computers aim to learn automatically without human intervention or assistance.
+• Deep learning is a part of machine learning based on artificial neural networks with representation learning.
+
+### Details
+
+According to the text, the process of machine learning begins with "observations or data, such as examples, direct experience, or instruction." This allows computers to look for patterns in the data and make better decisions in the future. The primary aim is to enable computers to learn automatically without human intervention or assistance (Text).
+
+Deep learning is a specific type of machine learning that uses artificial neural networks with representation learning. It has been applied to various fields, including computer vision, natural language processing, and speech recognition.
+
+### Conclusion
+The main takeaways from this document are the definitions of machine learning as a subset of artificial intelligence and its focus on developing computer programs that can learn and improve without being explicitly programmed. Additionally, deep learning is highlighted as a key method within machine learning with applications in various fields.
+
+  Done! Agent: ..ent-0577c8be
+
+  Results saved: out/doc_pipeline_20260313_104458.json

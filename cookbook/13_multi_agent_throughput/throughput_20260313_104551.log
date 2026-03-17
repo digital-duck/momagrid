@@ -1,0 +1,23 @@
+
+  Multi-Agent Throughput
+    Hub:         http://localhost:9000
+    Agents:      1 online
+    Tasks:       30
+    Model:       llama3
+    Concurrency: 20
+    Label:       run-104551
+      - wen (BRONZE)
+
+
+  ============================================================
+  Label:      run-104551
+  Completed:  30/30
+  Wall time:  73.0s
+  Tokens:     3374
+  Throughput: 46.2 tokens/s  <- KEY METRIC
+  Avg latency:34.2s  |  Avg TPS/agent: 5.2
+
+  Agent distribution:
+    ..agent-0577c8be      30 tasks  ██████████████████████████████
+
+  Results saved: out/throughput_20260313_104704.json

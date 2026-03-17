@@ -1,0 +1,8 @@
+Translating into 4 languages using llama3...
+  Chinese      SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+  French       SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+  Spanish      SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+  German       SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+Done in 0.00s
+  Results saved: out/translate_20260314_044506.json

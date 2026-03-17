@@ -1,0 +1,15 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "rewards": [
+    {
+      "operator_id": "duck",
+      "task_count": 557,
+      "total_tokens": 84296,
+      "total_credits": 84.29600000000003
+    }
+  ],
+  "timestamp": "2026-03-14T05:16:34-04:00",
+  "total_credits": 84.29600000000003,
+  "total_tasks": 557,
+  "total_tokens": 84296
+}

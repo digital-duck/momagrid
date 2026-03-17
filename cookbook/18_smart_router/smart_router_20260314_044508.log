@@ -1,0 +1,30 @@
+
+  Smart Router
+    Hub: http://localhost:9000
+    Prompts: 6
+
+  Routing decisions:
+    [math    ] → mathstral             What is the derivative of sin(x) * cos(x)?
+    [code    ] → qwen2.5-coder         Write a Python function to find the longest common subsequen
+    [general ] → llama3                Explain the causes of World War I in three sentences.
+    [math    ] → mathstral             Solve: 3x^2 - 12x + 9 = 0
+    [code    ] → qwen2.5-coder         Implement a binary search tree insert method in Python.
+    [general ] → llama3                What is quantum entanglement?
+
+  Results:
+
+  [math    ] mathstral            SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  [math    ] mathstral            SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  [code    ] qwen2.5-coder        SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  [general ] llama3               SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  [general ] llama3               SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  [code    ] qwen2.5-coder        SUBMIT_FAILED: Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  0/6 completed
+
+  Results saved: out/smart_router_20260314_044509.json

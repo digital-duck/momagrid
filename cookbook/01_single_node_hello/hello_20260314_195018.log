@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Nice to meet you! The i-Grid is a revolutionary AI framework that enables distributed inference networks, where multiple devices and servers can work together to perform complex computations and make predictions, while maintaining data privacy and security through decentralized processing. By harnessing the collective computing power of these interconnected nodes, the i-Grid empowers organizations to tackle even the most challenging AI tasks with unprecedented speed, scalability, and reliability.
+
+[model=llama3 tokens=33+83 latency=1672ms]

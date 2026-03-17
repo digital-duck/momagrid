@@ -1,0 +1,91 @@
+
+  Smart Router
+    Hub: http://192.168.0.177:9000
+    Prompts: 6
+
+  Routing decisions:
+    [math    ] → mathstral             What is the derivative of sin(x) * cos(x)?
+    [code    ] → qwen2.5-coder         Write a Python function to find the longest common subsequen
+    [general ] → llama3                Explain the causes of World War I in three sentences.
+    [math    ] → mathstral             Solve: 3x^2 - 12x + 9 = 0
+    [code    ] → qwen2.5-coder         Implement a binary search tree insert method in Python.
+    [general ] → llama3                What is quantum entanglement?
+
+  Results:
+
+  [math    ] mathstral             15.0s  22.1tps
+  Q: What is the derivative of sin(x) * cos(x)?
+  A: 1. First, we need to use the product rule for differentiation: if \( y = u \cdot v \), then
+   \[
+   y' = u' \cdot v + u \cdot v'.
+   \]
+2. Here, let \( u = \sin x \) and \( v = \cos x \). Hence, we have 
+   \[
+   y = (\sin x)(\cos x).
+   \]
+3. Now, compute the derivatives of \(u\) and \(v\):
+   \[
+
+
+  [general ] llama3                19.5s   6.8tps
+  Q: Explain the causes of World War I in three sentences.
+  A: Here are the causes of World War I in three sentences:
+
+The assassination of Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, by a Serbian nationalist on June 28, 1914, is widely regarded as the spark that ignited the war. Underlying tensions and complex alliances between European powe
+
+  [general ] llama3                19.5s  26.3tps
+  Q: What is quantum entanglement?
+  A: Quantum entanglement! One of the most fascinating and mind-bending concepts in physics. Entanglement is a fundamental aspect of quantum mechanics, and it's hard to wrap your head around, but I'll try to explain it simply.
+
+**What is entanglement?**
+
+Entanglement occurs when two or more particles bec
+
+  [code    ] qwen2.5-coder         19.5s  26.0tps
+  Q: Implement a binary search tree insert method in Python.
+  A: ```python
+class TreeNode:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        if self.root is None:
+            # If the tree is empty, set
+
+  [math    ] mathstral             19.6s  18.3tps
+  Q: Solve: 3x^2 - 12x + 9 = 0
+  A: 1. **Form the equation and rearrange**: Given the quadratic equation is \(3x^{2} - 12x + 9 = 0\).
+
+2. **Factor out the common term**: Observe that each term in the equation can be divided by 3:
+   \[
+   3(x^2 - 4x + 3) = 0
+   \]
+
+3. **Simplify inside the parentheses**: Now, we need to factor the qua
+
+  [code    ] qwen2.5-coder         31.3s  16.4tps
+  Q: Write a Python function to find the longest common subsequence.
+  A: ```python
+def lcs(X, Y):
+    m = len(X)
+    n = len(Y)
+
+    # Create a 2D array to store lengths of LCS of substring
+    L = [[None]*(n + 1) for i in range(m + 1)]
+
+    """Following steps build L[m+1][n+1] in bottom up fashion 
+    Note: L[i][j] contains length of LCS of X[0..i-1] and Y[0..j-1]"""
+ 
+
+  6/6 completed
+    math: 2 tasks
+    general: 2 tasks
+    code: 2 tasks
+
+  Results saved: out/smart_router_20260314_132331.json

@@ -1,0 +1,15 @@
+{
+  "hub": "http://localhost:9000",
+  "rewards": [
+    {
+      "operator_id": "duck",
+      "task_count": 174,
+      "total_tokens": 25588,
+      "total_credits": 25.588000000000008
+    }
+  ],
+  "timestamp": "2026-03-13T10:53:42-04:00",
+  "total_credits": 25.588000000000008,
+  "total_tasks": 174,
+  "total_tokens": 25588
+}

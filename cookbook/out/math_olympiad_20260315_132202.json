@@ -1,0 +1,141 @@
+{
+  "difficulty": "medium",
+  "hub": "http://192.168.0.177:9000",
+  "models": [
+    "mathstral",
+    "qwen2-math"
+  ],
+  "results": [
+    {
+      "model": "mathstral",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "1. The integral of a sum is the sum of the integrals, so we can separate this into two parts: ∫(2x)dx and ∫(3)dx.\n2. The integral of 2x with respect to x is x^2 (using the power rule for integrati",
+      "correct": false,
+      "state": "COMPLETE",
+      "latency_s": 8.077974843,
+      "output_tokens": 115,
+      "tps": 14.236241413855565,
+      "agent_id": "agent-345612c8",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "1. The given equation is a quadratic equation in the form of ax^2 + bx + c = 0, where a=1, b=-5, and c=6.\n2. To solve this equation, we can use the quadratic formula: x = [-b ± sqrt(b^2 - 4ac)] / (2a",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 11.191395429,
+      "output_tokens": 279,
+      "tps": 24.929867036690872,
+      "agent_id": "agent-7f765375",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "2^5 = x\n\nAnswer: x = 32",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 14.926843471,
+      "output_tokens": 16,
+      "tps": 1.0718944049413353,
+      "agent_id": "agent-ae5c6070",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "\n\nTo integrate (2x + 3) dx, we can use the power rule for integration, which states that the integral of x^n dx is (1/(n+1))x^(n+1), plus a constant of integration C.\n\nLet's break it down:\n\n1. Integra",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 19.410815436,
+      "output_tokens": 171,
+      "tps": 8.809521710399514,
+      "agent_id": "agent-7f765375",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "1. The total number of outcomes when rolling two dice is 6 (sides on the first die) * 6 (sides on the second die) = 36 possible outcomes.\n2. There are only 1 outcome where both dice show a six: (6,6).",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 19.411199029,
+      "output_tokens": 129,
+      "tps": 6.64564820582573,
+      "agent_id": "agent-ae5c6070",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "1. To find the derivative of f(x) = x^3 - 4x^2 + 2x - 1, we need to apply the power rule for differentiation. The power rule states that if you have a function h(x) = ax^n, then its derivative h'(x) =",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 19.411499496,
+      "output_tokens": 190,
+      "tps": 9.788012514909116,
+      "agent_id": "agent-ae5c6070",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "\nTo solve the quadratic equation x^2 - 5x + 6 = 0, we can factor it. We need to find two numbers that multiply to 6 (the constant term) and add up to -5 (the coefficient of the x term).\n\nThe factors o",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 24.792084898,
+      "output_tokens": 211,
+      "tps": 8.510780794277675,
+      "agent_id": "agent-7f765375",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "\n\nTo find the probability of rolling two sixes with two fair dice, we need to follow these steps:\n\n1. Determine the total number of possible outcomes when rolling two dice.\n2. Determine the number of ",
+      "correct": false,
+      "state": "COMPLETE",
+      "latency_s": 24.792756925,
+      "output_tokens": 233,
+      "tps": 9.39790603783367,
+      "agent_id": "agent-345612c8",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "\n\nTo find the derivative of f(x) = x^3 - 4x^2 + 2x - 1, we apply the power rule to each term. The power rule states that if f(x) = x^n, then f'(x) = nx^(n-1).\n\n1. For the term x^3:\n   derivative = 3x^",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 24.792766742,
+      "output_tokens": 221,
+      "tps": 8.91389018013938,
+      "agent_id": "agent-345612c8",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "\nTo solve for x in the equation log₂(x) = 5, we need to convert the logarithmic form to its exponential form. The general form of a logarithm is log_b(a) = c, which means b^c = a.\n\nIn our case:\nlog\ufffd",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 31.245426,
+      "output_tokens": 127,
+      "tps": 4.064594926630221,
+      "agent_id": "agent-345612c8",
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-15T13:22:02-04:00"
+}

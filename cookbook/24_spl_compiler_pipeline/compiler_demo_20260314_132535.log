@@ -1,0 +1,49 @@
+
+  Momahub Compiler Pipeline Demo
+    Hub:     http://192.168.0.177:9000
+    Input:   What is distributed inference and why does it matter?
+
+  Front-end:
+  → [translate ] llama3               ... OK 3.3s  25 tok  agent=..t-94a2e41b
+
+  Mid-end (parallel):
+  → [optimise  ] llama3               ...  → [concepts  ] llama3               ... OK 3.3s  56 tok  agent=..t-94a2e41b
+ OK 3.3s  9 tok  agent=..t-e5069a6b
+
+  Back-end:
+  → [generate  ] llama3               ... OK 3.3s  120 tok  agent=..t-94a2e41b
+  → [format    ] llama3               ... OK 8.1s  230 tok  agent=..t-94a2e41b
+
+  ============================================================
+  PIPELINE RESULTS
+  ------------------------------------------------------------
+  Original query:  What is distributed inference and why does it matter?
+  English:         What is distributed inference and why does it matter?
+
+(Note: No translation needed, as the input is already in English!)
+  Key concepts:    Distributed inference, scalability, machine learning
+  Optimised query: Here is a rewritten version of the query:
+
+"Can you explain the concept of distributed inference in machine learning, specifically how it enables scalable model evaluation and prediction across large datasets, and provide examples or use cases where this approach has significant impact on business outcomes or decision-making processes?"
+
+  FINAL OUTPUT:
+  ------------------------------------------------------------
+  Here is a clean, readable summary:
+
+**TL;DR:** Distributed inference is a machine learning technique that enables efficient and scalable model evaluation and prediction on large datasets by distributing computation across multiple machines or nodes.
+
+**Full Explanation:**
+
+Distributed inference refers to a machine learning technique that allows for the efficient and scalable evaluation and prediction of models on large datasets. This approach achieves this efficiency and scalability by distributing the computation across multiple machines or nodes, which takes advantage of parallel processing. By breaking down the problem into smaller sub-problems, distributed inference reduces the time and computational resources required for complex modeling tasks.
+
+This technique has significant implications for various industries and applications. For instance, it enables real-time customer recommendation systems, allowing businesses to provide personalized experiences to their customers. In finance, distributed inference accelerates data-driven decision-making processes, enabling faster and more informed investment decisions. Additionally, in healthcare, this technique improves the accuracy of predictive models used for diagnosis, treatment planning, and patient outcomes prediction.
+
+Overall, distributed inference is an important machine learning technique that enables organizations to process large datasets efficiently and make data-driven decisions quickly, leading to improved business outcomes.
+
+  ============================================================
+  Wall time:   18.1s
+  Steps:       5 (1 sequential + 2 parallel + 2 sequential)
+  Agents used: 2
+  Total tokens:440
+
+  Results saved: out/compiler_pipeline_20260314_132554.json

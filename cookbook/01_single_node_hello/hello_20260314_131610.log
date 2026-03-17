@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Welcome to the i-grid! I'm thrilled to introduce you to our innovative distributed inference network, which is a decentralized AI framework that enables collaborative learning and reasoning across a vast grid of interconnected nodes, allowing for seamless data sharing, real-time processing, and accelerated decision-making. By harnessing the collective power of this global network, we can tackle complex problems and make informed decisions at unprecedented scales!
+
+[model=llama3 tokens=33+79 latency=1634ms]

@@ -1,0 +1,45 @@
+{
+  "assembly": {
+    "Chunk": 0,
+    "State": "TIMEOUT",
+    "Content": "",
+    "AgentID": "",
+    "LatencyS": 0,
+    "OutputTokens": 0,
+    "Error": ""
+  },
+  "chunks": [
+    {
+      "Chunk": 1,
+      "State": "SUBMIT_REJECTED",
+      "Content": "",
+      "AgentID": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "Error": "HTTP 429"
+    },
+    {
+      "Chunk": 2,
+      "State": "SUBMIT_REJECTED",
+      "Content": "",
+      "AgentID": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "Error": "HTTP 429"
+    },
+    {
+      "Chunk": 3,
+      "State": "SUBMIT_REJECTED",
+      "Content": "",
+      "AgentID": "",
+      "LatencyS": 0,
+      "OutputTokens": 0,
+      "Error": "HTTP 429"
+    }
+  ],
+  "document": "demo_contract.txt",
+  "hub": "http://192.168.0.177:9000",
+  "num_chunks": 3,
+  "timestamp": "2026-03-14T05:16:07-04:00",
+  "wall_time_s": 308.511521254
+}

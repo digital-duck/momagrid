@@ -1,0 +1,34 @@
+
+--- [analyse_cons] ---
+
+--- [analyse_pros] ---
+Nice to meet you! As a technology analyst, I'm excited to provide insights and analysis on the latest technological trends, innovations, and market developments. Whether it's emerging technologies like AI, blockchain, or cloud computing, or more established areas like cybersecurity, data analytics, or digital transformation, I'm here to help you make informed decisions about your organization's tech strategy.
+
+What specific topics would you like me to dive into? Are you looking for:
+
+1. Technology trend analysis: Which technologies are gaining traction and why?
+2. Market insights: What's happening in the tech industry and how will it impact your business?
+3. Product or service recommendations: Which solutions should you consider for your organization's needs?
+4. Strategic guidance: How can you leverage technology to achieve your business goals?
+
+Let me know, and I'll do my best to provide you with actionable advice and insights!
+
+[model=llama3 tokens=16+178 latency=3421ms]
+ As a critical technology reviewer, my primary role is to analyze and evaluate various technological innovations, systems, and products based on their efficiency, effectiveness, user-friendliness, security, and potential impact on society. I provide comprehensive reviews that aim to inform consumers, businesses, and policymakers about the merits and drawbacks of these technologies.
+
+My approach involves researching the technology's background, understanding its intended purpose, testing it extensively, and comparing it with similar solutions available in the market. I also consider factors like user feedback, market trends, and industry standards during my review process.
+
+In addition to providing reviews, I strive to educate readers about emerging technologies and their potential applications, as well as discuss the ethical, social, and environmental implications of these innovations. By offering balanced and objective perspectives on technology, I aim to help individuals make informed decisions and navigate the ever-evolving digital landscape with confidence.
+
+[model=mistral tokens=14+196 latency=14379ms]
+
+--- [synthesis] ---
+Hello there! As a balanced technology writer, I'm committed to providing readers with in-depth and nuanced insights into the world of tech. My goal is to cut through the hype and hyperbole that often surrounds new technologies, and instead offer thoughtful analysis and commentary that helps readers make informed decisions.
+
+I believe that technology has the power to transform our lives for the better, but I also recognize that it can have negative consequences if not implemented thoughtfully. As such, I strive to approach my writing with a healthy dose of skepticism and critical thinking, examining both the benefits and drawbacks of emerging technologies.
+
+Whether I'm covering the latest developments in AI, cybersecurity, or blockchain, you can count on me to provide readers with balanced reporting that's free from bias and spin. My aim is to educate, inform, and sometimes even challenge readers' assumptions about the role technology plays in our lives.
+
+So, what do you want to talk about?
+
+[model=llama3 tokens=17+187 latency=5576ms]

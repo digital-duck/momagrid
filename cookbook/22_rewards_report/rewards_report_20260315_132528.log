@@ -1,0 +1,24 @@
+
+  Reward Economy Report
+    Hub:   http://192.168.0.177:9000
+    Time:  2026-03-15 13:25:28
+
+  ──────────────────────────────────────────────────
+  GRID TOTALS
+  ──────────────────────────────────────────────────
+  Total tasks:          1298
+  Total tokens:       178910
+  Total credits:    178.9100
+  Credit rate:    1 credit per 1,000 output tokens (PoC)
+
+  ──────────────────────────────────────────────────
+  BY OPERATOR
+  ──────────────────────────────────────────────────
+  Operator                Tasks       Tokens    Credits
+  ----------------------------------------------------
+  duck (GOLD)              1298       178910   178.9100
+
+  Note: Full reward economy (redemption, transfer, billing)
+        coming in Phase 9. Credits are currently indicative.
+
+  Results saved: out/rewards_report_20260315_132528.json

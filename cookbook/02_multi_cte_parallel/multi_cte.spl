@@ -1,0 +1,24 @@
+-- Recipe 02: Parallel CTEs — two models, one synthesis
+WITH
+    pros AS (
+        PROMPT analyse_pros
+        SELECT
+            SYSTEM_ROLE('You are a technology analyst.'),
+            GENERATE('List 3 key advantages of distributed LLM inference.')
+        USING MODEL 'llama3'
+        ON GRID
+    ),
+    cons AS (
+        PROMPT analyse_cons
+        SELECT
+            SYSTEM_ROLE('You are a critical technology reviewer.'),
+            GENERATE('List 3 key challenges of distributed LLM inference.')
+        USING MODEL 'mistral'
+        ON GRID
+    )
+PROMPT synthesis
+SELECT
+    SYSTEM_ROLE('You are a balanced technology writer.'),
+    GENERATE('Given pros: {pros} and cons: {cons}, write a 3-sentence balanced assessment of distributed LLM inference.')
+USING MODEL 'llama3'
+ON GRID;

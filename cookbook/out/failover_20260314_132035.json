@@ -1,0 +1,168 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "model": "llama3",
+  "num_tasks": 20,
+  "results": [
+    {
+      "task_id": "failover-b3118fe1",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.033953696,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-b999c914",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.037115023,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-35a0bea6",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.033661257,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-a580d654",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.266933735,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-76fcc0c3",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.035353137,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-3d0e9b68",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.036721235,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-171a1da1",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.034974874,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-9c647272",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.03170088,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-152a0dab",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.032043175,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-91c23c7f",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.033361979,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-a5dc5337",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.036704921,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-5b058c3e",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.041377246,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-163e6287",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.041310493,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-c0aa19b3",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.03693853,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-82465c12",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.036781783,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-11ff9651",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.036816041,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-94837b2e",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 0.03684085,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-52c27fc1",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 0.036633472,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-e9b444c3",
+      "state": "COMPLETE",
+      "agent_id": "agent-94a2e41b",
+      "latency_s": 1.776545521,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "task_id": "failover-38be28f6",
+      "state": "COMPLETE",
+      "agent_id": "agent-e5069a6b",
+      "latency_s": 1.5390732630000001,
+      "output_tokens": 64,
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T13:20:35-04:00"
+}

@@ -1,0 +1,19 @@
+
+  Tier-Aware Dispatch
+    Hub:   http://localhost:9000
+    Tasks: 4
+
+  Label                            VRAM  State                     Agent     Lat    Tok
+  -------------------------------------------------------------------------------------
+  No VRAM constraint                 0G  SUBMIT_FAILED                    -    0.0s      0
+  VRAM >= 4 GB                       4G  SUBMIT_FAILED                    -    0.0s      0
+  VRAM >= 8 GB                       8G  SUBMIT_FAILED                    -    0.0s      0
+  VRAM >= 10 GB                     10G  SUBMIT_FAILED                    -    0.0s      0
+
+  0/4 dispatched successfully
+  FAILED: No VRAM constraint — Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+  FAILED: VRAM >= 4 GB — Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+  FAILED: VRAM >= 8 GB — Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+  FAILED: VRAM >= 10 GB — Post "http://localhost:9000/tasks": dial tcp 127.0.0.1:9000: connect: connection refused
+
+  Results saved: out/tier_dispatch_20260314_044507.json

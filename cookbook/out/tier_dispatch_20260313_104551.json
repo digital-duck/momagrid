@@ -1,0 +1,50 @@
+{
+  "hub": "http://localhost:9000",
+  "results": [
+    {
+      "Label": "No VRAM constraint",
+      "Model": "llama3",
+      "MinVRAMGB": 0,
+      "Prompt": "Name the planets in our solar system.",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 5.475025849,
+      "OutputTokens": 74,
+      "Error": ""
+    },
+    {
+      "Label": "VRAM \u003e= 4 GB",
+      "Model": "llama3",
+      "MinVRAMGB": 4,
+      "Prompt": "What is photosynthesis?",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 11.183323369,
+      "OutputTokens": 128,
+      "Error": ""
+    },
+    {
+      "Label": "VRAM \u003e= 8 GB",
+      "Model": "llama3",
+      "MinVRAMGB": 8,
+      "Prompt": "Explain gradient descent in one paragraph.",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 8.069089207,
+      "OutputTokens": 128,
+      "Error": ""
+    },
+    {
+      "Label": "VRAM \u003e= 10 GB",
+      "Model": "llama3",
+      "MinVRAMGB": 10,
+      "Prompt": "What is a transformer architecture?",
+      "State": "COMPLETE",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 3.313592993,
+      "OutputTokens": 128,
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-13T10:45:51-04:00"
+}

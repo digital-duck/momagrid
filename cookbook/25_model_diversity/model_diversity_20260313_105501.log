@@ -1,0 +1,68 @@
+Model diversity benchmark
+  Hub:        http://localhost:9000
+  Models:     14
+  Benchmarks: 1 (probe only)
+  Tasks:      14
+  Timeout:    180s per task
+
+[llama3]
+  Probe                     ok   22.0 TPS     182ms  4 tok
+
+[llama3.1]
+  Probe                     ok    0.1 TPS   27631ms  4 tok
+
+[mistral]
+  Probe                     ok    2.2 TPS    1810ms  4 tok
+
+[mathstral]
+  Probe                     ok    5.3 TPS    1139ms  6 tok
+
+[qwen3]
+  Probe                     ok    0.3 TPS   61630ms  20 tok
+
+[qwen2.5]
+  Probe                     ok    0.1 TPS   35274ms  4 tok
+
+[qwen2.5-coder]
+  Probe                     ok    1.7 TPS    2383ms  4 tok
+
+[qwen2-math]
+  Probe                     ok    0.2 TPS   22556ms  4 tok
+
+[deepseek-r1]
+  Probe                     ok    0.3 TPS   63276ms  20 tok
+
+[deepseek-coder-v2]
+  Probe                     ok    1.2 TPS    3377ms  4 tok
+
+[gemma3]
+  Probe                     ok    0.0 TPS   82262ms  4 tok
+
+[phi4]
+  Probe                     ok    0.0 TPS  118096ms  4 tok
+
+[phi4-mini]
+  Probe                     ok    0.0 TPS   97772ms  4 tok
+
+[phi3]
+  Probe                     ok    0.3 TPS   15068ms  4 tok
+
+============================================================
+MODEL                  PASS  AVG TPS   TOKENS  ERRORS
+------------------------------------------------------------
+llama3                    1/1      22.0        4      OK
+llama3.1                  1/1       0.1        4      OK
+mistral                   1/1       2.2        4      OK
+mathstral                 1/1       5.3        6      OK
+qwen3                     1/1       0.3       20      OK
+qwen2.5                   1/1       0.1        4      OK
+qwen2.5-coder             1/1       1.7        4      OK
+qwen2-math                1/1       0.2        4      OK
+deepseek-r1               1/1       0.3       20      OK
+deepseek-coder-v2         1/1       1.2        4      OK
+gemma3                    1/1       0.0        4      OK
+phi4                      1/1       0.0        4      OK
+phi4-mini                 1/1       0.0        4      OK
+phi3                      1/1       0.3        4      OK
+============================================================
+Results saved: out/model_diversity_20260313_110440.json

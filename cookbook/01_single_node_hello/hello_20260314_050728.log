@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Hello! I'm happy to introduce the i-grid, a revolutionary AI framework that enables distributed inference networks by seamlessly integrating multiple machines and devices across the internet, allowing for efficient processing of complex tasks and massive datasets. The i-grid empowers developers to create scalable, decentralized, and highly available AI applications that can tackle challenging problems in areas like computer vision, natural language processing, and more!
+
+[model=llama3 tokens=33+78 latency=3620ms]

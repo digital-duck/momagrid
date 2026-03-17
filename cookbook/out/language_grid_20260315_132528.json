@@ -1,0 +1,118 @@
+{
+  "hub": "http://192.168.0.177:9000",
+  "model": "llama3",
+  "results": [
+    {
+      "Language": "Arabic",
+      "Question": "ما هو الذكاء الاصطناعي؟",
+      "State": "COMPLETE",
+      "Answer": "Artificial Intelligence (AI) is the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making. AI uses algorithms and data to simulate human thought processes, enabling machines to think critically and make decisions autonomously. This technology has numerous applications in industries like healthcare, finance, and entertainment.",
+      "LatencyS": 3.317842877,
+      "OutputTokens": 71,
+      "TPS": 21.39944615587051,
+      "AgentID": "agent-ae5c6070",
+      "Error": ""
+    },
+    {
+      "Language": "Chinese",
+      "Question": "人工智能是什么？",
+      "State": "COMPLETE",
+      "Answer": "人工智能（Artificial Intelligence）是指计算机或机器能够模仿人类智慧和行为的能力，通过复杂的算法和数据分析来执行任务、学习和改进。它可以帮助人类完成一些复杂的工作，例如语言识别、图像处理、决策支持等。",
+      "LatencyS": 5.480079524,
+      "OutputTokens": 70,
+      "TPS": 12.773537262266927,
+      "AgentID": "agent-345612c8",
+      "Error": ""
+    },
+    {
+      "Language": "English",
+      "Question": "What is artificial intelligence?",
+      "State": "COMPLETE",
+      "Answer": "Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, decision-making, and perception. AI systems use algorithms and data to make predictions or take actions, often mimicking human thought processes. The goal of AI is to create machines that can think and act like humans, but with greater speed, accuracy, and efficiency.",
+      "LatencyS": 8.076850484,
+      "OutputTokens": 83,
+      "TPS": 10.27628283628879,
+      "AgentID": "agent-345612c8",
+      "Error": ""
+    },
+    {
+      "Language": "French",
+      "Question": "Qu'est-ce que l'intelligence artificielle?",
+      "State": "COMPLETE",
+      "Answer": "L'intelligence artificielle (IA) est une technologie qui permet aux ordinateurs et aux robots de simuler l'intelligence humaine en résolvant des problèmes, en apprenant et en adaptant leurs actions à partir d'expérience. Elle utilise des algorithmes et des données pour prendre des décisions autonomement, sans intervention humaine directe. L'IA a des applications très variées, allant de la reconnaissance vocale à l'apprentissage automatique, en passant par la robotique et les jeux vidéo intelligents.",
+      "LatencyS": 8.07638037,
+      "OutputTokens": 120,
+      "TPS": 14.858141209612196,
+      "AgentID": "agent-7f765375",
+      "Error": ""
+    },
+    {
+      "Language": "German",
+      "Question": "Was ist künstliche Intelligenz?",
+      "State": "COMPLETE",
+      "Answer": "Die künstliche Intelligenz (KI) bezeichnet die Fähigkeit von Maschinen, wie zum Beispiel Computern oder Robotern, nachzuleben und zu handeln wie ein intelligenter Mensch. Sie basiert auf Algorithmen und Daten, die es ermöglichen, Probleme zu lösen und Entscheidungen zu treffen, ohne menschliche Anweisung. KI wird in vielen Bereichen eingesetzt, wie zum Beispiel in der Sprachverarbeitung, Bilderkennung oder Spieltheorie.",
+      "LatencyS": 8.078456326,
+      "OutputTokens": 113,
+      "TPS": 13.987820870717178,
+      "AgentID": "agent-ae5c6070",
+      "Error": ""
+    },
+    {
+      "Language": "Hindi",
+      "Question": "कृत्रिम बुद्धिमत्ता क्या है?",
+      "State": "COMPLETE",
+      "Answer": "कृत्रिम बुद्धिमत्ता (Artificial Intelligence) का अर्थ है मानव निर्मित सॉफ्टवेयर और एल्गोरिदम जो इंसानी Thoughts और Actions के समान कार्य करने में सक्षम हैं। इसका उद्देश्य है मानव की मदद करके जीवन को आसान बनाने के लिए।",
+      "LatencyS": 8.077246595,
+      "OutputTokens": 94,
+      "TPS": 11.637629097295129,
+      "AgentID": "agent-345612c8",
+      "Error": ""
+    },
+    {
+      "Language": "Japanese",
+      "Question": "人工知能とは何ですか？",
+      "State": "COMPLETE",
+      "Answer": "人工知能（Artificial Intelligence，AI）は、計算機が人間のような知性を示す技術です。これにより、コンピューターは人間のように学習、推測、決断することができます。",
+      "LatencyS": 5.480210798,
+      "OutputTokens": 48,
+      "TPS": 8.758787165179408,
+      "AgentID": "agent-ae5c6070",
+      "Error": ""
+    },
+    {
+      "Language": "Portuguese",
+      "Question": "O que é inteligência artificial?",
+      "State": "COMPLETE",
+      "Answer": "A inteligência artificial (IA) é um campo de estudos que envolve criar máquinas capazes de realizar tarefas que normalmente requerem habilidades intelectuais, como aprendizado, raciocínio e tomada de decisões, sem a intervenção humana direta. Essas máquinas são treinadas com algoritmos e dados para aprender e melhorar suas respostas.",
+      "LatencyS": 5.47980246,
+      "OutputTokens": 88,
+      "TPS": 16.05897304553566,
+      "AgentID": "agent-7f765375",
+      "Error": ""
+    },
+    {
+      "Language": "Russian",
+      "Question": "Что такое искусственный интеллект?",
+      "State": "COMPLETE",
+      "Answer": "Искусственный интеллект (Artificial Intelligence, AI) - это компьютерная система, которая может имитировать человеческое мышление и принимать решения на основе анализа данных. Она использует алгоритмы и машинное обучение для выполнения задач, которые ранее выполнялись людьми, и способна развивать свои навыки и знания с течением времени.",
+      "LatencyS": 8.077710845,
+      "OutputTokens": 89,
+      "TPS": 11.01797300098825,
+      "AgentID": "agent-7f765375",
+      "Error": ""
+    },
+    {
+      "Language": "Spanish",
+      "Question": "¿Qué es la inteligencia artificial?",
+      "State": "COMPLETE",
+      "Answer": "La inteligencia artificial (IA) se refiere al campo de estudio que combina ciencias como la informática, matemáticas y filosofía para crear máquinas que pueden pensar y tomar decisiones como los seres humanos. Las IA están diseñadas para aprender y adaptarse a nuevas situaciones, imitando el comportamiento humano mediante algoritmos y datos.",
+      "LatencyS": 3.315452404,
+      "OutputTokens": 81,
+      "TPS": 24.431054990346347,
+      "AgentID": "agent-345612c8",
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-15T13:25:28-04:00",
+  "wall_time_s": 8.078580273
+}

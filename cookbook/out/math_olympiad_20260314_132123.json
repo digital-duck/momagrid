@@ -1,0 +1,141 @@
+{
+  "difficulty": "medium",
+  "hub": "http://192.168.0.177:9000",
+  "models": [
+    "mathstral",
+    "qwen2-math"
+  ],
+  "results": [
+    {
+      "model": "mathstral",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "2^5 = 32\nSo, x = 32",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 5.508818914,
+      "output_tokens": 16,
+      "tps": 2.9044338268840035,
+      "agent_id": "agent-52f71884",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "1. The probability of rolling a six on one die is $\\frac{1}{6}$ because there are six possible outcomes (1, 2, 3, 4, 5, 6) and only one favorable outcome (6).\n2. Since the dice are independent, the pr",
+      "correct": false,
+      "state": "COMPLETE",
+      "latency_s": 8.104857136,
+      "output_tokens": 178,
+      "tps": 21.962139123879556,
+      "agent_id": "agent-e5069a6b",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "∫(2x + 3)dx = x^2 + 3x + C Answer: \\boxed{x^2 + 3x + C}",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 8.106290594,
+      "output_tokens": 38,
+      "tps": 4.687717465757556,
+      "agent_id": "agent-52f71884",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "\n\nTo solve for x in the equation log₂(x) = 5, we need to convert the logarithmic equation to its exponential form. The general form of a logarithmic equation log_b(a) = c can be rewritten as b^c = a",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 14.968614259,
+      "output_tokens": 153,
+      "tps": 10.22138705378205,
+      "agent_id": "agent-e5069a6b",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "\n\nTo find the probability of rolling two sixes with two fair dice, we can follow these steps:\n\n1. Determine the total number of possible outcomes when rolling two dice.\n2. Determine the number of favo",
+      "correct": false,
+      "state": "COMPLETE",
+      "latency_s": 14.970261204,
+      "output_tokens": 235,
+      "tps": 15.697788889428919,
+      "agent_id": "agent-52f71884",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "\n\nTo find the derivative of the function f(x) = x^3 - 4x^2 + 2x - 1, we will apply the power rule to each term. The power rule states that if f(x) = x^n, then f'(x) = nx^(n-1).\n\n1. For the term x^3:\n ",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 15.167156228,
+      "output_tokens": 226,
+      "tps": 14.900617927491425,
+      "agent_id": "agent-e5069a6b",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "1. The function given is f(x) = x^3 - 4x^2 + 2x - 1. We want to find its derivative, denoted as f'(x).\n2. To find the derivative of each term, we will apply the power rule: if f(x) = x^n, then f'(x) =",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 19.457099664,
+      "output_tokens": 216,
+      "tps": 11.101346229913622,
+      "agent_id": "agent-52f71884",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "1. Find two numbers that multiply to 6 (the constant term) and add up to -5 (the coefficient of x). These numbers are -2 and -3.\n2. Rewrite the equation as a product: (x - 2)(x - 3) = 0.\n3. Solve for ",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 39.046438405,
+      "output_tokens": 136,
+      "tps": 3.4830321421219517,
+      "agent_id": "agent-94a2e41b",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "\n\nTo integrate the function \\(2x + 3\\), we can use the basic integration rules for polynomials. The integral of a sum is the sum of the integrals, and the integral of \\(x^n\\) is \\(\\frac{x^{n+1}}{n+1}\\",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 39.049010704,
+      "output_tokens": 235,
+      "tps": 6.0180781987372525,
+      "agent_id": "agent-94a2e41b",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "\n\nTo solve the quadratic equation x^2 - 5x + 6 = 0, we can factor it into two binomials:\n\n(x - 2)(x - 3) = 0\n\nSetting each factor equal to zero gives us the solutions:\n\nx - 2 = 0  or  x - 3 = 0\nx = 2 ",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 48.341098978,
+      "output_tokens": 116,
+      "tps": 2.3996144575197085,
+      "agent_id": "agent-94a2e41b",
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-14T13:21:23-04:00"
+}

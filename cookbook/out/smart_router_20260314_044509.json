@@ -1,0 +1,78 @@
+{
+  "hub": "http://localhost:9000",
+  "results": [
+    {
+      "prompt": "Solve: 3x^2 - 12x + 9 = 0",
+      "type": "math",
+      "model": "mathstral",
+      "state": "SUBMIT_FAILED",
+      "content": "",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "prompt": "What is the derivative of sin(x) * cos(x)?",
+      "type": "math",
+      "model": "mathstral",
+      "state": "SUBMIT_FAILED",
+      "content": "",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "prompt": "Write a Python function to find the longest common subsequence.",
+      "type": "code",
+      "model": "qwen2.5-coder",
+      "state": "SUBMIT_FAILED",
+      "content": "",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "prompt": "Explain the causes of World War I in three sentences.",
+      "type": "general",
+      "model": "llama3",
+      "state": "SUBMIT_FAILED",
+      "content": "",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "prompt": "What is quantum entanglement?",
+      "type": "general",
+      "model": "llama3",
+      "state": "SUBMIT_FAILED",
+      "content": "",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    },
+    {
+      "prompt": "Implement a binary search tree insert method in Python.",
+      "type": "code",
+      "model": "qwen2.5-coder",
+      "state": "SUBMIT_FAILED",
+      "content": "",
+      "latency_s": 0,
+      "output_tokens": 0,
+      "tps": 0,
+      "agent_id": "",
+      "error": "Post \"http://localhost:9000/tasks\": dial tcp 127.0.0.1:9000: connect: connection refused"
+    }
+  ],
+  "timestamp": "2026-03-14T04:45:09-04:00"
+}

@@ -1,0 +1,43 @@
+
+--- [analyse_cons] ---
+
+--- [analyse_pros] ---
+Nice to meet you! As a technology analyst, I'm excited to share my insights and expertise on the latest trends, innovations, and market developments in the world of tech. Whether it's artificial intelligence, blockchain, cloud computing, cybersecurity, or emerging technologies like quantum computing and augmented reality, I'm always happy to dive into the details and provide actionable advice for individuals, businesses, and investors.
+
+What specific areas of technology interest you? Would you like me to weigh in on a particular topic, such as:
+
+1. The future of work: How AI is changing job roles and industries?
+2. Cybersecurity threats and mitigation strategies?
+3. The rise of 5G networks and their impact on IoT (Internet of Things)?
+4. Blockchain's potential applications beyond cryptocurrency?
+5. Emerging trends in consumer electronics or gaming?
+
+Feel free to ask me anything, and I'll do my best to provide you with informative and engaging analysis!
+
+[model=llama3 tokens=16+188 latency=7034ms]
+ As a critical technology reviewer, my role is to provide thorough and unbiased evaluations of various technological products and services. I analyze their features, performance, usability, and value for the intended audience. My reviews aim to help potential users make informed decisions by providing an honest assessment based on my findings.
+
+In my reviews, I strive to present a balanced perspective that highlights both the strengths and weaknesses of each product or service. Additionally, I endeavor to discuss real-world applications and potential impacts on the user's experience. By focusing on practicality, efficiency, and overall quality, I hope my reviews serve as valuable resources for those seeking guidance in choosing the right technology solutions.
+
+Ultimately, my goal is to empower users with knowledge that helps them make the best decisions when it comes to adopting new technologies and improving their digital lives.
+
+[model=mistral tokens=15+180 latency=26693ms]
+
+--- [synthesis] ---
+I'm excited to be your go-to source for balanced and informative technology content! As a tech writer, my goal is to provide readers with accurate, unbiased, and engaging information about the latest developments in the world of technology.
+
+Whether you're interested in the latest smartphone trends, emerging technologies like AI and blockchain, or the impact of technology on society, I'm here to help. My writing style is approachable, easy to understand, and free from technical jargon, so you can feel confident in your knowledge of the topic.
+
+Some of the topics I'll be covering include:
+
+* Emerging tech trends: AI, AR, VR, blockchain, and more
+* Industry news and updates: What's happening in the world of tech, and what it means for you
+* Product reviews: Honest assessments of the latest gadgets and software
+* How-to guides: Tips and tricks for getting the most out of your technology
+* The human side of tech: Exploring the social and cultural implications of technology
+
+I believe that technology should be accessible to everyone, regardless of their technical background. That's why I'll be writing in a clear, concise manner, avoiding overly technical terms whenever possible.
+
+So, what do you want to know about technology? Let me know, and I'll do my best to provide you with the information you need!
+
+[model=llama3 tokens=17+269 latency=5546ms]

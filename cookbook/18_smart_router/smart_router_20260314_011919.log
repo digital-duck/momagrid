@@ -1,0 +1,75 @@
+
+  Smart Router
+    Hub: http://localhost:9000
+    Prompts: 6
+
+  Routing decisions:
+    [math    ] → mathstral             What is the derivative of sin(x) * cos(x)?
+    [code    ] → qwen2.5-coder         Write a Python function to find the longest common subsequen
+    [general ] → llama3                Explain the causes of World War I in three sentences.
+    [math    ] → mathstral             Solve: 3x^2 - 12x + 9 = 0
+    [code    ] → qwen2.5-coder         Implement a binary search tree insert method in Python.
+    [general ] → llama3                What is quantum entanglement?
+
+  Results:
+
+  [general ] llama3                 5.5s  27.4tps
+  Q: Explain the causes of World War I in three sentences.
+  A: Here are three sentences summarizing the causes of World War I:
+
+The assassination of Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, by a Serbian nationalist on June 28, 1914, set off a chain reaction of diplomatic crises and military mobilizations that escalated into war. Long-stand
+
+  [code    ] qwen2.5-coder         24.8s  20.7tps
+  Q: Write a Python function to find the longest common subsequence.
+  A: Certainly! The Longest Common Subsequence (LCS) problem is a classic computer science problem that involves finding the longest sequence of characters that appear left-to-right in both strings, but not necessarily in contiguous positions.
+
+Here's a Python function to solve the LCS problem using dyna
+
+  [math    ] mathstral             24.8s  17.8tps
+  Q: Solve: 3x^2 - 12x + 9 = 0
+  A: 1. The given equation is \(3x^{2} - 12x + 9 = 0\).
+   To solve this quadratic equation, we can use the method of completing the square or applying the quadratic formula. However, in this case, let's complete the square manually for clarity.
+
+2. First, divide the entire equation by 3 to simplify:
+   
+
+  [math    ] mathstral             39.0s   7.1tps
+  Q: What is the derivative of sin(x) * cos(x)?
+  A: 2.\ So, we can say that our function f(x) = sin(x)cos(x).
+
+3.\ Now let's find its derivative. We will use the product rule which states that if you have a function h(x) = f(x)g(x), then its derivative is given by:
+
+h'(x) = f'(x)g(x) + f(x)g'(x)
+
+4.\ Here, we have f(x) = sin(x) and g(x) = cos(x).
+
+5.
+
+  [code    ] qwen2.5-coder         48.3s  10.6tps
+  Q: Implement a binary search tree insert method in Python.
+  A: ```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, value):
+        # If the tree is empty, set the root to be a new node
+
+  [general ] llama3                57.6s   8.0tps
+  Q: What is quantum entanglement?
+  A: The fascinating realm of quantum mechanics!
+
+Quantum entanglement is a fundamental concept in quantum physics that describes the interconnectedness of two or more particles in such a way that their properties become correlated, regardless of the distance between them. This means that measuring the s
+
+  6/6 completed
+    math: 2 tasks
+    general: 2 tasks
+    code: 2 tasks
+
+  Results saved: out/smart_router_20260314_012017.json

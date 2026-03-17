@@ -1,0 +1,45 @@
+{
+  "assembly": {
+    "Chunk": 0,
+    "State": "COMPLETE",
+    "Content": "Here is the combined document analysis:\n\n**Summary**\n\nThe \"Momahub Distributed Inference Agreement\" (Demo Document) outlines the terms and conditions for collaboration between Digital Duck Labs (\"Provider\") and GPU operators who participate in the Momahub system (\"Contributors\"). The agreement details the roles of each party, compute contribution procedures, privacy and data handling guidelines, as well as key obligations, liability limitations, and termination procedures.\n\n**Main Themes**\n\n1. **Compute Contribution**: Contributors agree to provide their GPU resources during registered hours, with compensation in Momahub credits for output tokens generated.\n2. **Privacy and Data Handling**: The hub retains sole access to task assembly and final result delivery, with prompt chunks not representing complete documents.\n3. **Liability and Termination**: Neither party is liable for indirect or consequential damages, while either party can terminate participation with 24 hours' notice.\n\n**Key Obligations**\n\n1. **Provider**:\n\t* Operates the hub infrastructure\n\t* Dispatches inference tasks based on tier, VRAM availability, and model support\n2. **Contributors**:\n\t* Make their GPU resources available during registered hours\n\t* Are responsible for their own hardware and network\n\n**Notable Clauses**\n\n1. **Warranty Disclaimer**: The provider makes no warranty regarding uptime, task completion rates, or inference quality.\n2. **Credit Redemption**: Credits earned prior to termination remain redeemable indefinitely.\n\nOverall, the agreement outlines a collaborative framework between the Provider and Contributors, with clear guidelines for compute contribution, privacy, and liability.",
+    "AgentID": "agent-0577c8be",
+    "LatencyS": 10.757339649,
+    "OutputTokens": 0,
+    "Error": ""
+  },
+  "chunks": [
+    {
+      "Chunk": 1,
+      "State": "COMPLETE",
+      "Content": "Based on this excerpt, the key points are:\n\n* The document is titled \"Momahub Distributed Inference Agreement\" (Demo Document), implying that it is a demonstration or trial version of an agreement.\n* The agreement is between two parties: Digital Duck Labs (\"Provider\") and GPU operators who participate in the Momahub system (\"Contributors\").\n* The Provider operates the hub infrastructure, whereas the Contributors supply compute resources via the Momahub agent software.",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 10.758582141,
+      "OutputTokens": 93,
+      "Error": ""
+    },
+    {
+      "Chunk": 2,
+      "State": "COMPLETE",
+      "Content": "Here are the key points extracted from this excerpt:\n\n**Compute Contribution**\n\n* Contributors agree to make their GPU resources available during registered hours\n* The hub dispatches inference tasks based on tier, VRAM availability, and model support\n* Contributors are compensated with Momahub credits at a rate of 1 credit per 1,000 output tokens generated\n\n**Privacy and Data Handling**\n\n* Task prompts will not be stored beyond the task lifecycle (default: 24 hours)\n* Prompt chunks may not represent complete documents\n* The hub retains sole access to task assembly and final result delivery",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 7.298040983,
+      "OutputTokens": 118,
+      "Error": ""
+    },
+    {
+      "Chunk": 3,
+      "State": "COMPLETE",
+      "Content": "Based on this excerpt, the key points are:\n\n* The provider makes no warranty regarding:\n\t+ Uptime\n\t+ Task completion rates\n\t+ Inference quality\n* Contributors are responsible for:\n\t+ Their own hardware\n\t+ Their own network\n* Neither party is liable for:\n\t+ Indirect damages\n\t+ Consequential damages\n* Termination procedures:\n\t+ Either party can terminate participation with 24 hours' notice via a specific channel (moma down)\n\t+ Outstanding tasks will be re-queued to available agents when termination occurs\n\t+ Credits earned prior to termination remain redeemable indefinitely",
+      "AgentID": "agent-0577c8be",
+      "LatencyS": 4.416164602,
+      "OutputTokens": 127,
+      "Error": ""
+    }
+  ],
+  "document": "demo_contract.txt",
+  "hub": "http://localhost:9000",
+  "num_chunks": 3,
+  "timestamp": "2026-03-14T01:20:39-04:00",
+  "wall_time_s": 21.516249196
+}

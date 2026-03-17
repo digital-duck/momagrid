@@ -1,0 +1,82 @@
+Model diversity benchmark
+  Hub:        http://192.168.0.177:9000
+  Models:     14
+  Benchmarks: 1 (probe only)
+  Tasks:      14
+  Timeout:    180s per task
+
+[llama3]
+  warmup (loading)...       ok  (183ms load time excluded)
+  Probe                     ok   28.2 TPS     142ms  4 tok
+
+[llama3.1]
+  warmup (loading)...       ok  (2960ms load time excluded)
+  Probe                     ok   16.3 TPS     246ms  4 tok
+
+[mistral]
+  warmup (loading)...       ok  (28303ms load time excluded)
+  Probe                     ok   48.8 TPS      82ms  4 tok
+
+[mathstral]
+  warmup (loading)...       ok  (2121ms load time excluded)
+  Probe                     ok   56.6 TPS     212ms  12 tok
+
+[qwen3]
+  warmup (loading)...       ok  (76092ms load time excluded)
+  Probe                     ok   41.9 TPS     477ms  20 tok
+
+[qwen2.5]
+  warmup (loading)...       ok  (2950ms load time excluded)
+  Probe                     ok   25.3 TPS     158ms  4 tok
+
+[qwen2.5-coder]
+  warmup (loading)...       ok  (24820ms load time excluded)
+  Probe                     ok   27.4 TPS     146ms  4 tok
+
+[qwen2-math]
+  warmup (loading)...       ok  (28666ms load time excluded)
+  Probe                     ok   33.3 TPS     150ms  5 tok
+
+[deepseek-r1]
+  warmup (loading)...       ok  (32499ms load time excluded)
+  Probe                     ok   30.4 TPS     657ms  20 tok
+
+[deepseek-coder-v2]
+  warmup (loading)...       ok  (5071ms load time excluded)
+  Probe                     ok   38.8 TPS     103ms  4 tok
+
+[gemma3]
+  warmup (loading)...       ok  (60065ms load time excluded)
+  Probe                     ok   17.6 TPS     227ms  4 tok
+
+[phi4]
+  warmup (loading)...       ok  (67554ms load time excluded)
+  Probe                     ok   20.1 TPS     199ms  4 tok
+
+[phi4-mini]
+  warmup (loading)...       ok  (39736ms load time excluded)
+  Probe                     ok   20.2 TPS     198ms  4 tok
+
+[phi3]
+  warmup (loading)...       ok  (20180ms load time excluded)
+  Probe                     ok   64.9 TPS      77ms  5 tok
+
+============================================================
+MODEL                  PASS  AVG TPS   TOKENS  ERRORS
+------------------------------------------------------------
+llama3                    1/1      28.2        4      OK
+llama3.1                  1/1      16.3        4      OK
+mistral                   1/1      48.8        4      OK
+mathstral                 1/1      56.6       12      OK
+qwen3                     1/1      41.9       20      OK
+qwen2.5                   1/1      25.3        4      OK
+qwen2.5-coder             1/1      27.4        4      OK
+qwen2-math                1/1      33.3        5      OK
+deepseek-r1               1/1      30.4       20      OK
+deepseek-coder-v2         1/1      38.8        4      OK
+gemma3                    1/1      17.6        4      OK
+phi4                      1/1      20.1        4      OK
+phi4-mini                 1/1      20.2        4      OK
+phi3                      1/1      64.9        5      OK
+============================================================
+Results saved: out/model_diversity_20260314_133405.json
