@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mgui — Momagrid Unified UI</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🦆 mgui</h1>
+            <nav>
+                <button onclick="showTab('chat')" id="btn-chat" class="active">Chat</button>
+                <button onclick="showTab('join')" id="btn-join">Join Grid</button>
+                <button onclick="showTab('status')" id="btn-status">Grid Status</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Chat Tab -->
+            <section id="tab-chat" class="tab">
+                <div class="chat-controls">
+                    <select id="provider-select" onchange="updateModels()">
+                        <option value="">Select Provider</option>
+                    </select>
+                    <select id="model-select">
+                        <option value="">Select Model</option>
+                    </select>
+                </div>
+                <div id="chat-history"></div>
+                <div class="chat-input">
+                    <textarea id="prompt-input" placeholder="Type your prompt here..."></textarea>
+                    <button onclick="sendMessage()" id="send-btn">Send</button>
+                </div>
+            </section>
+
+            <!-- Join Tab -->
+            <section id="tab-join" class="tab" style="display:none">
+                <div class="join-card">
+                    <h2>Join the Grid</h2>
+                    <p>Contribute your GPU to the decentralized network.</p>
+                    <div id="probe-results">
+                        <p>Hardware Detection: <span id="probe-status">Checking...</span></p>
+                    </div>
+                    <div id="ollama-guide" style="display:none; text-align:left; margin-top:1rem; padding:1rem; border:1px solid #fca5a5; background:#fff5f5; border-radius:0.5rem;">
+                        <h3 style="color:#c53030">Ollama Not Found</h3>
+                        <p>To join the grid, you need Ollama running on your local machine.</p>
+                        <ol>
+                            <li>Install Ollama from <a href="https://ollama.com" target="_blank">ollama.com</a></li>
+                            <li>Open your terminal and pull a model: <code>ollama pull llama3</code></li>
+                            <nav>
+                                <button onclick="showTab('chat')" id="btn-chat" class="active">Chat</button>
+                                <button onclick="showTab('join')" id="btn-join">Join Grid</button>
+                                <button onclick="showTab('status')" id="btn-status">Grid Status</button>
+                                <button onclick="showTab('settings')" id="btn-settings">Settings</button>
+                            </nav>
+                            </header>
+
+                            <main>
+                            ...
+                            <!-- Status Tab -->
+                            <section id="tab-status" class="tab" style="display:none">
+                                <h2>Grid Status</h2>
+                                <div class="status-grid">
+                                    <div class="status-card">
+                                        <h3>Agents</h3>
+                                        <table id="agents-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Tier</th>
+                                                    <th>Status</th>
+                                                    <th>TPS</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="status-card">
+                                        <h3>Recent Tasks</h3>
+                                        <table id="tasks-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Model</th>
+                                                    <th>State</th>
+                                                    <th>Latency</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="status-card" style="margin-top: 2rem;">
+                                    <h3>Async Job Queue</h3>
+                                    <table id="jobs-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Job ID</th>
+                                                <th>Model</th>
+                                                <th>State</th>
+                                                <th>Created</th>
+                                                <th>Updated</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                            <!-- Settings Tab -->
+                            <section id="tab-settings" class="tab" style="display:none">
+                                <div class="settings-card">
+                                    <h2>Preferences</h2>
+                                    <div class="settings-group">
+                                        <label>Notification Email</label>
+                                        <input type="email" id="settings-email" placeholder="your@email.com">
+                                    </div>
+                                    <div class="settings-group">
+                                        <label>Default Submission Mode</label>
+                                        <select id="settings-mode">
+                                            <option value="sync">Synchronous (Task)</option>
+                                            <option value="async">Asynchronous (Job)</option>
+                                        </select>
+                                    </div>
+                                    <div class="settings-group">
+                                        <label>Default Job Priority</label>
+                                        <select id="settings-priority">
+                                            <option value="1">Low</option>
+                                            <option value="5">Normal</option>
+                                            <option value="10">High</option>
+                                        </select>
+                                    </div>
+                                    <button onclick="saveSettings()" id="save-settings-btn">Save Settings</button>
+                                </div>
+                            </section>
+                            </main>
+        <footer>
+            Momagrid — Decentralized AI Inference
+        </footer>
+    </div>
+    <script src="static/app.js"></script>
+</body>
+</html>
