@@ -174,6 +174,81 @@ mg config
 mg config --set operator_id=myname
 ```
 
+## LAN Deployment — Multi-Node Grid
+
+A typical two-machine LAN setup:
+
+**Hub machine** (e.g. `192.168.1.10`):
+```bash
+mg hub up --port 9000
+```
+
+**Agent machine(s)** — join the hub and start serving tasks:
+```bash
+# Basic join (auto-detects LAN IP and queries Ollama for installed models)
+mg join http://192.168.1.10:9000
+
+# Specify models explicitly (useful if Ollama probe fails)
+mg join http://192.168.1.10:9000 --models llama3.2,qwen3
+
+# Pull mode — for agents behind NAT (hub pushes tasks via SSE instead of HTTP POST)
+mg join http://192.168.1.10:9000 --pull
+```
+
+Check the grid from any machine:
+```bash
+mg agents          # list registered agents + status + tier
+mg tasks --detail  # see which agent handled each task
+```
+
+### Agent Eligibility for Task Dispatch
+
+After joining, an agent must satisfy all of the following to receive tasks:
+
+| Field | Requirement |
+|-------|-------------|
+| `status` | `ONLINE` or `BUSY` (not `OFFLINE` / `PENDING_APPROVAL`) |
+| `supported_models` | Contains the requested model (`:latest` suffix is normalized) |
+| `tier` | At or above the task's `min_tier` (Platinum > Gold > Silver > Bronze) |
+| `gpus[0].vram_gb` | At or above the task's `min_vram_gb` (if set) |
+| `last_pulse` | Within 90 seconds (stale agents are evicted automatically) |
+
+Tier is assigned from GPU VRAM at join time and updated dynamically from throughput (TPS) on each pulse:
+
+| Tier | VRAM | TPS |
+|------|------|-----|
+| Platinum | ≥ 16 GB | ≥ 60 tok/s |
+| Gold | ≥ 10 GB | ≥ 30 tok/s |
+| Silver | ≥ 6 GB | ≥ 15 tok/s |
+| Bronze | < 6 GB | < 15 tok/s |
+
+### Fair Load Balancing
+
+The dispatcher (`PickAgent`) selects the best available agent by: **ONLINE > tier > least active tasks**. When multiple agents are equally ranked (same tier, status, and load — common when tasks arrive one at a time), the candidate list is **shuffled randomly** before selection. This prevents all tasks from always going to the same agent and ensures work is spread evenly across the grid over time.
+
+For maximum distribution with sequential workloads (e.g. SPL cookbook recipes), use the [SPL 2.0 momagrid parallel runner](#spl-20-integration) to submit multiple tasks concurrently.
+
+## SPL 2.0 Integration
+
+[SPL 2.0](https://github.com/digital-duck/SPL20) can use momagrid as its inference backend via `--adapter momagrid`. The adapter submits tasks to the hub's `POST /tasks` endpoint and polls for results — no changes to `.spl` files required.
+
+```bash
+# Set hub URL (or export MOMAGRID_HUB_URL)
+export MOMAGRID_HUB_URL=http://192.168.1.10:9000
+
+# Run a single SPL recipe on the grid
+spl run cookbook/01_hello_world/hello.spl --adapter momagrid -m llama3.2
+
+# Run the full cookbook — parallel mode submits all recipes concurrently
+# so the hub sees multiple tasks queued at once and distributes across agents
+python cookbook/run_all.py run --adapter momagrid --model llama3.2
+
+# Limit parallel workers (default: one per active recipe)
+python cookbook/run_all.py run --adapter momagrid --workers 4
+```
+
+> **Why parallel matters:** SPL's `run_all.py` runs recipes sequentially by default, meaning only one task is in the hub queue at a time. With a single queued task, the dispatcher's load-balancing never fires — the same agent always wins. Parallel mode (`--adapter momagrid`) submits all recipes simultaneously, filling the queue and triggering proper multi-agent distribution.
+
 ## Documentation
 
 - **[User Guide](docs/USER-GUIDE.md)** — LAN setup, two-machine grid, SPL scripts, mgui web UI (default port 9080), compute tiers, monitoring commands, troubleshooting, and cookbook recipes.
