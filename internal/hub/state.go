@@ -10,10 +10,7 @@ import (
 	"github.com/digital-duck/momagrid/internal/schema"
 )
 
-const (
-	maxRetries    = 3
-	agentTimeoutS = 90
-)
+const agentTimeoutS = 90
 
 // GridState holds shared state backed by SQLite or Postgres.
 type GridState struct {
@@ -21,6 +18,7 @@ type GridState struct {
 	HubID      string
 	OperatorID string
 	Driver     string // "sqlite" or "postgres"
+	MaxRetries int    // max requeue attempts for transient errors
 }
 
 // q returns the correct placeholder for the current driver.
@@ -247,6 +245,10 @@ func (s *GridState) FailTask(taskID, errMsg string) error {
 		return err
 	}
 	retries++
+	maxRetries := s.MaxRetries
+	if maxRetries <= 0 {
+		maxRetries = 3
+	}
 	newState := schema.StatePending
 	if retries >= maxRetries {
 		newState = schema.StateFailed
