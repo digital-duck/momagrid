@@ -123,6 +123,21 @@ func Join(args []string) error {
 		modelList = append([]string{*model}, modelList...)
 	}
 
+	// Baseline model check — llama3.2 is required for full grid compatibility.
+	hasBaseline := false
+	for _, m := range modelList {
+		base := strings.TrimSuffix(m, ":latest")
+		if base == "llama3.2" {
+			hasBaseline = true
+			break
+		}
+	}
+	if !hasBaseline {
+		return fmt.Errorf(
+			"baseline model 'llama3.2' not found in Ollama — run: ollama pull llama3.2\n" +
+				"  advertised models: %s", strings.Join(modelList, ", "))
+	}
+
 	gpus := probeGPUs()
 	agentID := "agent-" + uuid.New().String()[:8]
 	fmt.Printf("Agent ID    : %s\n", agentID)

@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
@@ -30,6 +31,8 @@ func Status(args []string) error {
 func Agents(args []string) error {
 	fs := flag.NewFlagSet("agents", flag.ExitOnError)
 	hubURL := fs.String("hub-url", "", "Hub URL")
+	verbose := fs.Bool("verbose", false, "Show supported models for each agent")
+	fs.BoolVar(verbose, "v", false, "Verbose (shorthand)")
 	fs.Parse(args)
 
 	url := ResolveHubURL(*hubURL)
@@ -47,6 +50,15 @@ func Agents(args []string) error {
 	for _, a := range agents {
 		fmt.Printf("%-16s %-38s %-10s %-10s %6.1f\n",
 			str(a, "name"), str(a, "agent_id"), str(a, "tier"), str(a, "status"), num(a, "current_tps"))
+		if *verbose {
+			var models []string
+			raw := str(a, "supported_models")
+			if err := json.Unmarshal([]byte(raw), &models); err == nil && len(models) > 0 {
+				fmt.Printf("  models: %s\n", strings.Join(models, ", "))
+			} else {
+				fmt.Printf("  models: (none advertised)\n")
+			}
+		}
 	}
 	return nil
 }
