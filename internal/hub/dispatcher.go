@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math/rand"
 	"net/http"
 	"strings"
 	"time"
@@ -113,7 +114,15 @@ func PickAgent(state *GridState, req schema.TaskRequest, maxConcurrent int) (map
 		return nil, nil
 	}
 
-	// Sort: prefer ONLINE, then best tier, then least loaded
+	// Shuffle first so that equally-ranked agents (same status, tier, load)
+	// are selected randomly rather than always by DB insertion order.
+	// This prevents all tasks from piling onto the first registered agent
+	// when tasks arrive one at a time (e.g. sequential SPL runs).
+	rand.Shuffle(len(candidates), func(i, j int) {
+		candidates[i], candidates[j] = candidates[j], candidates[i]
+	})
+
+	// Then pick the best by: ONLINE > tier > least loaded
 	best := candidates[0]
 	for _, c := range candidates[1:] {
 		if isBetter(c, best) {
