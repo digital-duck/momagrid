@@ -1,0 +1,5 @@
+
+--- [hello_grid] ---
+Hello there! The i-grid is a revolutionary distributed inference network that enables the aggregation and fusion of information from multiple sources across the globe, allowing for more accurate and informed decision-making through the power of collective intelligence. By harnessing the strengths of individual nodes and leveraging their diverse perspectives, the i-grid creates a robust and resilient ecosystem for knowledge sharing and collaboration.
+
+[model=llama3 tokens=33+72 latency=4538ms]

@@ -1,0 +1,58 @@
+
+  Privacy Chunk Demo
+    Hub:           http://192.168.0.184:9000
+    Document:      demo_contract.txt (1418 chars)
+    Chunks:        3 (dispatched in parallel)
+    Chunk model:   llama3
+    Assembly model:llama3
+
+  Privacy guarantee: no single agent sees the full document.
+  The hub is the only point that assembles all chunk analyses.
+
+  Active agents: 1
+    - ducklover1 (GOLD)
+
+  → Chunk 3: dispatching to agent (490 chars)...
+  → Chunk 1: dispatching to agent (308 chars)...
+  → Chunk 2: dispatching to agent (614 chars)...
+    OK Chunk 1 complete  4.4s  agent=..ent-96b20f3c
+    OK Chunk 2 complete  7.3s  agent=..ent-96b20f3c
+    OK Chunk 3 complete  7.3s  agent=..ent-96b20f3c
+
+  → Assembly: combining 3 chunk analyses...
+    OK Assembly complete  10.7s
+
+  Chunks handled by 1 agent(s): ..agent-96b20f3c
+  (Each agent saw only 1/3 of the document)
+
+  ============================================================
+  ASSEMBLED ANALYSIS
+  ------------------------------------------------------------
+  Here is the combined document analysis:
+
+**Summary:**
+
+The Momahub agreement outlines the roles and responsibilities of Digital Duck Labs (Provider) and GPU operators (Contributors) in a distributed inference system called Momahub. The agreement covers compute contribution, privacy and data handling, warranties, liability, and termination.
+
+**Main Themes:**
+
+1. Compute Contribution: Contributors agree to make their GPU resources available during registered hours and receive Momahub credits for their contributions.
+2. Privacy and Data Handling: Task prompts are not stored beyond the task lifecycle, and the hub retains sole access to task assembly and final result delivery.
+3. Responsibilities: Both parties have specific responsibilities, with the Provider responsible for operating the hub infrastructure and Contributors responsible for their own hardware and network.
+
+**Key Obligations:**
+
+1. Compute Contribution: Contributors agree to make their GPU resources available during registered hours and receive Momahub credits for their contributions.
+2. Data Handling: The hub retains sole access to task assembly and final result delivery, with task prompts not stored beyond the task lifecycle.
+
+**Notable Clauses:**
+
+1. Warranties: The Provider does not make any warranties regarding uptime, task completion rates, or inference quality.
+2. Liability: Neither party is liable for indirect damages or consequential damages.
+3. Termination: Termination of participation can occur with 24 hours notice via moma down, with outstanding tasks re-queued to available agents and credits earned prior to termination remaining redeemable indefinitely.
+
+Overall, the Momahub agreement outlines the key obligations and responsibilities of both parties involved in the distributed inference system, with a focus on compute contribution, privacy and data handling, warranties, liability, and termination.
+
+  Wall time: 18.1s
+
+  Results saved: out/privacy_demo_20260327_060346.json

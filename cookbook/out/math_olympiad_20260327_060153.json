@@ -1,0 +1,141 @@
+{
+  "difficulty": "medium",
+  "hub": "http://192.168.0.184:9000",
+  "models": [
+    "mathstral",
+    "qwen2-math"
+  ],
+  "results": [
+    {
+      "model": "mathstral",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "1. Each die has 6 faces, so there are 6 possible outcomes for each roll (1,2,3,4,5,6).\n2. The total number of outcomes when rolling two dice is 6*6 = 36 (each outcome from the first die can be paired ",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 8.060645924,
+      "output_tokens": 154,
+      "tps": 19.105168674073123,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "2^5 = x\nSo, x = 32\n\nTherefore, Answer: x = 32",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 14.909741569,
+      "output_tokens": 26,
+      "tps": 1.7438263352638264,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "\n\nTo solve the quadratic equation x^2 - 5x + 6 = 0, we can factor it.\n\n1. Look for two numbers that multiply to 6 (the constant term) and add up to -5 (the coefficient of x).\n   The numbers are -2 and",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 19.38881709,
+      "output_tokens": 235,
+      "tps": 12.120388722487041,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "\n\nTo find the derivative of f(x) = x^3 - 4x^2 + 2x - 1, we'll apply the power rule to each term. The power rule states that if f(x) = x^n, then f'(x) = nx^(n-1).\n\n1. For the first term, x^3:\n   - Appl",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 19.389276161,
+      "output_tokens": 230,
+      "tps": 11.862227248205729,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Find the derivative of f(x) = x^3 - 4x^2 + 2x - 1",
+      "expected": "3x^2-8x+2",
+      "response": "1. To find the derivative of f(x) = x^3 - 4x^2 + 2x - 1, we apply the power rule for each term. The power rule states that if f(x) = x^n, then its derivative f'(x) = n*x^(n-1).\n\n2. Applying the power ",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 31.221389962,
+      "output_tokens": 264,
+      "tps": 8.455741410658467,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "If log₂(x) = 5, what is x?",
+      "expected": "32",
+      "response": "\nTo solve for x in the equation \\(\\log_2(x) = 5\\), we need to convert the logarithmic equation into its exponential form. The general conversion rule is that if \\(\\log_b(a) = c\\), then \\(a = b^c\\).\n\nI",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 31.221705251,
+      "output_tokens": 154,
+      "tps": 4.9324660124087085,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "\n\nTo integrate the function (2x + 3)dx, we can use the power rule for integration, which states that the integral of x^n dx is (1/(n+1))x^(n+1) + C, where C is the constant of integration.\n\nLet's brea",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 31.228313575,
+      "output_tokens": 238,
+      "tps": 7.62128891233282,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "qwen2-math",
+      "q": "What is the probability of rolling two sixes with two fair dice?",
+      "expected": "1/36",
+      "response": "\n\nTo find the probability of rolling two sixes with two fair dice, we need to follow these steps:\n\n1. Determine the total number of possible outcomes when rolling two dice.\n2. Determine the number of ",
+      "correct": false,
+      "state": "COMPLETE",
+      "latency_s": 38.97105279,
+      "output_tokens": 276,
+      "tps": 7.082179726764317,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Integrate: ∫(2x + 3)dx",
+      "expected": "x^2+3x+C",
+      "response": "1. The antiderivative of 2x is x^2 (since the derivative of x^2 is 2x).\n2. The antiderivative of a constant is just that constant times x. So, the antiderivative of 3 is 3x.\n3. Therefore, the integral",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 38.971484346,
+      "output_tokens": 128,
+      "tps": 3.2844527774097427,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    },
+    {
+      "model": "mathstral",
+      "q": "Solve the quadratic: x^2 - 5x + 6 = 0",
+      "expected": "2,3",
+      "response": "1. Factor the quadratic equation: (x - 3)(x - 2) = 0\n2. Set each factor equal to zero and solve for x: x - 3 = 0 or x - 2 = 0\n3. Solve these linear equations: x = 3 or x = 2\n4. The solutions are x = 2",
+      "correct": true,
+      "state": "COMPLETE",
+      "latency_s": 38.972414702,
+      "output_tokens": 87,
+      "tps": 2.232348204883884,
+      "agent_id": "agent-96b20f3c",
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-27T06:01:53-04:00"
+}

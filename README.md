@@ -70,10 +70,16 @@ SQLite requires no installation — it's built into the binary as a pure-Go libr
 go build -buildvcs=false -o mg ./cmd/mg
 
 # 2. Run (database file is created automatically at .igrid/hub.sqlite3)
-mg hub up --port 9000
+mg hub up --port 9000  # default to SQLite
 ```
 
 That's it. The database file is created at `.igrid/hub.sqlite3` in the current directory on first run. No configuration needed.
+
+If your config (`~/.igrid/config.yaml`) was previously set to PostgreSQL, reset it to SQLite:
+
+```bash
+mg config --set hub.db_path=.igrid/hub.sqlite3
+```
 
 To use a custom path:
 

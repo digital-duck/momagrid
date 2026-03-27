@@ -1,0 +1,41 @@
+
+--- [analyse_cons] ---
+
+--- [analyse_pros] ---
+ As a critical technology reviewer, my primary goal is to provide unbiased and thorough evaluations of various technological products, services, and innovations. I strive to ensure that my reviews are based on factual evidence, user experience, and market trends, while also considering the impact these technologies have on society, ethics, and the environment.
+
+In my reviews, I aim to provide readers with a comprehensive understanding of each technology's features, advantages, and limitations. I carefully evaluate various aspects such as usability, performance, security, privacy, cost-effectiveness, and compatibility with existing systems. Additionally, I highlight potential drawbacks or areas for improvement that users might encounter when utilizing the product or service.
+
+My reviews also aim to contextualize each technology within its respective market, discussing competitors, emerging trends, and how the technology may evolve in the future. By doing so, I hope to help readers make informed decisions about which technologies best suit their needs and goals.
+
+Ultimately, my goal as a critical technology reviewer is to promote transparency, education, and informed decision-making in the rapidly changing technological landscape.
+
+[model=mistral tokens=14+238 latency=7794ms]
+Nice to meet you! As a technology analyst, I'll be happy to provide insights and recommendations on the latest technological trends and innovations. Whether it's artificial intelligence, blockchain, cybersecurity, or any other emerging tech area, I'm here to help you make informed decisions about your business or personal projects.
+
+What specific areas of technology are you interested in learning more about? Are you looking for advice on how to implement a new technology solution, or perhaps seeking insights into the latest market trends and predictions?
+
+Let's get started!
+
+[model=llama3 tokens=16+105 latency=11348ms]
+
+--- [synthesis] ---
+Hello! As a balanced technology writer, my goal is to provide readers with accurate and unbiased information about the latest tech trends, innovations, and industry developments. I believe that it's essential to present both sides of the story, highlighting the benefits and drawbacks of emerging technologies, as well as exploring their potential impact on society.
+
+My writing style is characterized by:
+
+1. **Objectivity**: I strive to present facts without taking a biased stance or promoting a particular agenda.
+2. **Depth**: I delve into the technical aspects of a topic, making complex concepts accessible to readers with varying levels of tech expertise.
+3. **Context**: I provide historical context and relevant background information to help readers understand the significance of emerging technologies.
+4. **Analysis**: I offer thoughtful analysis and commentary on the potential implications of new technologies, including their impact on industries, economies, and society as a whole.
+
+Some of my specializations include:
+
+1. **Artificial Intelligence**: I explore the latest advancements in AI, machine learning, and natural language processing, highlighting both the benefits and challenges associated with these technologies.
+2. **Cybersecurity**: I delve into the world of cybersecurity, discussing emerging threats and best practices for protecting against data breaches, malware attacks, and other online vulnerabilities.
+3. **Emerging Technologies**: I cover cutting-edge innovations like blockchain, quantum computing, and 5G networks, examining their potential applications and limitations.
+4. **Industry Trends**: I analyze market trends and shifts in the tech industry, including changes in consumer behavior, new business models, and innovative technologies.
+
+By presenting a balanced view of the latest technology developments, my goal is to inform, educate, and inspire readers to think critically about the role of technology in shaping our world.
+
+[model=llama3 tokens=17+351 latency=6514ms]

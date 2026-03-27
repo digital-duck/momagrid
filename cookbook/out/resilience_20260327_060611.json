@@ -1,0 +1,156 @@
+{
+  "agent_events": [
+    {
+      "ts": "06:05:15",
+      "event": "JOINED",
+      "agent": "ducklover1"
+    }
+  ],
+  "duration_s": 60,
+  "hub": "http://192.168.0.184:9000",
+  "model": "llama3",
+  "results": [
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.304213967,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.303827546,
+      "output_tokens": 51,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.306107173,
+      "output_tokens": 13,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.305250415,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.30623205,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.30231211,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.304173358,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.304407174,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.3055116780000002,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.303348428,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.305962675,
+      "output_tokens": 12,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.30484317,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.306532792,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.304114622,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.308904065,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.305509033,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.307165644,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.303842166,
+      "output_tokens": 64,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.306301781,
+      "output_tokens": 11,
+      "error": ""
+    },
+    {
+      "state": "COMPLETE",
+      "agent_id": "agent-96b20f3c",
+      "latency_s": 3.305307909,
+      "output_tokens": 64,
+      "error": ""
+    }
+  ],
+  "timestamp": "2026-03-27T06:06:11-04:00",
+  "wall_time_s": 60.319619028
+}

@@ -1,0 +1,36 @@
+{
+  "hub": "http://192.168.0.184:9000",
+  "models": [
+    "llama3",
+    "mistral",
+    "phi3"
+  ],
+  "prompt": "Explain gradient descent in three sentences.",
+  "results": [
+    {
+      "Model": "llama3",
+      "State": "COMPLETE",
+      "OutputTokens": 106,
+      "LatencyS": 12.389286078,
+      "TPS": 8.555779512447222,
+      "Error": ""
+    },
+    {
+      "Model": "mistral",
+      "State": "COMPLETE",
+      "OutputTokens": 123,
+      "LatencyS": 7.989810262,
+      "TPS": 15.39460837824837,
+      "Error": ""
+    },
+    {
+      "Model": "phi3",
+      "State": "COMPLETE",
+      "OutputTokens": 109,
+      "LatencyS": 12.38975798,
+      "TPS": 8.797589119654457,
+      "Error": ""
+    }
+  ],
+  "timestamp": "2026-03-27T05:54:37-04:00"
+}

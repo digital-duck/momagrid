@@ -1,0 +1,45 @@
+{
+  "assembly": {
+    "Chunk": 0,
+    "State": "COMPLETE",
+    "Content": "Here is the combined document analysis:\n\n**Summary:**\n\nThe Momahub agreement outlines the roles and responsibilities of Digital Duck Labs (Provider) and GPU operators (Contributors) in a distributed inference system called Momahub. The agreement covers compute contribution, privacy and data handling, warranties, liability, and termination.\n\n**Main Themes:**\n\n1. Compute Contribution: Contributors agree to make their GPU resources available during registered hours and receive Momahub credits for their contributions.\n2. Privacy and Data Handling: Task prompts are not stored beyond the task lifecycle, and the hub retains sole access to task assembly and final result delivery.\n3. Responsibilities: Both parties have specific responsibilities, with the Provider responsible for operating the hub infrastructure and Contributors responsible for their own hardware and network.\n\n**Key Obligations:**\n\n1. Compute Contribution: Contributors agree to make their GPU resources available during registered hours and receive Momahub credits for their contributions.\n2. Data Handling: The hub retains sole access to task assembly and final result delivery, with task prompts not stored beyond the task lifecycle.\n\n**Notable Clauses:**\n\n1. Warranties: The Provider does not make any warranties regarding uptime, task completion rates, or inference quality.\n2. Liability: Neither party is liable for indirect damages or consequential damages.\n3. Termination: Termination of participation can occur with 24 hours notice via moma down, with outstanding tasks re-queued to available agents and credits earned prior to termination remaining redeemable indefinitely.\n\nOverall, the Momahub agreement outlines the key obligations and responsibilities of both parties involved in the distributed inference system, with a focus on compute contribution, privacy and data handling, warranties, liability, and termination.",
+    "AgentID": "agent-96b20f3c",
+    "LatencyS": 10.745143554,
+    "OutputTokens": 0,
+    "Error": ""
+  },
+  "chunks": [
+    {
+      "Chunk": 1,
+      "State": "COMPLETE",
+      "Content": "Here are the key points extracted from this excerpt:\n\n**Parties involved:**\n\n1. **Digital Duck Labs (Provider)**: Operates the hub infrastructure.\n2. **GPU operators (Contributors)**: Supply compute resources via the Momahub agent software.\n\n**Agreement scope:** The agreement is between these two parties, outlining their roles and responsibilities in a distributed inference system called Momahub.",
+      "AgentID": "agent-96b20f3c",
+      "LatencyS": 4.421035639,
+      "OutputTokens": 82,
+      "Error": ""
+    },
+    {
+      "Chunk": 2,
+      "State": "COMPLETE",
+      "Content": "Here are the key points summarized from this excerpt:\n\n**Compute Contribution**\n\n* Contributors agree to make their GPU resources available during registered hours\n* Inference tasks are dispatched based on tier, VRAM availability, and model support\n* Contributors receive Momahub credits at a rate of 1 credit per 1,000 output tokens generated\n\n**Privacy and Data Handling**\n\n* Task prompts are not stored beyond the task lifecycle (default: 24 hours)\n* Prompt chunks may not represent complete documents\n* The hub retains sole access to task assembly and final result delivery",
+      "AgentID": "agent-96b20f3c",
+      "LatencyS": 7.304353684,
+      "OutputTokens": 114,
+      "Error": ""
+    },
+    {
+      "Chunk": 3,
+      "State": "COMPLETE",
+      "Content": "Based on this excerpt, the key points are:\n\n1. The Provider does not make any warranties regarding:\n\t* Uptime\n\t* Task completion rates\n\t* Inference quality\n2. Contributors are responsible for their own:\n\t* Hardware\n\t* Network\n3. Neither party is liable for:\n\t* Indirect damages\n\t* Consequential damages\n4. Termination of participation can occur with:\n\t* 24 hours notice via moma down\n5. If termination occurs, outstanding tasks will be:\n\t* Re-queued to available agents\n6. Credits earned prior to termination remain:\n\t* Redeemable indefinitely",
+      "AgentID": "agent-96b20f3c",
+      "LatencyS": 7.305088218,
+      "OutputTokens": 132,
+      "Error": ""
+    }
+  ],
+  "document": "demo_contract.txt",
+  "hub": "http://192.168.0.184:9000",
+  "num_chunks": 3,
+  "timestamp": "2026-03-27T06:03:46-04:00",
+  "wall_time_s": 18.050444602
+}

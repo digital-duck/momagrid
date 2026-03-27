@@ -1,0 +1,23 @@
+
+  Multi-Agent Throughput
+    Hub:         http://192.168.0.184:9000
+    Agents:      1 online
+    Tasks:       60
+    Model:       llama3
+    Concurrency: 20
+    Label:       run-055841
+      - ducklover1 (GOLD)
+
+
+  ============================================================
+  Label:      run-055841
+  Completed:  60/60
+  Wall time:  122.3s
+  Tokens:     6795
+  Throughput: 55.6 tokens/s  <- KEY METRIC
+  Avg latency:34.3s  |  Avg TPS/agent: 4.0
+
+  Agent distribution:
+    ..agent-96b20f3c      60 tasks  ████████████████████████████████████████████████████████████
+
+  Results saved: out/throughput_20260327_060043.json

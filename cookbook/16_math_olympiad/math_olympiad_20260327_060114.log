@@ -1,0 +1,20 @@
+
+  Math Olympiad — MEDIUM
+    Hub:       http://192.168.0.184:9000
+    Models:    [mathstral qwen2-math]
+    Problems:  5
+
+  Problem                                         mathstral     qwen2-math  
+  ---------------------------------------------   ------------  ------------
+  Find the derivative of f(x) = x^3 - 4x^2 + 2   ✓ 31.2s   8.5tps  ✓ 19.4s  11.9tps
+  Solve the quadratic: x^2 - 5x + 6 = 0          ✓ 39.0s   2.2tps  ✓ 19.4s  12.1tps
+  What is the probability of rolling two sixes   ✓  8.1s  19.1tps  ✗ 39.0s   7.1tps
+  Integrate: ∫(2x + 3)dx                         ✓ 39.0s   3.3tps  ✓ 31.2s   7.6tps
+  If log₂(x) = 5, what is x?                     ✓ 14.9s   1.7tps  ✓ 31.2s   4.9tps
+
+  Model                  Score   Avg Lat   Avg TPS   Tokens
+  ---------------------------------------------------------
+  mathstral                5/5     26.4s       7.0      659
+  qwen2-math               4/5     28.0s       8.7     1133
+
+  Results saved: out/math_olympiad_20260327_060153.json

@@ -1,0 +1,18 @@
+
+  Tier-Aware Dispatch
+    Hub:   http://192.168.0.184:9000
+    Tasks: 4
+
+  Available agents:
+    ducklover1           tier=GOLD       vram=11GB  status=ONLINE
+
+  Label                            VRAM  State                     Agent     Lat    Tok
+  -------------------------------------------------------------------------------------
+  No VRAM constraint                 0G  COMPLETE       ..agent-96b20f3c    8.1s     70
+  VRAM >= 4 GB                       4G  COMPLETE       ..agent-96b20f3c    5.5s    128
+  VRAM >= 8 GB                       8G  COMPLETE       ..agent-96b20f3c   11.2s    128
+  VRAM >= 10 GB                     10G  COMPLETE       ..agent-96b20f3c    5.5s    128
+
+  4/4 dispatched successfully
+
+  Results saved: out/tier_dispatch_20260327_055840.json
