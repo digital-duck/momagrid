@@ -13,6 +13,9 @@ docs/LAN-Tests/digital-duck.code-workspace
 *.so
 *.dylib
 
+.igrid/hub.sqlite3-shm
+.igrid/hub.sqlite3-wal
+
 # Test binary, built with `go test -c`
 *.test
 
@@ -24,8 +27,8 @@ profile.cov
 
 docs/memory/
 
-mg
-mgui
+./mg
+./mgui
 model_health
 
 go_git.log
