@@ -12,7 +12,7 @@ import (
 // Migrate implements "mg hub migrate --from <sqlite> --to <postgres>".
 func Migrate(args []string) error {
 	fs := flag.NewFlagSet("hub migrate", flag.ExitOnError)
-	from := fs.String("from", ".igrid/hub.db", "Source SQLite database path")
+	from := fs.String("from", ".igrid/hub.sqlite3", "Source SQLite database path")
 	to := fs.String("to", "", "Destination Postgres connection string")
 	fs.Parse(args)
 

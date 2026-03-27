@@ -61,6 +61,26 @@ export PATH=$PATH:$HOME/.local/bin
 1.  **SQLite (Default):** Zero-configuration. Perfect for local testing and small grids. No C libraries needed.
 2.  **PostgreSQL:** Recommended for production and high-concurrency tasks (like parallel translations). 
 
+### Running the Hub with SQLite (Default)
+
+SQLite requires no installation — it's built into the binary as a pure-Go library.
+
+```bash
+# 1. Build
+go build -buildvcs=false -o mg ./cmd/mg
+
+# 2. Run (database file is created automatically at .igrid/hub.sqlite3)
+mg hub up --port 9000
+```
+
+That's it. The database file is created at `.igrid/hub.sqlite3` in the current directory on first run. No configuration needed.
+
+To use a custom path:
+
+```bash
+mg hub up --port 9000 --db /path/to/my.db
+```
+
 ### Setup PostgreSQL on Ubuntu
 
 If you don't have Postgres installed:
@@ -88,7 +108,7 @@ Use the `--db` flag with a standard PostgreSQL connection string:
 go build -buildvcs=false -o mg ./cmd/mg
 
 # 2. Migrate: 
-mg hub migrate --from .igrid/hub.db --to "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable"
+mg hub migrate --from .igrid/hub.sqlite3 --to "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable"
 
 # 3. Run: 
 # Format: postgres://<user>:<password>@<host>:<port>/<dbname>?sslmode=disable
@@ -102,7 +122,7 @@ If you have an existing SQLite database and want to move its history to PostgreS
 1. **Stop the hub** (if it's running).
 2. **Run the migration command**:
    ```bash
-   mg hub migrate --from .igrid/hub.db --to "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable"
+   mg hub migrate --from .igrid/hub.sqlite3 --to "postgres://mguser:mgpass@localhost/momagrid?sslmode=disable"
    ```
 3. **Restart the hub** using the Postgres connection string.
 
@@ -160,7 +180,7 @@ mg hub up [flags]
   --host            Listen address (default: 0.0.0.0)
   --port            Listen port (default: 9000)
   --hub-url         Public hub URL (default: auto-detect LAN IP)
-  --db              SQLite database path (default: .igrid/hub.db)
+  --db              SQLite database path (default: .igrid/hub.sqlite3)
   --operator-id     Operator ID (default: duck)
   --api-key         API key for agent registration
   --admin           Enable admin mode (agents require verification)

@@ -21,7 +21,7 @@ var ddlPostgres string
 
 // InitDB opens (or creates) the database and applies the schema.
 // Supports:
-//   - SQLite: pass a file path (e.g. ".igrid/hub.db")
+//   - SQLite: pass a file path (e.g. ".igrid/hub.sqlite3")
 //   - Postgres: pass a connection string starting with "postgres://" or "postgresql://"
 func InitDB(connStr string) (*sql.DB, error) {
 	var driver, dsn string

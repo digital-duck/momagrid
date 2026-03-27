@@ -348,7 +348,7 @@ mg hub up
   --host              Bind address (use 0.0.0.0 for LAN)     default: localhost
   --port              Hub port                                 default: 9000
   --hub-url           Public URL for peer callbacks           default: (empty)
-  --db                SQLite database path                    default: .igrid/hub.db
+  --db                SQLite database path                    default: .igrid/hub.sqlite3
   --operator-id       Your operator ID                        default: duck
   --api-key           Require key on /join (optional)
   --admin             Require agent verification before approval
@@ -438,16 +438,16 @@ mg hub reject <agent_id>
 
 ## Database
 
-All hub state is in a SQLite file (default `.igrid/hub.db`):
+All hub state is in a SQLite file (default `.igrid/hub.sqlite3`):
 
 ```bash
 # Quick inspection
-sqlite3 .igrid/hub.db "SELECT name, status, tier, current_tps FROM agents;"
-sqlite3 .igrid/hub.db "SELECT task_id, state, latency_ms FROM tasks ORDER BY created_at DESC LIMIT 10;"
-sqlite3 .igrid/hub.db "SELECT * FROM reward_summary;"
+sqlite3 .igrid/hub.sqlite3 "SELECT name, status, tier, current_tps FROM agents;"
+sqlite3 .igrid/hub.sqlite3 "SELECT task_id, state, latency_ms FROM tasks ORDER BY created_at DESC LIMIT 10;"
+sqlite3 .igrid/hub.sqlite3 "SELECT * FROM reward_summary;"
 
 # Migrate to PostgreSQL (production)
-mg migrate --from .igrid/hub.db --to postgres://user:pass@host/dbname
+mg migrate --from .igrid/hub.sqlite3 --to postgres://user:pass@host/dbname
 ```
 
 ---

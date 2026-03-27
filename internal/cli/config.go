@@ -53,7 +53,7 @@ var defaultConfig = AppConfig{
 	Hub: HubCfg{
 		Host:   "0.0.0.0",
 		Port:   9000,
-		DBPath: ".igrid/hub.db",
+		DBPath: ".igrid/hub.sqlite3",
 		APIKey: "",
 		URLs:   []string{}, // empty → falls back to http://localhost:{port} in HubURL()
 	},

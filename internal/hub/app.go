@@ -55,7 +55,7 @@ func NewApp(cfg HubConfig) (*App, error) {
 		cfg.OperatorID = "duck"
 	}
 	if cfg.DBPath == "" {
-		cfg.DBPath = ".igrid/hub.db"
+		cfg.DBPath = ".igrid/hub.sqlite3"
 	}
 	if cfg.MaxConcurrentTasks == 0 {
 		cfg.MaxConcurrentTasks = 3
