@@ -123,11 +123,10 @@ func Join(args []string) error {
 		modelList = append([]string{*model}, modelList...)
 	}
 
-	// Baseline model check — llama3.2 is required for full grid compatibility.
+	// Baseline model check — llama3.2 (any tag) is required for full grid compatibility.
 	hasBaseline := false
 	for _, m := range modelList {
-		base := strings.TrimSuffix(m, ":latest")
-		if base == "llama3.2" {
+		if m == "llama3.2" || strings.HasPrefix(m, "llama3.2:") {
 			hasBaseline = true
 			break
 		}
