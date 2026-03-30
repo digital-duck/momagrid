@@ -1,5 +1,30 @@
+CLAUDE.md
+GEMINI.md
 
-
+archive/
+**/logs/
+memory.db
+**/__pycache__/
+*.py[codz]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 docs/LAN-Tests/digital-duck.code-workspace
 
