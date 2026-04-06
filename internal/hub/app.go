@@ -27,6 +27,7 @@ type HubConfig struct {
 	APIKey             string
 	AdminMode          bool
 	MaxConcurrentTasks int
+	MaxRetries         int // max requeue attempts for transient errors (default 3)
 	AllowedCountries   []string
 	MaxPromptChars     int // soft limit; HTTP 413 if exceeded (default 50000)
 	MaxQueueDepth      int // HTTP 503 if PENDING tasks >= this (default 1000)
@@ -59,6 +60,9 @@ func NewApp(cfg HubConfig) (*App, error) {
 	}
 	if cfg.MaxConcurrentTasks == 0 {
 		cfg.MaxConcurrentTasks = 3
+	}
+	if cfg.MaxRetries == 0 {
+		cfg.MaxRetries = 3
 	}
 	if cfg.MaxPromptChars == 0 {
 		cfg.MaxPromptChars = 50000
@@ -94,7 +98,7 @@ func NewApp(cfg HubConfig) (*App, error) {
 		}
 	}
 
-	state := &GridState{DB: db, HubID: cfg.HubID, OperatorID: cfg.OperatorID, Driver: driver}
+	state := &GridState{DB: db, HubID: cfg.HubID, OperatorID: cfg.OperatorID, Driver: driver, MaxRetries: cfg.MaxRetries}
 	cluster := &ClusterManager{State: state, ThisHubURL: cfg.HubURL}
 	sseQueues := NewSSEManager()
 	rl := NewRateLimiter(cfg.RateLimit, 60, cfg.BurstThreshold, 10)
@@ -578,6 +582,16 @@ func (a *App) handleResults(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, 200, map[string]interface{}{"ok": true, "detail": "already completed"})
 		return
 	}
+	// For transient Ollama errors (EOF, connection refused), requeue via
+	// FailTask so the dispatcher retries on a different agent (up to maxRetries).
+	if result.State == schema.StateFailed && isTransientOllamaError(result.Error) {
+		log.Printf("transient ollama error on task %s — requeueing: %s", result.TaskID, result.Error)
+		if err := a.State.FailTask(result.TaskID, result.Error); err != nil {
+			log.Printf("requeue error for task %s: %v", result.TaskID, err)
+		}
+		writeJSON(w, 200, map[string]bool{"ok": true})
+		return
+	}
 	a.State.CompleteTask(result.TaskID, result)
 	if result.State == schema.StateComplete && result.OutputTokens > 0 {
 		agentID := result.AgentID
@@ -781,4 +795,23 @@ func strVal(v interface{}) string {
 		return ""
 	}
 	return fmt.Sprint(v)
+}
+
+// isTransientOllamaError returns true for known transient Ollama errors that
+// are safe to retry on a different agent (EOF, connection refused, reset).
+func isTransientOllamaError(errMsg string) bool {
+	transient := []string{
+		"EOF",
+		"connection refused",
+		"connection reset by peer",
+		"broken pipe",
+		"no such host",
+		"dial tcp",
+	}
+	for _, t := range transient {
+		if strings.Contains(errMsg, t) {
+			return true
+		}
+	}
+	return false
 }

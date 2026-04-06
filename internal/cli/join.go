@@ -18,7 +18,9 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"net"
 	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"os/signal"
@@ -40,7 +42,7 @@ func Join(args []string) error {
 	model := fs.String("model", "llama3", "Primary model to advertise")
 	models := fs.String("models", "", "Comma-separated list of supported models")
 	ollamaURL := fs.String("ollama", "", "Ollama URL (default: from config)")
-	pullMode := fs.Bool("pull", false, "Use SSE pull mode (for agents behind NAT)")
+	pullMode := fs.Bool("pull", false, "Use SSE pull mode (default: auto — enabled for non-local hubs, disabled for LAN/localhost)")
 	sign := fs.Bool("sign", true, "Sign join/pulse with Ed25519 keypair (recommended)")
 	apiKey := fs.String("api-key", "", "API key (if hub requires one)")
 	pulseInterval := fs.Duration("pulse", 30*time.Second, "Heartbeat interval")
@@ -51,8 +53,8 @@ func Join(args []string) error {
 
 	var hubURL string
 	if len(remaining) > 0 {
-		// Explicit URL provided — use it directly.
-		hubURL = strings.TrimRight(remaining[0], "/")
+		// Explicit URL provided — normalize and use it directly.
+		hubURL = normalizeHubURL(strings.TrimRight(remaining[0], "/"))
 		// Re-parse any flags that appeared after the positional URL
 		// (Go's flag package stops at the first non-flag arg).
 		if len(remaining) > 1 {
@@ -65,7 +67,7 @@ func Join(args []string) error {
 		case 0:
 			return fmt.Errorf("no hub URLs configured; run: mg config --set hub.urls or pass a URL")
 		case 1:
-			hubURL = strings.TrimRight(urls[0], "/")
+			hubURL = normalizeHubURL(strings.TrimRight(urls[0], "/"))
 			fmt.Printf("Using hub: %s\n", hubURL)
 		default:
 			fmt.Println("Multiple hubs configured. Select one to join:")
@@ -81,8 +83,21 @@ func Join(args []string) error {
 			if choice < 1 || choice > len(urls) {
 				return fmt.Errorf("invalid selection")
 			}
-			hubURL = strings.TrimRight(urls[choice-1], "/")
+			hubURL = normalizeHubURL(strings.TrimRight(urls[choice-1], "/"))
 		}
+	}
+
+	// Auto-detect pull mode when --pull was not explicitly set:
+	//   hostname (e.g., momagrid.org) → pull (WAN / NAT-friendly)
+	//   LAN/loopback IP              → push (hub can reach agent directly)
+	pullExplicit := false
+	fs.Visit(func(f *flag.Flag) {
+		if f.Name == "pull" {
+			pullExplicit = true
+		}
+	})
+	if !pullExplicit {
+		*pullMode = !isLocalHub(hubURL)
 	}
 
 	if *operatorID == "" {
@@ -123,13 +138,34 @@ func Join(args []string) error {
 		modelList = append([]string{*model}, modelList...)
 	}
 
+	// Baseline model check — llama3.2 (any tag) is required for full grid compatibility.
+	hasBaseline := false
+	for _, m := range modelList {
+		if m == "llama3.2" || strings.HasPrefix(m, "llama3.2:") {
+			hasBaseline = true
+			break
+		}
+	}
+	if !hasBaseline {
+		return fmt.Errorf(
+			"baseline model 'llama3.2' not found in Ollama — run: ollama pull llama3.2\n" +
+				"  advertised models: %s", strings.Join(modelList, ", "))
+	}
+
 	gpus := probeGPUs()
 	agentID := "agent-" + uuid.New().String()[:8]
 	fmt.Printf("Agent ID    : %s\n", agentID)
 	fmt.Printf("Operator    : %s\n", *operatorID)
 	fmt.Printf("Hub         : %s\n", hubURL)
 	fmt.Printf("Models      : %s\n", strings.Join(modelList, ", "))
-	fmt.Printf("Pull mode   : %v\n", *pullMode)
+	modeLabel := "push (LAN)"
+	if *pullMode {
+		modeLabel = "pull (SSE)"
+	}
+	if !pullExplicit {
+		modeLabel += " [auto]"
+	}
+	fmt.Printf("Mode        : %s\n", modeLabel)
 	fmt.Printf("Signed      : %v\n", *sign)
 	fmt.Println()
 
@@ -482,4 +518,35 @@ func postLeave(hubURL, agentID, operatorID string) {
 		"agent_id":    agentID,
 		"operator_id": operatorID,
 	})
+}
+
+// isLocalHub returns true when hubURL resolves to a loopback or RFC1918 address,
+// meaning the hub is reachable on the local machine or LAN and push mode is viable.
+// A hostname (e.g., momagrid.org) is treated as non-local → pull mode.
+func isLocalHub(rawURL string) bool {
+	u, err := url.Parse(rawURL)
+	if err != nil {
+		return false
+	}
+	host := u.Hostname()
+	if host == "localhost" || host == "127.0.0.1" || host == "::1" {
+		return true
+	}
+	ip := net.ParseIP(host)
+	if ip == nil {
+		// DNS hostname — assume WAN (e.g., momagrid.org) → pull
+		return false
+	}
+	for _, cidr := range []string{
+		"127.0.0.0/8",    // loopback
+		"10.0.0.0/8",     // RFC1918 class A
+		"172.16.0.0/12",  // RFC1918 class B
+		"192.168.0.0/16", // RFC1918 class C
+	} {
+		_, network, _ := net.ParseCIDR(cidr)
+		if network.Contains(ip) {
+			return true
+		}
+	}
+	return false
 }

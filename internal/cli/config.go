@@ -2,6 +2,7 @@ package cli
 
 import (
 	"fmt"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
@@ -134,20 +135,31 @@ func SaveConfig(cfg AppConfig) error {
 	return os.WriteFile(configFile(), data, 0644)
 }
 
-// HubURL returns the first hub URL, with trailing slash stripped.
+// HubURL returns the first hub URL, with trailing slash stripped and default port applied.
 func (c AppConfig) HubURL() string {
 	if len(c.Hub.URLs) > 0 {
-		return strings.TrimRight(c.Hub.URLs[0], "/")
+		return normalizeHubURL(strings.TrimRight(c.Hub.URLs[0], "/"))
 	}
 	return fmt.Sprintf("http://localhost:%d", c.Hub.Port)
 }
 
-// ResolveHubURL picks the hub URL from flag or config.
+// ResolveHubURL picks the hub URL from flag or config, applying the default port.
 func ResolveHubURL(flagURL string) string {
 	if flagURL != "" {
-		return strings.TrimRight(flagURL, "/")
+		return normalizeHubURL(strings.TrimRight(flagURL, "/"))
 	}
 	return LoadConfig().HubURL()
+}
+
+// normalizeHubURL appends the default hub port (9000) when no port is specified.
+// This lets users type "mg join https://momagrid.org" instead of "...momagrid.org:9000".
+func normalizeHubURL(rawURL string) string {
+	u, err := url.Parse(rawURL)
+	if err != nil || u.Port() != "" {
+		return rawURL
+	}
+	u.Host = u.Host + ":9000"
+	return u.String()
 }
 
 // Config implements the "mg config" command.

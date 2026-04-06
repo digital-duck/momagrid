@@ -45,6 +45,7 @@ func hubUp(args []string) error {
 	apiKey := fs.String("api-key", cfg.Hub.APIKey, "API key for agent registration")
 	admin := fs.Bool("admin", false, "Enable admin mode: agents require verification")
 	maxConcurrent := fs.Int("max-concurrent", 3, "Max concurrent tasks per agent")
+	maxRetries := fs.Int("max-retries", 3, "Max requeue attempts for transient agent errors (EOF, connection refused)")
 	maxPromptChars := fs.Int("max-prompt-chars", 50000, "Soft prompt size limit (HTTP 413 if exceeded)")
 	maxQueueDepth := fs.Int("max-queue-depth", 1000, "Max PENDING tasks in queue (HTTP 503 if exceeded)")
 	rateLimit := fs.Int("rate-limit", 300, "Max requests per minute per IP")
@@ -79,6 +80,7 @@ func hubUp(args []string) error {
 		APIKey:             *apiKey,
 		AdminMode:          *admin,
 		MaxConcurrentTasks: *maxConcurrent,
+		MaxRetries:         *maxRetries,
 		MaxPromptChars:     *maxPromptChars,
 		MaxQueueDepth:      *maxQueueDepth,
 		RateLimit:          *rateLimit,

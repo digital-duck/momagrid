@@ -1,6 +1,6 @@
 # momagrid (Go)
 
-Go implementation of the **momagrid** i-grid — hub server + CLI client. Decentralized, peer-to-peer LLM inference network.
+Go implementation of the Momagrid — hub server + CLI client. Decentralized, peer-to-peer LLM inference network.
 
 This repository contains the production-grade Go implementation of the momagrid protocol, optimized for high concurrency and scalability. It is fully compatible with the Python-based momagrid ecosystem.
 
