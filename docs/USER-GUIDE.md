@@ -453,7 +453,14 @@ mg hub up --host 0.0.0.0 --port 9000 --hub-url http://192.168.1.11:9000
 
 **Peer them (from Machine A):**
 ```bash
-mg peer add http://192.168.1.11:9000 --hub http://192.168.0.177:9000
+mg peer add http://192.168.1.11:9000
+```
+
+Only the peer hub's URL is needed. `mg peer add` targets your local hub by default
+(`localhost:9000`, or `hub.urls[0]` from `~/.igrid/config.yaml`).
+To target a different local hub explicitly, use `--peer-hub-url`:
+```bash
+mg peer add http://192.168.1.11:9000 --peer-hub-url http://192.168.0.177:9000
 ```
 
 Or run the full cluster demo:
@@ -559,7 +566,7 @@ mg hub reject <agent_id>
 | Agent cannot reach hub | Firewall | Open port 9000 on Machine A |
 | Task FAILED: "no agents" | Model mismatch | Ensure agent advertises the required model |
 | Pull-mode agent not getting tasks | SSE dropped | Restart agent; check hub logs |
-| Hub-to-hub forward fails | --hub-url not set | Set `--hub-url http://<public-IP>:9000` on both hubs |
+| Hub-to-hub forward fails | --hub-url not set on hub | Set `--hub-url http://<public-IP>:9000` on both hubs |
 
 ---
 

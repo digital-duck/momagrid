@@ -23,12 +23,12 @@ func Peer(args []string) error {
 
 func peerAdd(args []string) error {
 	fs := flag.NewFlagSet("peer add", flag.ExitOnError)
-	hubURL := fs.String("hub-url", "", "Hub URL")
+	hubURL := fs.String("peer-hub-url", "", "URL of your local hub (default: localhost:9000)")
 	fs.Parse(args)
 
 	remaining := fs.Args()
 	if len(remaining) == 0 {
-		return fmt.Errorf("usage: mg peer add <peer_url>")
+		return fmt.Errorf("usage: mg peer add <peer_url> [--peer-hub-url http://localhost:9000]")
 	}
 	peerURL := remaining[0]
 	url := ResolveHubURL(*hubURL)
@@ -48,7 +48,7 @@ func peerAdd(args []string) error {
 
 func peerList(args []string) error {
 	fs := flag.NewFlagSet("peer list", flag.ExitOnError)
-	hubURL := fs.String("hub-url", "", "Hub URL")
+	hubURL := fs.String("peer-hub-url", "", "URL of your local hub (default: localhost:9000)")
 	fs.Parse(args)
 
 	url := ResolveHubURL(*hubURL)
