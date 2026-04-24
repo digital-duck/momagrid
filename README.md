@@ -31,7 +31,11 @@ export PATH=$PATH:/usr/local/go/bin
 cd ~/projects/digital-duck/momagrid
 go mod tidy
 go build -buildvcs=false -o mg ./cmd/mg
-cp -rf ./mg ./mgui ~/.local/bin
+go build -buildvcs=false -o mgui ./cmd/mgui
+
+# alias
+ln -s ~/projects/digital-duck/momagrid/mg ~/.local/bin/mg
+ln -s ~/projects/digital-duck/momagrid/mgui ~/.local/bin/mgui
 ```
 
 ## Cross-compile for Linux (from Windows/Mac)

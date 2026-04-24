@@ -1,5 +1,6 @@
 CLAUDE.md
 GEMINI.md
+mg
 
 archive/
 **/logs/
@@ -52,8 +53,8 @@ profile.cov
 
 docs/memory/
 
-./mg
-./mgui
+mg
+mgui
 model_health
 
 go_git.log

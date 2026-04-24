@@ -1,5 +1,5 @@
 # MomaGrid User Guide
-<!-- Version: 2026-03-17 -->
+<!-- Version: 2026-04-06 -->
 
 ---
 
@@ -278,8 +278,10 @@ go run cookbook/run_all.go --ids 29   # runs model fingerprinting even though in
 
 `mgui` is an optional web-based front-end that provides:
 - **Chat** — unified chat across OpenAI, Anthropic, Google, OpenRouter, and Momagrid
+- **Cookbook** — browse the full SPL 2.0 recipe catalog, pick a recipe, run it on the grid, and see the response in-browser
 - **Join Grid** — one-click GPU node registration with live SSE progress
-- **Grid Status** — live agents table, recent tasks, rewards ledger
+- **Grid Status** — live agents table, recent tasks, async job queue
+- **Settings** — submission mode, priority, notification email
 
 Default port: **9080**.
 
@@ -287,12 +289,35 @@ Default port: **9080**.
 # Build
 go build -buildvcs=false -o mgui ./cmd/mgui
 
-# Run — mgui serves on :9080, proxies to the hub at :9000
+# Run (minimal — hub only)
 ./mgui --hub http://localhost:9000 --port 9080
+
+# Run (with cookbook tab enabled)
+./mgui \
+  --hub     http://localhost:9000 \
+  --port    9080 \
+  --catalog /path/to/SPL20/cookbook/cookbook_catalog.json \
+  --report  /path/to/SPL20/cookbook/report/2026-04-06.md
+
+# Public hub via Pinggy
+./mgui \
+  --hub     https://<pinggy-id>.run.pinggy-free.link \
+  --port    9080 \
+  --catalog /home/papagame/projects/digital-duck/SPL20/cookbook/cookbook_catalog.json \
+  --report  /home/papagame/projects/digital-duck/SPL20/cookbook/report/2026-04-06.md
 
 # Open browser
 open http://localhost:9080
 ```
+
+### mgui flags
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--hub` | `http://localhost:9000` | Momagrid Hub URL (LAN or public) |
+| `--port` | `9080` | mgui HTTP port |
+| `--catalog` | *(empty)* | Path to `cookbook_catalog.json`; enables Cookbook tab |
+| `--report` | *(empty)* | Path to latest run report `.md`; adds last-elapsed timings |
 
 The **Join Grid** tab auto-detects your local GPU and Ollama installation.
 Click **Register** to walk through a 6-step SSE-streamed wizard:
@@ -307,6 +332,108 @@ Step 6  Starting heartbeat loop...   ✅  pulse every 30s
 ```
 
 The tab is hidden if no GPU or Ollama is detected on the local machine.
+
+---
+
+## mgui — Cookbook Tab
+
+The **Cookbook** tab exposes the full SPL 2.0 recipe catalog directly in the
+browser. It lets anyone explore the recipes, understand expected latency, and
+run a live demonstration against the grid with a single click.
+
+### How it works
+
+1. `mgui` reads `cookbook_catalog.json` (via `--catalog`) and the latest run
+   report (via `--report`) on startup.
+2. The `/api/cookbook` endpoint serves the merged catalog — recipe metadata
+   plus last-observed elapsed time for each recipe.
+3. The model selector is populated dynamically from `/agents` — only models
+   available on currently ONLINE agents appear.
+4. Clicking **Run on Grid** calls `/api/cookbook/run`, which submits a
+   demonstration task (prompt) to `POST /tasks` on the hub and returns a
+   `task_id`.
+5. The UI polls `GET /tasks/{task_id}` every 2 seconds. When the task reaches
+   `COMPLETE`, it displays the full result: content, serving agent name, model,
+   latency, and token count.
+
+### User workflow
+
+```
+① Open Cookbook tab
+② Filter by category or search by name (e.g. "tree", "rag", "sentiment")
+③ Click a recipe row to select it
+④ Review or edit the pre-filled input (extracted from the recipe's default args)
+⑤ Pick a model from the online agents' supported model list
+⑥ Click ▶ Run on Grid
+⑦ Watch the status update every 2s: PENDING → IN_FLIGHT → COMPLETE
+⑧ Read the result, agent name, and timing inline
+```
+
+### Elapsed time reference (2026-04-06 momagrid test — 4 GPU LAN via Pinggy)
+
+This was the **first successful public-internet momagrid test**: 45/45 recipes
+passed over a Pinggy WAN tunnel to a 4-GPU LAN grid (3× GTX 1080 Ti 11 GB +
+1× RTX 4060 8 GB), all running `gemma3` with 10 parallel workers.
+
+| ID | Recipe | Elapsed |
+|----|--------|---------|
+| 01 | Hello World | 9.3s |
+| 05 | Self-Refine | 197.0s |
+| 08 | RAG Query | 11.5s |
+| 09 | Chain of Thought | 47.1s |
+| 12 | Plan and Execute | 275.4s |
+| 14 | Multi-Agent Collaboration | 169.1s |
+| 16 | Reflection Agent | 362.6s |
+| 17 | Tree of Thought | 348.9s |
+| 20 | Ensemble Voting | 367.6s |
+| 27 | Data Extraction | 6.2s |
+| 36 | Tool-Use / Function-Call | 13.1s |
+| 45 | Vision to Action | 3.7s |
+
+Full timings are embedded in the report file and surfaced automatically in the
+Cookbook tab's **Last Run** column when `--report` is provided.
+
+---
+
+## Security — Rate Limiting
+
+All hub endpoints are protected by a per-IP sliding-window rate limiter.
+Rate limiting is applied as a global middleware — no endpoint is exempt.
+
+| Limit | Threshold | Response |
+|-------|-----------|----------|
+| Sustained | 60 req/min | HTTP 429 |
+| Burst | > 200 req/10s | HTTP 429 + IP auto-suspended 24 h |
+| Suspended IP | any request | HTTP 403 `"IP is blocked"` |
+
+The defaults match the values in `--rate-limit` / `--burst-threshold` hub flags
+and can be tuned at startup:
+
+```bash
+mg hub up \
+  --rate-limit       60   \   # requests per minute per IP
+  --burst-threshold  200      # requests per 10s before flood suspension
+```
+
+**Watchlist management:**
+
+```bash
+mg watchlist               # list blocked / suspended IPs
+mg unblock <entity_id>     # remove an IP from the watchlist and reset its counter
+```
+
+Or via HTTP:
+
+```bash
+curl http://localhost:9000/watchlist
+curl -X DELETE http://localhost:9000/watchlist/<entity_id>
+```
+
+**What changed (2026-04-06):** Previously only `POST /join`, `POST /tasks`, and
+`POST /jobs` had rate limiting applied per-handler. All other endpoints —
+`POST /pulse`, `POST /results`, `GET /agents`, `POST /cluster/*`,
+`GET /task-stream/*` — were unprotected. Rate limiting is now a single chi
+middleware (`rateLimitMiddleware`) applied at router level, covering every route.
 
 ---
 
@@ -326,7 +453,14 @@ mg hub up --host 0.0.0.0 --port 9000 --hub-url http://192.168.1.11:9000
 
 **Peer them (from Machine A):**
 ```bash
-mg peer add http://192.168.1.11:9000 --hub http://192.168.0.177:9000
+mg peer add http://192.168.1.11:9000
+```
+
+Only the peer hub's URL is needed. `mg peer add` targets your local hub by default
+(`localhost:9000`, or `hub.urls[0]` from `~/.igrid/config.yaml`).
+To target a different local hub explicitly, use `--peer-hub-url`:
+```bash
+mg peer add http://192.168.1.11:9000 --peer-hub-url http://192.168.0.177:9000
 ```
 
 Or run the full cluster demo:
@@ -432,7 +566,7 @@ mg hub reject <agent_id>
 | Agent cannot reach hub | Firewall | Open port 9000 on Machine A |
 | Task FAILED: "no agents" | Model mismatch | Ensure agent advertises the required model |
 | Pull-mode agent not getting tasks | SSE dropped | Restart agent; check hub logs |
-| Hub-to-hub forward fails | --hub-url not set | Set `--hub-url http://<public-IP>:9000` on both hubs |
+| Hub-to-hub forward fails | --hub-url not set on hub | Set `--hub-url http://<public-IP>:9000` on both hubs |
 
 ---
 
@@ -452,4 +586,4 @@ mg migrate --from .igrid/hub.sqlite3 --to postgres://user:pass@host/dbname
 
 ---
 
-*momagrid — Apache 2.0 | 2026-03-17*
+*momagrid — Apache 2.0 | updated 2026-04-06*
