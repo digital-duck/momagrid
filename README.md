@@ -28,8 +28,10 @@ export PATH=$PATH:/usr/local/go/bin
 ## Build
 
 ```bash
+cd ~/projects/digital-duck/momagrid
 go mod tidy
 go build -buildvcs=false -o mg ./cmd/mg
+cp -rf ./mg ./mgui ~/.local/bin
 ```
 
 ## Cross-compile for Linux (from Windows/Mac)

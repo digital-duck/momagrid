@@ -33,6 +33,11 @@ type HubConfig struct {
 	MaxQueueDepth      int // HTTP 503 if PENDING tasks >= this (default 1000)
 	RateLimit          int // max requests per minute per IP (default 60)
 	BurstThreshold     int // max requests per 10s before flood watchlist (default 200)
+
+	// Backend selects the dispatch backend: "native" (default) or "dbos".
+	Backend     string
+	// PostgresDSN is required when Backend == "dbos".
+	PostgresDSN string
 }
 
 // App is the hub HTTP application.
@@ -44,6 +49,7 @@ type App struct {
 	RateLimiter *RateLimiter
 	Notifier    *Notifier
 	Router      chi.Router
+	Backend     DispatchBackend
 	stopCh      chan struct{}
 }
 
@@ -114,6 +120,20 @@ func NewApp(cfg HubConfig) (*App, error) {
 		stopCh:      make(chan struct{}),
 	}
 
+	// Select dispatch backend.
+	switch cfg.Backend {
+	case "dbos":
+		b, err := NewDBOSBackend(cfg.PostgresDSN, state, sseQueues, notifier, cfg.MaxConcurrentTasks, cfg.MaxRetries)
+		if err != nil {
+			return nil, fmt.Errorf("dbos backend: %w", err)
+		}
+		app.Backend = b
+		log.Printf("dispatch backend: dbos (postgres DSN configured)")
+	default:
+		app.Backend = NewNativeBackend(state, sseQueues, notifier, cfg.MaxConcurrentTasks, app.stopCh)
+		log.Printf("dispatch backend: native")
+	}
+
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
@@ -149,23 +169,25 @@ func NewApp(cfg HubConfig) (*App, error) {
 	return app, nil
 }
 
-// Start launches background goroutines and the HTTP server.
+// Start launches the dispatch backend and the HTTP server.
+// ClusterMonitor runs regardless of backend (peer forwarding is backend-agnostic).
 func (a *App) Start(addr string) error {
-	go AgentMonitor(a.State, a.stopCh)
+	if err := a.Backend.Start(); err != nil {
+		return fmt.Errorf("backend start: %w", err)
+	}
 	go ClusterMonitor(a.State, a.Cluster, a.stopCh)
-	go DispatchLoop(a.State, a.SSEQueues, a.Config.MaxConcurrentTasks, a.stopCh)
-	go JobLoop(a.State, a.SSEQueues, a.Notifier, a.Config.MaxConcurrentTasks, a.stopCh)
 
-	log.Printf("hub %s started  url=%s  db=%s  admin=%v  max_concurrent=%d",
-		a.Config.HubID, a.Config.HubURL, a.Config.DBPath,
+	log.Printf("hub %s started  url=%s  db=%s  backend=%s  admin=%v  max_concurrent=%d",
+		a.Config.HubID, a.Config.HubURL, a.Config.DBPath, a.Config.Backend,
 		a.Config.AdminMode, a.Config.MaxConcurrentTasks)
 
 	return http.ListenAndServe(addr, a.Router)
 }
 
-// Stop signals background goroutines to exit.
+// Stop shuts down the dispatch backend and closes the database.
 func (a *App) Stop() {
 	close(a.stopCh)
+	a.Backend.Stop()
 	a.State.DB.Close()
 }
 
@@ -343,7 +365,7 @@ func (a *App) handleSubmitTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// Queue depth enforcement (spec §2.4): HTTP 503 if too many PENDING tasks
-	if pending, _ := a.State.CountPendingTasks(); pending >= a.Config.MaxQueueDepth {
+	if pending, _ := a.Backend.CountPendingTasks(); pending >= a.Config.MaxQueueDepth {
 		writeJSON(w, 503, map[string]string{"detail": "queue full — try again later"})
 		return
 	}
@@ -351,7 +373,7 @@ func (a *App) handleSubmitTask(w http.ResponseWriter, r *http.Request) {
 		req.TaskID = uuid.New().String()
 	}
 	req.ApplyDefaults()
-	if err := a.State.SubmitTask(req); err != nil {
+	if err := a.Backend.SubmitTask(req); err != nil {
 		writeJSON(w, 500, map[string]string{"detail": err.Error()})
 		return
 	}
@@ -360,28 +382,10 @@ func (a *App) handleSubmitTask(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) handleGetTask(w http.ResponseWriter, r *http.Request) {
 	taskID := chi.URLParam(r, "taskID")
-	row, err := a.State.GetTask(taskID)
-	if err != nil || row == nil {
+	resp, err := a.Backend.GetTaskStatus(taskID)
+	if err != nil || resp == nil {
 		writeJSON(w, 404, map[string]string{"detail": "Task not found"})
 		return
-	}
-	state := fmt.Sprint(row["state"])
-	resp := schema.TaskStatusResponse{TaskID: taskID, State: schema.TaskState(state)}
-	if state == string(schema.StateComplete) || state == string(schema.StateFailed) {
-		resp.Result = &schema.TaskResult{
-			TaskID:       taskID,
-			State:        schema.TaskState(state),
-			Content:      strVal(row["content"]),
-			Model:        strVal(row["model"]),
-			InputTokens:  toInt(row["input_tokens"]),
-			OutputTokens: toInt(row["output_tokens"]),
-			LatencyMs:    toFloat(row["latency_ms"]),
-			AgentID:      strVal(row["agent_id"]),
-			AgentName:    strVal(row["agent_name"]),
-			AgentHost:    strVal(row["agent_host"]),
-			CompletedAt:  strVal(row["updated_at"]),
-			Error:        strVal(row["error"]),
-		}
 	}
 	writeJSON(w, 200, resp)
 }
@@ -393,7 +397,7 @@ func (a *App) handleListTasks(w http.ResponseWriter, r *http.Request) {
 			limit = n
 		}
 	}
-	tasks, _ := a.State.ListTasks(limit)
+	tasks, _ := a.Backend.ListTasks(limit)
 	writeJSON(w, 200, map[string]interface{}{"tasks": tasks})
 }
 
@@ -740,7 +744,7 @@ func (a *App) handleSubmitJob(w http.ResponseWriter, r *http.Request) {
 		req.MaxTokens = 4096
 	}
 
-	if err := a.State.SubmitJob(req); err != nil {
+	if err := a.Backend.SubmitJob(req); err != nil {
 		writeJSON(w, 500, map[string]string{"detail": err.Error()})
 		return
 	}
@@ -749,27 +753,11 @@ func (a *App) handleSubmitJob(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) handleGetJob(w http.ResponseWriter, r *http.Request) {
 	jobID := chi.URLParam(r, "jobID")
-	row, err := a.State.GetJob(jobID)
-	if err != nil || row == nil {
+	resp, err := a.Backend.GetJobStatus(jobID)
+	if err != nil || resp == nil {
 		writeJSON(w, 404, map[string]string{"detail": "Job not found"})
 		return
 	}
-	
-	state := schema.JobState(strVal(row["state"]))
-	resp := schema.JobStatusResponse{
-		JobID:     jobID,
-		State:     state,
-		Model:     strVal(row["model"]),
-		CreatedAt: parseTime(row["created_at"]),
-		UpdatedAt: parseTime(row["updated_at"]),
-	}
-	
-	if resStr := strVal(row["result"]); resStr != "" {
-		var res schema.TaskResult
-		json.Unmarshal([]byte(resStr), &res)
-		resp.Result = &res
-	}
-	
 	writeJSON(w, 200, resp)
 }
 
@@ -780,7 +768,7 @@ func (a *App) handleListJobs(w http.ResponseWriter, r *http.Request) {
 			limit = n
 		}
 	}
-	jobs, _ := a.State.ListJobs(limit)
+	jobs, _ := a.Backend.ListJobs(limit)
 	writeJSON(w, 200, map[string]interface{}{"jobs": jobs})
 }
 

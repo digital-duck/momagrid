@@ -50,6 +50,8 @@ func hubUp(args []string) error {
 	maxQueueDepth := fs.Int("max-queue-depth", 1000, "Max PENDING tasks in queue (HTTP 503 if exceeded)")
 	rateLimit := fs.Int("rate-limit", 300, "Max requests per minute per IP")
 	burstThreshold := fs.Int("burst-threshold", 200, "Requests per 10s before flood auto-block")
+	backend := fs.String("backend", "native", `Dispatch backend: "native" (default) or "dbos"`)
+	postgres := fs.String("postgres", "", `PostgreSQL DSN required for --backend dbos (e.g. "postgres://user:pass@localhost/momagrid")`)
 	fs.Parse(args)
 
 	// Persist any explicitly-provided flags back to config.
@@ -85,6 +87,8 @@ func hubUp(args []string) error {
 		MaxQueueDepth:      *maxQueueDepth,
 		RateLimit:          *rateLimit,
 		BurstThreshold:     *burstThreshold,
+		Backend:            *backend,
+		PostgresDSN:        *postgres,
 	}
 
 	app, err := hub.NewApp(hubCfg)
