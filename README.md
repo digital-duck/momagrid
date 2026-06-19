@@ -158,7 +158,7 @@ mg logs --follow
 # Submit a task
 mg submit "What is 10 !" --model qwen3
 
-mg submit "Explain quantum computing" --model llama3.1:8b
+mg submit "Explain quantum computing" --model gemma3
 
 # Export results
 mg export --label "run-1" --output results.json
@@ -195,7 +195,7 @@ mg hub up --port 9000
 mg join http://192.168.1.10:9000
 
 # Specify models explicitly (useful if Ollama probe fails)
-mg join http://192.168.1.10:9000 --models llama3.2,qwen3
+mg join http://192.168.1.10:9000 --models gemma3,qwen3
 
 # Pull mode — for agents behind NAT (hub pushes tasks via SSE instead of HTTP POST)
 mg join http://192.168.1.10:9000 --pull
@@ -243,11 +243,11 @@ For maximum distribution with sequential workloads (e.g. SPL cookbook recipes), 
 export MOMAGRID_HUB_URL=http://192.168.1.10:9000
 
 # Run a single SPL recipe on the grid
-spl run cookbook/01_hello_world/hello.spl --adapter momagrid -m llama3.2
+spl run cookbook/01_hello_world/hello.spl --adapter momagrid -m gemma3
 
 # Run the full cookbook — parallel mode submits all recipes concurrently
 # so the hub sees multiple tasks queued at once and distributes across agents
-python cookbook/run_all.py run --adapter momagrid --model llama3.2
+python cookbook/run_all.py run --adapter momagrid --model gemma3
 
 # Limit parallel workers (default: one per active recipe)
 python cookbook/run_all.py run --adapter momagrid --workers 4
