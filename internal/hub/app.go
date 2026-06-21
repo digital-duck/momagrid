@@ -153,6 +153,7 @@ func NewApp(cfg HubConfig) (*App, error) {
 	r.Get("/agents/pending", app.handleListPendingAgents)
 	r.Post("/agents/{agentID}/approve", app.handleApproveAgent)
 	r.Post("/agents/{agentID}/reject", app.handleRejectAgent)
+	r.Patch("/agents/{agentID}", app.handleUpdateAgent)
 	r.Get("/rewards", app.handleRewards)
 	r.Get("/logs", app.handleLogs)
 	r.Post("/cluster/handshake", app.handleClusterHandshake)
@@ -280,12 +281,17 @@ func (a *App) handleJoin(w http.ResponseWriter, r *http.Request) {
 		log.Printf("agent %s identity verified (Ed25519)", req.AgentID)
 	}
 
-	// Classify initial tier from VRAM if GPU info provided; fall back to BRONZE.
+	// Classify initial tier: VRAM wins when GPUs are reported; otherwise honour
+	// the agent's TierHint (useful for Apple Silicon / unified-memory machines
+	// that don't expose a discrete GPU). Fall back to BRONZE when neither is set.
 	initialTier := schema.TierBronze
 	for _, gpu := range req.GPUs {
 		if t := schema.TierFromVRAM(gpu.VramGB); schema.TierOrder[t] < schema.TierOrder[initialTier] {
 			initialTier = t
 		}
+	}
+	if len(req.GPUs) == 0 && schema.ValidTier(req.TierHint) {
+		initialTier = req.TierHint
 	}
 	initialStatus, err := a.State.RegisterAgent(req, initialTier, a.Config.AdminMode)
 	if err != nil {
@@ -431,6 +437,28 @@ func (a *App) handleRejectAgent(w http.ResponseWriter, r *http.Request) {
 	}
 	log.Printf("agent %s rejected", agentID)
 	writeJSON(w, 200, map[string]interface{}{"ok": true, "agent_id": agentID, "status": "OFFLINE"})
+}
+
+func (a *App) handleUpdateAgent(w http.ResponseWriter, r *http.Request) {
+	agentID := chi.URLParam(r, "agentID")
+	var body struct {
+		Tier schema.ComputeTier `json:"tier"`
+	}
+	if err := readJSON(r, &body); err != nil {
+		writeJSON(w, 400, map[string]string{"detail": err.Error()})
+		return
+	}
+	if !schema.ValidTier(body.Tier) {
+		writeJSON(w, 400, map[string]string{"detail": "invalid tier; valid values: PLATINUM, GOLD, SILVER, BRONZE"})
+		return
+	}
+	ok, err := a.State.UpdateAgentTier(agentID, body.Tier)
+	if err != nil || !ok {
+		writeJSON(w, 404, map[string]string{"detail": "agent not found"})
+		return
+	}
+	log.Printf("agent %s tier updated to %s", agentID, body.Tier)
+	writeJSON(w, 200, map[string]interface{}{"ok": true, "agent_id": agentID, "tier": body.Tier})
 }
 
 func (a *App) handleRewards(w http.ResponseWriter, r *http.Request) {

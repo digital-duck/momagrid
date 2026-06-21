@@ -31,6 +31,9 @@ type JoinRequest struct {
 	PublicKey string `json:"public_key,omitempty"`
 	Signature string `json:"signature,omitempty"`
 	Timestamp string `json:"timestamp,omitempty"`
+	// Optional: agent can self-declare a tier (e.g. Apple Silicon with unified memory
+	// that doesn't expose a discrete GPU). Hub uses this when no GPU VRAM is detected.
+	TierHint ComputeTier `json:"tier_hint,omitempty"`
 }
 
 // JoinAck is the hub's response to a JoinRequest.

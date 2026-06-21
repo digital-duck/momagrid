@@ -59,6 +59,41 @@ func postJSON(url string, payload interface{}) (map[string]interface{}, error) {
 	return data, nil
 }
 
+// patchJSON performs a PATCH request with JSON body and returns the parsed response.
+func patchJSON(url string, payload interface{}) (map[string]interface{}, error) {
+	body, err := json.Marshal(payload)
+	if err != nil {
+		return nil, err
+	}
+	req, err := http.NewRequest(http.MethodPatch, url, bytes.NewReader(body))
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("Content-Type", "application/json")
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("cannot reach hub: %w", err)
+	}
+	defer resp.Body.Close()
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	if resp.StatusCode >= 400 {
+		var errData map[string]interface{}
+		json.Unmarshal(respBody, &errData)
+		if detail, ok := errData["detail"].(string); ok {
+			return nil, fmt.Errorf("%s (HTTP %d)", detail, resp.StatusCode)
+		}
+		return nil, fmt.Errorf("HTTP %d: %s", resp.StatusCode, string(respBody))
+	}
+	var data map[string]interface{}
+	if err := json.Unmarshal(respBody, &data); err != nil {
+		return nil, fmt.Errorf("invalid JSON response: %w", err)
+	}
+	return data, nil
+}
+
 // str extracts a string from a map, returning "" for nil.
 func str(m map[string]interface{}, key string) string {
 	v, ok := m[key]

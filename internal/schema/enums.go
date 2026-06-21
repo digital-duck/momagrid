@@ -40,6 +40,15 @@ func TierFromVRAM(vramGB float64) ComputeTier {
 	}
 }
 
+// ValidTier returns true if t is a recognised ComputeTier value.
+func ValidTier(t ComputeTier) bool {
+	switch t {
+	case TierPlatinum, TierGold, TierSilver, TierBronze:
+		return true
+	}
+	return false
+}
+
 // TierOrder maps tiers to ordinal values (lower = better).
 var TierOrder = map[ComputeTier]int{
 	TierPlatinum: 0,
