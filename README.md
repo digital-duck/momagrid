@@ -14,6 +14,37 @@ This repository contains the production-grade Go implementation of the momagrid 
 
 **momagrid** requires Go 1.22 or higher.
 
+### macOS
+
+**Option 1 — Homebrew (recommended):**
+```bash
+brew install go
+```
+Homebrew adds Go to your PATH automatically. Verify with `go version`.
+
+**Option 2 — Official installer (.pkg):**
+
+Download the macOS `.pkg` from [go.dev/dl](https://go.dev/dl/), run it, and Go installs to `/usr/local/go`. Add the following to `~/.zshrc` (zsh is the default shell since macOS Catalina):
+```bash
+export PATH=$PATH:/opt/homebrew/bin/go
+```
+Then reload: `source ~/.zshrc`.
+
+**After installation — build alias (macOS):**
+```bash
+cd ~/projects/digital-duck/momagrid
+go mod tidy
+go build -buildvcs=false -o mg ./cmd/mg
+
+# Put the binary on PATH (create ~/.local/bin if needed)
+mkdir -p ~/.local/bin
+ln -sf $(pwd)/mg ~/.local/bin/mg
+
+# Add to ~/.zshrc if not already there
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.zshrc
+source ~/.zshrc
+```
+
 ### Ubuntu / Linux
 ```bash
 # Easiest way via snap

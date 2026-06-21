@@ -22,6 +22,7 @@ Hub commands:
 Client commands:
   status        Hub health and agent count
   agents        List online agents
+  agent tier    Set compute tier of an agent
   tasks         List recent tasks
   submit        Submit a prompt
   rewards       Reward summary by operator
@@ -60,6 +61,8 @@ func main() {
 		err = cli.Status(args)
 	case "agents":
 		err = cli.Agents(args)
+	case "agent":
+		err = cli.Agent(args)
 	case "tasks":
 		err = cli.Tasks(args)
 	case "submit":

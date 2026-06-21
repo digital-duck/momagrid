@@ -152,6 +152,16 @@ func (s *GridState) RecordPulse(agentID string, status schema.AgentStatus, gpuUt
 	return nil
 }
 
+func (s *GridState) UpdateAgentTier(agentID string, tier schema.ComputeTier) (bool, error) {
+	res, err := s.DB.Exec(fmt.Sprintf(`UPDATE agents SET tier=%s WHERE agent_id=%s`, s.q(1), s.q(2)),
+		string(tier), agentID)
+	if err != nil {
+		return false, err
+	}
+	n, _ := res.RowsAffected()
+	return n > 0, nil
+}
+
 func (s *GridState) ListAgents() ([]map[string]interface{}, error) {
 	return queryMaps(s.DB, "SELECT * FROM agents WHERE status != 'OFFLINE' ORDER BY tier")
 }

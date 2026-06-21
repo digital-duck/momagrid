@@ -46,6 +46,7 @@ func Join(args []string) error {
 	sign := fs.Bool("sign", true, "Sign join/pulse with Ed25519 keypair (recommended)")
 	apiKey := fs.String("api-key", "", "API key (if hub requires one)")
 	pulseInterval := fs.Duration("pulse", 30*time.Second, "Heartbeat interval")
+	tierHint := fs.String("tier", "", "Override compute tier (PLATINUM|GOLD|SILVER|BRONZE). Useful for Apple Silicon / unified-memory machines without a discrete GPU.")
 	fs.Parse(args)
 
 	remaining := fs.Args()
@@ -194,6 +195,7 @@ func Join(args []string) error {
 		SupportedModels: modelList,
 		PullMode:        *pullMode,
 		APIKey:          *apiKey,
+		TierHint:        schema.ComputeTier(strings.ToUpper(*tierHint)),
 	}
 	if ident != nil {
 		req.Timestamp = identity.TimestampNow()
