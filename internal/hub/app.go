@@ -165,6 +165,8 @@ func NewApp(cfg HubConfig) (*App, error) {
 	r.Post("/cluster/result", app.handleClusterResult)
 	r.Get("/watchlist", app.handleListWatchlist)
 	r.Delete("/watchlist/{entityID}", app.handleUnblock)
+	r.Get("/gpu-scores", app.handleListGPUScores)
+	r.Post("/gpu-scores/refresh", app.handleRefreshGPUScores)
 
 	app.Router = r
 	return app, nil
@@ -294,7 +296,27 @@ func (a *App) handleJoin(w http.ResponseWriter, r *http.Request) {
 	if tierIsHint {
 		initialTier = req.TierHint
 	}
-	initialStatus, err := a.State.RegisterAgent(req, initialTier, tierIsHint, a.Config.AdminMode)
+
+	// Seed dispatch_score (see docs/DEV/task-dispatch.md), in priority order:
+	//   1. operator's explicit --score estimate
+	//   2. historical average for this exact GPU model (gpu_scores — see
+	//      RecomputeGPUScores), when this grid has seen that hardware before
+	//   3. tier-based default, same as the old fixed tier-weight table
+	// Only used on a genuinely new agent — RegisterAgent never resets a score
+	// already learned from a prior session.
+	initialScore := req.ScoreHint
+	if initialScore <= 0 {
+		if len(req.GPUs) > 0 {
+			if avg, ok := a.State.GPUScoreFor(req.GPUs[0].Model); ok {
+				initialScore = avg
+			}
+		}
+	}
+	if initialScore <= 0 {
+		initialScore = defaultDispatchScore[initialTier]
+	}
+
+	initialStatus, err := a.State.RegisterAgent(req, initialTier, tierIsHint, a.Config.AdminMode, initialScore)
 	if err != nil {
 		writeJSON(w, 500, map[string]string{"detail": err.Error()})
 		return
@@ -720,6 +742,26 @@ func (a *App) verifyAgent(req schema.JoinRequest) {
 
 	a.State.ApproveAgent(req.AgentID)
 	log.Printf("verify: agent %s auto-approved", req.AgentID)
+}
+
+// handleListGPUScores returns the historical dispatch_score average per GPU
+// model (see docs/DEV/task-dispatch.md), highest-scoring first.
+func (a *App) handleListGPUScores(w http.ResponseWriter, r *http.Request) {
+	scores, _ := a.State.ListGPUScores()
+	writeJSON(w, 200, map[string]interface{}{"gpu_scores": scores})
+}
+
+// handleRefreshGPUScores recomputes gpu_scores on-demand from current agent
+// dispatch_score values, instead of waiting for GPUScoreMonitor's 10-minute
+// timer.
+func (a *App) handleRefreshGPUScores(w http.ResponseWriter, r *http.Request) {
+	n, err := a.State.RecomputeGPUScores()
+	if err != nil {
+		writeJSON(w, 500, map[string]string{"detail": err.Error()})
+		return
+	}
+	log.Printf("gpu scores refreshed on-demand for %d model(s)", n)
+	writeJSON(w, 200, map[string]interface{}{"models_updated": n})
 }
 
 func (a *App) handleListWatchlist(w http.ResponseWriter, r *http.Request) {

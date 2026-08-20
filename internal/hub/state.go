@@ -40,7 +40,11 @@ func (s *GridState) now() interface{} {
 // tierIsHint marks the tier as operator-set (via --tier at join) rather than
 // probed from GPU VRAM — RecordPulse below must not let TPS-based
 // reclassification silently overwrite it.
-func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTier, tierIsHint bool, adminMode bool) (string, error) {
+// initialScore seeds dispatch_score (see docs/DEV/task-dispatch.md) — used only
+// on first INSERT; a rejoin never resets a score the hub has already learned
+// from real measured task throughput (dispatch_score is deliberately absent
+// from both ON CONFLICT UPDATE clauses below).
+func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTier, tierIsHint bool, adminMode bool, initialScore float64) (string, error) {
 	tx, err := s.DB.Begin()
 	if err != nil {
 		return "", err
@@ -97,15 +101,15 @@ func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTie
 
 	query := fmt.Sprintf(`
 		INSERT INTO agents
-			(agent_id, operator_id, name, host, port, status, tier, tier_is_hint, gpus, cpu_cores, ram_gb, supported_models, pull_mode, joined_at, last_pulse, public_key)
-		VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+			(agent_id, operator_id, name, host, port, status, tier, tier_is_hint, gpus, cpu_cores, ram_gb, supported_models, pull_mode, joined_at, last_pulse, public_key, dispatch_score)
+		VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
 		%s
-	`, s.q(1), s.q(2), s.q(3), s.q(4), s.q(5), s.q(6), s.q(7), s.q(8), s.q(9), s.q(10), s.q(11), s.q(12), s.q(13), s.q(14), s.q(15), s.q(16), onConflict)
+	`, s.q(1), s.q(2), s.q(3), s.q(4), s.q(5), s.q(6), s.q(7), s.q(8), s.q(9), s.q(10), s.q(11), s.q(12), s.q(13), s.q(14), s.q(15), s.q(16), s.q(17), onConflict)
 
 	_, err = tx.Exec(query,
 		req.AgentID, req.OperatorID, req.Name, req.Host, req.Port,
 		initialStatus, string(tier), tierIsHintInt, string(gpusJSON), req.CPUCores, req.RamGB, string(modelsJSON),
-		pullMode, now, now, req.PublicKey)
+		pullMode, now, now, req.PublicKey, initialScore)
 	if err != nil {
 		return "", err
 	}
@@ -166,6 +170,102 @@ func (s *GridState) RecordPulse(agentID string, status schema.AgentStatus, gpuUt
 		VALUES (%s,%s,%s,%s,%s,%s,%s)`, s.q(1), s.q(2), s.q(3), s.q(4), s.q(5), s.q(6), s.q(7)),
 		agentID, string(status), gpuUtil, vramUsed, tps, tasksDone, now)
 	return nil
+}
+
+// dispatchScoreAlpha is the EWMA smoothing factor for UpdateDispatchScore —
+// low enough that one unusually large/small task doesn't swing a node's
+// score, high enough to track real drift (thermal throttling, background
+// load) within a few dozen tasks. See docs/DEV/task-dispatch.md.
+const dispatchScoreAlpha = 0.2
+
+// UpdateDispatchScore refines an agent's dispatch_score from one completed
+// task's real measured throughput (tokens/sec — already normalized for task
+// size, unlike raw elapsed time). Blended via EWMA against the prior score
+// (which starts as the operator's join-time estimate or tier-based default
+// and gradually converges toward real measured relative performance as
+// tasks complete). No-ops when latency or token count is missing/zero (e.g.
+// a failed task) so a bad sample can't zero out a node's score.
+func (s *GridState) UpdateDispatchScore(agentID string, latencyMs float64, outputTokens int) error {
+	if latencyMs <= 0 || outputTokens <= 0 {
+		return nil
+	}
+	measured := float64(outputTokens) / (latencyMs / 1000.0) // tokens/sec
+	_, err := s.DB.Exec(fmt.Sprintf(
+		`UPDATE agents SET dispatch_score = %s * dispatch_score + %s * %s WHERE agent_id=%s`,
+		s.q(1), s.q(2), s.q(3), s.q(4)),
+		1-dispatchScoreAlpha, dispatchScoreAlpha, measured, agentID)
+	return err
+}
+
+// gpuModelKey returns the primary GPU model string for an agent row, or ""
+// for agents with no discrete GPU reported (e.g. unified-memory hardware —
+// these fall back to the tier-based default at join time since there's no
+// GPU model to key history off of; see docs/DEV/task-dispatch.md).
+func gpuModelKey(agent map[string]interface{}) string {
+	gpusStr, _ := agent["gpus"].(string)
+	var gpus []schema.GPUInfo
+	json.Unmarshal([]byte(gpusStr), &gpus)
+	if len(gpus) == 0 {
+		return ""
+	}
+	return gpus[0].Model
+}
+
+// RecomputeGPUScores aggregates every agent's current dispatch_score by GPU
+// model (agents with no discrete GPU are skipped — no model to key on) and
+// upserts the simple mean into gpu_scores. Only agents with at least one
+// completed task contribute, so a freshly-joined agent still running on its
+// join-time seed doesn't dilute the historical average with an unmeasured
+// guess. Returns the number of distinct GPU models updated. Called on-demand
+// (POST /gpu-scores/refresh) and periodically by GPUScoreMonitor.
+func (s *GridState) RecomputeGPUScores() (int, error) {
+	rows, err := queryMaps(s.DB, "SELECT gpus, dispatch_score FROM agents WHERE tasks_completed > 0")
+	if err != nil {
+		return 0, err
+	}
+
+	sums := map[string]float64{}
+	counts := map[string]int{}
+	for _, row := range rows {
+		model := gpuModelKey(row)
+		if model == "" {
+			continue
+		}
+		sums[model] += toFloat(row["dispatch_score"])
+		counts[model]++
+	}
+
+	now := s.now()
+	onConflict := "ON CONFLICT(gpu_model) DO UPDATE SET avg_score=excluded.avg_score, sample_count=excluded.sample_count, updated_at=excluded.updated_at"
+	if s.Driver == "postgres" {
+		onConflict = "ON CONFLICT(gpu_model) DO UPDATE SET avg_score=EXCLUDED.avg_score, sample_count=EXCLUDED.sample_count, updated_at=EXCLUDED.updated_at"
+	}
+	query := fmt.Sprintf(`INSERT INTO gpu_scores (gpu_model, avg_score, sample_count, updated_at)
+		VALUES (%s,%s,%s,%s) %s`, s.q(1), s.q(2), s.q(3), s.q(4), onConflict)
+
+	for model, count := range counts {
+		avg := sums[model] / float64(count)
+		if _, err := s.DB.Exec(query, model, avg, count, now); err != nil {
+			return 0, err
+		}
+	}
+	return len(counts), nil
+}
+
+// GPUScoreFor looks up the historical average dispatch_score for a GPU
+// model. ok is false when the model has no history yet (brand-new hardware
+// to this grid) — callers should fall back to the tier-based default.
+func (s *GridState) GPUScoreFor(model string) (avg float64, ok bool) {
+	if model == "" {
+		return 0, false
+	}
+	err := s.DB.QueryRow(fmt.Sprintf("SELECT avg_score FROM gpu_scores WHERE gpu_model=%s", s.q(1)), model).Scan(&avg)
+	return avg, err == nil
+}
+
+// ListGPUScores returns all historical GPU-model scores, highest first.
+func (s *GridState) ListGPUScores() ([]map[string]interface{}, error) {
+	return queryMaps(s.DB, "SELECT * FROM gpu_scores ORDER BY avg_score DESC")
 }
 
 func (s *GridState) UpdateAgentTier(agentID string, tier schema.ComputeTier) (bool, error) {

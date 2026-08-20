@@ -41,7 +41,18 @@ CREATE TABLE IF NOT EXISTS agents (
     -- See hub_ddl_sqlite.sql's comment on this column — set when the agent
     -- joined with an explicit --tier hint; RecordPulse must not let
     -- TPS-based reclassification overwrite it.
-    tier_is_hint     INTEGER NOT NULL DEFAULT 0
+    tier_is_hint     INTEGER NOT NULL DEFAULT 0,
+    -- See hub_ddl_sqlite.sql's comment — measured EWMA dispatch weight,
+    -- replaces the old fixed per-tier weight table.
+    dispatch_score   DOUBLE PRECISION NOT NULL DEFAULT 0.0
+);
+
+-- See hub_ddl_sqlite.sql's comment on this table.
+CREATE TABLE IF NOT EXISTS gpu_scores (
+    gpu_model     TEXT PRIMARY KEY,
+    avg_score     DOUBLE PRECISION NOT NULL DEFAULT 0.0,
+    sample_count  INTEGER NOT NULL DEFAULT 0,
+    updated_at    TEXT
 );
 
 CREATE TABLE IF NOT EXISTS tasks (

@@ -113,6 +113,10 @@ func migrateSQLite(db *sql.DB) {
 	if !cols["tier_is_hint"] {
 		db.Exec("ALTER TABLE agents ADD COLUMN tier_is_hint INTEGER NOT NULL DEFAULT 0")
 	}
+	// See hub_ddl_sqlite.sql's comment on this column.
+	if !cols["dispatch_score"] {
+		db.Exec("ALTER TABLE agents ADD COLUMN dispatch_score REAL NOT NULL DEFAULT 0.0")
+	}
 
 	// callback_url stored for crash-recovery: if hub restarts mid-forward, the
 	// dispatcher can re-fire the callback when the peer result arrives.
@@ -132,6 +136,14 @@ func migrateSQLite(db *sql.DB) {
 	if !taskCols["callback_url"] {
 		db.Exec("ALTER TABLE tasks ADD COLUMN callback_url TEXT NOT NULL DEFAULT ''")
 	}
+
+	// Ensure gpu_scores table exists on older databases (see hub_ddl_sqlite.sql)
+	db.Exec(`CREATE TABLE IF NOT EXISTS gpu_scores (
+		gpu_model    TEXT PRIMARY KEY,
+		avg_score    REAL NOT NULL DEFAULT 0.0,
+		sample_count INTEGER NOT NULL DEFAULT 0,
+		updated_at   TEXT
+	)`)
 
 	// Ensure watchlist table exists on older databases
 	db.Exec(`CREATE TABLE IF NOT EXISTS watchlist (

@@ -48,7 +48,25 @@ CREATE TABLE IF NOT EXISTS agents (
     -- GPUs and would otherwise silently downgrade e.g. a Mac Mini to BRONZE
     -- the moment it completes its first (naturally slower) task, discarding
     -- the operator's explicit override (observed 2026-08-20).
-    tier_is_hint     INTEGER NOT NULL DEFAULT 0
+    tier_is_hint     INTEGER NOT NULL DEFAULT 0,
+    -- Measured dispatch weight (see docs/DEV/task-dispatch.md). Seeded from the
+    -- operator's --score estimate (or a tier-based default) at first join, then
+    -- refined via EWMA from each completed task's real tokens/sec — replaces
+    -- the old fixed per-tier weight table used by the dispatcher's weighted
+    -- selection. A rejoin never resets an already-learned score.
+    dispatch_score   REAL    NOT NULL DEFAULT 0.0
+);
+
+-- Historical dispatch_score averages by GPU model (see docs/DEV/task-dispatch.md
+-- and RecomputeGPUScores in state.go). Populated on-demand (POST
+-- /gpu-scores/refresh) and on a background timer (GPUScoreMonitor); consulted
+-- at join time so a new agent with a previously-seen GPU model starts from
+-- real historical performance instead of a flat tier default.
+CREATE TABLE IF NOT EXISTS gpu_scores (
+    gpu_model     TEXT PRIMARY KEY,
+    avg_score     REAL    NOT NULL DEFAULT 0.0,
+    sample_count  INTEGER NOT NULL DEFAULT 0,
+    updated_at    TEXT
 );
 
 CREATE TABLE IF NOT EXISTS tasks (

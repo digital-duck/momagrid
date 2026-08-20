@@ -40,6 +40,7 @@ Other commands:
   run           Execute an SPL recipe
   watchlist     Show rate-limited / blocked IPs
   unblock       Remove an entity from the watchlist
+  gpu-scores    Show historical dispatch scores by GPU model (--refresh to recompute)
 
 Run "mg <command> --help" for flag details.
 `
@@ -87,6 +88,8 @@ func main() {
 		err = cli.Watchlist(args)
 	case "unblock":
 		err = cli.Unblock(args)
+	case "gpu-scores":
+		err = cli.GPUScores(args)
 	case "--help", "-h", "help":
 		fmt.Print(usage)
 	default:

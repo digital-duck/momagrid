@@ -34,6 +34,11 @@ type JoinRequest struct {
 	// Optional: agent can self-declare a tier (e.g. Apple Silicon with unified memory
 	// that doesn't expose a discrete GPU). Hub uses this when no GPU VRAM is detected.
 	TierHint ComputeTier `json:"tier_hint,omitempty"`
+	// Optional: operator's initial dispatch-score estimate (see docs/DEV/task-dispatch.md).
+	// Only used on first registration — a rejoin never resets a score the hub has
+	// already learned from real measured task throughput. Falls back to a tier-based
+	// default (see hub.defaultDispatchScore) when zero/unset.
+	ScoreHint float64 `json:"score_hint,omitempty"`
 }
 
 // JoinAck is the hub's response to a JoinRequest.

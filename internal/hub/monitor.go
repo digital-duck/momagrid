@@ -27,6 +27,28 @@ func AgentMonitor(state *GridState, stop <-chan struct{}) {
 	}
 }
 
+// GPUScoreMonitor periodically refreshes the gpu_scores lookup table (see
+// docs/DEV/task-dispatch.md and RecomputeGPUScores in state.go) so a newly
+// joining agent's GPU model always gets a reasonably fresh historical
+// estimate without requiring an operator to remember to call
+// POST /gpu-scores/refresh manually.
+func GPUScoreMonitor(state *GridState, stop <-chan struct{}) {
+	ticker := time.NewTicker(10 * time.Minute)
+	defer ticker.Stop()
+	for {
+		select {
+		case <-stop:
+			return
+		case <-ticker.C:
+			if n, err := state.RecomputeGPUScores(); err != nil {
+				log.Printf("gpu score monitor error: %v", err)
+			} else if n > 0 {
+				log.Printf("gpu scores refreshed for %d model(s)", n)
+			}
+		}
+	}
+}
+
 // ClusterMonitor periodically pushes capabilities and forwards pending tasks
 // that have no eligible local agent to peer hubs (spec §6.3, §10).
 func ClusterMonitor(state *GridState, cluster *ClusterManager, stop <-chan struct{}) {

@@ -47,6 +47,7 @@ func Join(args []string) error {
 	apiKey := fs.String("api-key", "", "API key (if hub requires one)")
 	pulseInterval := fs.Duration("pulse", 30*time.Second, "Heartbeat interval")
 	tierHint := fs.String("tier", "", "Override compute tier (PLATINUM|GOLD|SILVER|BRONZE). Useful for Apple Silicon / unified-memory machines without a discrete GPU.")
+	scoreHint := fs.Float64("score", 0, "Initial dispatch-score estimate (see docs/DEV/task-dispatch.md); the hub refines this from real measured throughput after each task, so a rough guess is fine. Ignored on rejoin if the hub already has a learned score. Defaults to a tier-based estimate when unset.")
 	fs.Parse(args)
 
 	remaining := fs.Args()
@@ -196,6 +197,7 @@ func Join(args []string) error {
 		PullMode:        *pullMode,
 		APIKey:          *apiKey,
 		TierHint:        schema.ComputeTier(strings.ToUpper(*tierHint)),
+		ScoreHint:       *scoreHint,
 	}
 	if ident != nil {
 		req.Timestamp = identity.TimestampNow()

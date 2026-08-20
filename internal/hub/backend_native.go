@@ -28,6 +28,7 @@ func NewNativeBackend(state *GridState, sseQueues *SSEManager, notifier *Notifie
 
 func (b *NativeBackend) Start() error {
 	go AgentMonitor(b.state, b.stopCh)
+	go GPUScoreMonitor(b.state, b.stopCh)
 	go DispatchLoop(b.state, b.sseQueues, b.maxConcurrent, b.stopCh)
 	go JobLoop(b.state, b.sseQueues, b.notifier, b.maxConcurrent, b.stopCh)
 	return nil
