@@ -109,6 +109,10 @@ func migrateSQLite(db *sql.DB) {
 	if !cols["public_key"] {
 		db.Exec("ALTER TABLE agents ADD COLUMN public_key TEXT NOT NULL DEFAULT ''")
 	}
+	// See hub_ddl_sqlite.sql's comment on this column.
+	if !cols["tier_is_hint"] {
+		db.Exec("ALTER TABLE agents ADD COLUMN tier_is_hint INTEGER NOT NULL DEFAULT 0")
+	}
 
 	// callback_url stored for crash-recovery: if hub restarts mid-forward, the
 	// dispatcher can re-fire the callback when the peer result arrives.

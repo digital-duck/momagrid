@@ -37,7 +37,11 @@ CREATE TABLE IF NOT EXISTS agents (
     pull_mode        INTEGER NOT NULL DEFAULT 0,
     joined_at        TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_pulse       TEXT,
-    public_key       TEXT NOT NULL DEFAULT ''
+    public_key       TEXT NOT NULL DEFAULT '',
+    -- See hub_ddl_sqlite.sql's comment on this column — set when the agent
+    -- joined with an explicit --tier hint; RecordPulse must not let
+    -- TPS-based reclassification overwrite it.
+    tier_is_hint     INTEGER NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS tasks (

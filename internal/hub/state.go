@@ -37,7 +37,10 @@ func (s *GridState) now() interface{} {
 }
 
 // RegisterAgent registers or re-registers an agent. Returns the initial status.
-func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTier, adminMode bool) (string, error) {
+// tierIsHint marks the tier as operator-set (via --tier at join) rather than
+// probed from GPU VRAM — RecordPulse below must not let TPS-based
+// reclassification silently overwrite it.
+func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTier, tierIsHint bool, adminMode bool) (string, error) {
 	tx, err := s.DB.Begin()
 	if err != nil {
 		return "", err
@@ -56,6 +59,10 @@ func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTie
 	if req.PullMode {
 		pullMode = 1
 	}
+	tierIsHintInt := 0
+	if tierIsHint {
+		tierIsHintInt = 1
+	}
 
 	initialStatus := string(schema.StatusOnline)
 	if adminMode {
@@ -72,7 +79,7 @@ func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTie
 	if s.Driver == "postgres" {
 		onConflict = `ON CONFLICT(agent_id) DO UPDATE SET
 			name=EXCLUDED.name, host=EXCLUDED.host, port=EXCLUDED.port, status=CASE WHEN agents.status = 'ONLINE' THEN 'ONLINE' ELSE EXCLUDED.status END,
-			tier=EXCLUDED.tier, gpus=EXCLUDED.gpus, cpu_cores=EXCLUDED.cpu_cores, ram_gb=EXCLUDED.ram_gb,
+			tier=EXCLUDED.tier, tier_is_hint=EXCLUDED.tier_is_hint, gpus=EXCLUDED.gpus, cpu_cores=EXCLUDED.cpu_cores, ram_gb=EXCLUDED.ram_gb,
 			supported_models=EXCLUDED.supported_models, pull_mode=EXCLUDED.pull_mode, last_pulse=EXCLUDED.last_pulse,
 			public_key=CASE WHEN EXCLUDED.public_key != '' THEN EXCLUDED.public_key ELSE agents.public_key END`
 	} else {
@@ -82,7 +89,7 @@ func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTie
 		}
 		onConflict = fmt.Sprintf(`ON CONFLICT(agent_id) DO UPDATE SET
 			name=excluded.name, host=excluded.host, port=excluded.port, status=%s, tier=excluded.tier,
-			gpus=excluded.gpus, cpu_cores=excluded.cpu_cores, ram_gb=excluded.ram_gb,
+			tier_is_hint=excluded.tier_is_hint, gpus=excluded.gpus, cpu_cores=excluded.cpu_cores, ram_gb=excluded.ram_gb,
 			supported_models=excluded.supported_models, pull_mode=excluded.pull_mode, last_pulse=excluded.last_pulse,
 			public_key=CASE WHEN excluded.public_key != '' THEN excluded.public_key ELSE agents.public_key END`,
 			onConflictStatus)
@@ -90,14 +97,14 @@ func (s *GridState) RegisterAgent(req schema.JoinRequest, tier schema.ComputeTie
 
 	query := fmt.Sprintf(`
 		INSERT INTO agents
-			(agent_id, operator_id, name, host, port, status, tier, gpus, cpu_cores, ram_gb, supported_models, pull_mode, joined_at, last_pulse, public_key)
-		VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+			(agent_id, operator_id, name, host, port, status, tier, tier_is_hint, gpus, cpu_cores, ram_gb, supported_models, pull_mode, joined_at, last_pulse, public_key)
+		VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
 		%s
-	`, s.q(1), s.q(2), s.q(3), s.q(4), s.q(5), s.q(6), s.q(7), s.q(8), s.q(9), s.q(10), s.q(11), s.q(12), s.q(13), s.q(14), s.q(15), onConflict)
+	`, s.q(1), s.q(2), s.q(3), s.q(4), s.q(5), s.q(6), s.q(7), s.q(8), s.q(9), s.q(10), s.q(11), s.q(12), s.q(13), s.q(14), s.q(15), s.q(16), onConflict)
 
 	_, err = tx.Exec(query,
 		req.AgentID, req.OperatorID, req.Name, req.Host, req.Port,
-		initialStatus, string(tier), string(gpusJSON), req.CPUCores, req.RamGB, string(modelsJSON),
+		initialStatus, string(tier), tierIsHintInt, string(gpusJSON), req.CPUCores, req.RamGB, string(modelsJSON),
 		pullMode, now, now, req.PublicKey)
 	if err != nil {
 		return "", err
@@ -142,7 +149,16 @@ func (s *GridState) RecordPulse(agentID string, status schema.AgentStatus, gpuUt
 		t := string(schema.TierFromTPS(tps))
 		tierVal = &t
 	}
-	s.DB.Exec(fmt.Sprintf(`UPDATE agents SET status=%s, current_tps=%s, tasks_completed=%s, last_pulse=%s, tier=COALESCE(%s,tier) WHERE agent_id=%s`, 
+	// tier_is_hint = 1 means the operator explicitly set --tier at join (e.g.
+	// Apple Silicon / unified-memory hardware with no discrete GPU to probe)
+	// — TPS-based reclassification below must never overwrite that, since
+	// the TPS thresholds (schema.TierFromTPS) are calibrated for discrete
+	// GPU throughput and would otherwise silently downgrade e.g. a Mac Mini
+	// to BRONZE on its very first (naturally slower) completed task,
+	// discarding the operator's override with no warning (observed
+	// 2026-08-20). Agents without a hint keep the prior COALESCE behavior.
+	s.DB.Exec(fmt.Sprintf(`UPDATE agents SET status=%s, current_tps=%s, tasks_completed=%s, last_pulse=%s,
+		tier=CASE WHEN tier_is_hint=1 THEN tier ELSE COALESCE(%s,tier) END WHERE agent_id=%s`,
 		s.q(1), s.q(2), s.q(3), s.q(4), s.q(5), s.q(6)),
 		string(status), tps, tasksDone, now, tierVal, agentID)
 	

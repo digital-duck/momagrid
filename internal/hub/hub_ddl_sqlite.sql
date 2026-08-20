@@ -40,7 +40,15 @@ CREATE TABLE IF NOT EXISTS agents (
     pull_mode        INTEGER NOT NULL DEFAULT 0,
     joined_at        TEXT NOT NULL DEFAULT (datetime('now')),
     last_pulse       TEXT,
-    public_key       TEXT NOT NULL DEFAULT ''
+    public_key       TEXT NOT NULL DEFAULT '',
+    -- Set when the agent joined with an explicit --tier hint (e.g. Apple
+    -- Silicon / unified-memory machines with no discrete GPU to probe).
+    -- RecordPulse (state.go) must not let TPS-based tier reclassification
+    -- overwrite a hinted tier — TPS thresholds are calibrated for discrete
+    -- GPUs and would otherwise silently downgrade e.g. a Mac Mini to BRONZE
+    -- the moment it completes its first (naturally slower) task, discarding
+    -- the operator's explicit override (observed 2026-08-20).
+    tier_is_hint     INTEGER NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS tasks (

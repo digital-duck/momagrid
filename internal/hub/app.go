@@ -290,10 +290,11 @@ func (a *App) handleJoin(w http.ResponseWriter, r *http.Request) {
 			initialTier = t
 		}
 	}
-	if len(req.GPUs) == 0 && schema.ValidTier(req.TierHint) {
+	tierIsHint := len(req.GPUs) == 0 && schema.ValidTier(req.TierHint)
+	if tierIsHint {
 		initialTier = req.TierHint
 	}
-	initialStatus, err := a.State.RegisterAgent(req, initialTier, a.Config.AdminMode)
+	initialStatus, err := a.State.RegisterAgent(req, initialTier, tierIsHint, a.Config.AdminMode)
 	if err != nil {
 		writeJSON(w, 500, map[string]string{"detail": err.Error()})
 		return

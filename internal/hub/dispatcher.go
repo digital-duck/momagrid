@@ -114,42 +114,59 @@ func PickAgent(state *GridState, req schema.TaskRequest, maxConcurrent int) (map
 		return nil, nil
 	}
 
-	// Shuffle first so that equally-ranked agents (same status, tier, load)
-	// are selected randomly rather than always by DB insertion order.
-	// This prevents all tasks from piling onto the first registered agent
-	// when tasks arrive one at a time (e.g. sequential SPL runs).
-	rand.Shuffle(len(candidates), func(i, j int) {
-		candidates[i], candidates[j] = candidates[j], candidates[i]
-	})
-
-	// Then pick the best by: ONLINE > tier > least loaded
-	best := candidates[0]
-	for _, c := range candidates[1:] {
-		if isBetter(c, best) {
-			best = c
-		}
-	}
-	return best.agent, nil
+	return weightedPick(candidates), nil
 }
 
-func isBetter(a, b agentCandidate) bool {
-	aOnline := 0
-	if s, _ := a.agent["status"].(string); s != "ONLINE" {
-		aOnline = 1
+// tierWeight is each tier's relative share of dispatch probability among
+// otherwise-equal eligible candidates. Deliberately NOT winner-take-all
+// (unlike the old strict ONLINE > tier > least-loaded ordering this
+// replaces): with tier as a hard cutoff via minIdx above, a task-eligible
+// lower-tier agent must still get real (if smaller) traffic, or it sits
+// idle for the entire grid lifetime any time a higher-tier agent is online
+// — observed 2026-08-20 with a 2-node grid where the higher-tier node
+// absorbed 100% of dispatch, starving the other entirely. Ratios are
+// roughly the same 2x-per-tier-step relationship the old strict ordering
+// implied, just probabilistic instead of absolute.
+var tierWeight = map[schema.ComputeTier]float64{
+	schema.TierPlatinum: 8,
+	schema.TierGold:     4,
+	schema.TierSilver:   2,
+	schema.TierBronze:   1,
+}
+
+// weightedPick selects one candidate at random, weighted by tier (higher
+// tiers get proportionally more traffic) and inversely by current load (a
+// candidate already juggling more active tasks gets proportionally less of
+// its tier's share). Every eligible candidate keeps a nonzero chance
+// regardless of tier — this is the "no starvation" property strict
+// tier-then-load ordering didn't have.
+func weightedPick(candidates []agentCandidate) map[string]interface{} {
+	weights := make([]float64, len(candidates))
+	total := 0.0
+	for i, c := range candidates {
+		tier := schema.ComputeTier(fmt.Sprint(c.agent["tier"]))
+		w, ok := tierWeight[tier]
+		if !ok {
+			w = 1
+		}
+		if status, _ := c.agent["status"].(string); status != "ONLINE" {
+			w *= 0.5 // e.g. BUSY — still eligible, just deprioritized
+		}
+		w /= float64(1 + c.activeCount)
+		weights[i] = w
+		total += w
 	}
-	bOnline := 0
-	if s, _ := b.agent["status"].(string); s != "ONLINE" {
-		bOnline = 1
+	if total <= 0 {
+		return candidates[rand.Intn(len(candidates))].agent
 	}
-	if aOnline != bOnline {
-		return aOnline < bOnline
+	r := rand.Float64() * total
+	for i, w := range weights {
+		r -= w
+		if r <= 0 {
+			return candidates[i].agent
+		}
 	}
-	aTier := TierIndex(fmt.Sprint(a.agent["tier"]))
-	bTier := TierIndex(fmt.Sprint(b.agent["tier"]))
-	if aTier != bTier {
-		return aTier < bTier
-	}
-	return a.activeCount < b.activeCount
+	return candidates[len(candidates)-1].agent // float rounding fallback
 }
 
 // DeliverTask sends a task to an agent via HTTP POST.
